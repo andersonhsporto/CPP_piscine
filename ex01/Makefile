@@ -1,9 +1,9 @@
-NAME	= megaphone
+NAME	= PPhonebook
 
 CC		= g++
-CFLAGS	= -std=c++98 -Wall -Wextra -Werror
+CFLAGS	= -std=c++98 -Wall -Wextra #-Werror
 
-SRC		= megaphone.cpp
+SRC		= PhoneBookApplication.cpp PhoneBook.cpp Contact.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
