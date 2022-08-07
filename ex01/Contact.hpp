@@ -39,5 +39,4 @@ private:
 
 };
 
-
 #endif // CONTACT_HPP
