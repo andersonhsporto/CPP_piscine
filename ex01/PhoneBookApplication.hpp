@@ -1,7 +1,8 @@
-#ifdef PHONEBOOK_HPP
+# ifdef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include <string>
+# include <string>
+# include <iostream>
 
 #endif
 

@@ -1,7 +1,7 @@
 NAME	= PPhonebook
 
 CC		= g++
-CFLAGS	= -std=c++98 -Wall -Wextra #-Werror
+CFLAGS	= -Wall -Wextra -std=c++98 #-Werror
 
 SRC		= PhoneBookApplication.cpp PhoneBook.cpp Contact.cpp
 
