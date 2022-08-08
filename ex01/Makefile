@@ -3,7 +3,7 @@ NAME	= PPhonebook
 CC		= g++
 CFLAGS	= -Wall -Wextra -std=c++98 #-Werror
 
-SRC		= PhoneBookApplication.cpp PhoneBook.cpp Contact.cpp PhoneBookService.cpp
+SRC		= PhoneBookApplication.cpp PhoneBook.cpp Contact.cpp PhoneBookController.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)

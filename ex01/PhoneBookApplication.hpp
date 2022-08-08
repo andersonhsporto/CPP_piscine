@@ -10,6 +10,6 @@
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-#include "PhoneBookService.hpp"
+#include "PhoneBookController.hpp"
 
 #endif //PHONEBOOKAPPLICATION_HPP

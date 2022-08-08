@@ -1,7 +1,7 @@
 #include "PhoneBookApplication.hpp"
 
 int	main() {
-    PhoneBookService	service;
+    PhoneController	service;
 
 	service.phoneBookService();
 	return 0;
