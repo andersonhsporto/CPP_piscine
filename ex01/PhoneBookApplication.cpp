@@ -1,6 +1,8 @@
-#include "Contact.hpp"
+#include "PhoneBookApplication.hpp"
 
 int	main() {
-    Contact instance;
+    PhoneBookService	service;
+
+	service.phoneBookService();
 	return 0;
 }

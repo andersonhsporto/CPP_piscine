@@ -1,9 +1,15 @@
-# ifdef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef PHONEBOOKAPPLICATION_HPP
+#define PHONEBOOKAPPLICATION_HPP
 
-# include <string>
-# include <iostream>
+#define CMD "ADD, SEARCH and EXIT"
 
-#endif
+#include <iostream>
+#include <iomanip>
+#include <iostream>
+#include <string>
 
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
+#include "PhoneBookService.hpp"
 
+#endif //PHONEBOOKAPPLICATION_HPP

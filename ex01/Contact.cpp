@@ -1,18 +1,13 @@
-#include <iostream> // TODO REMOVER AO FINAL
-
-#include "Contact.hpp"
-
+#include "PhoneBookApplication.hpp"
 
 // Constructors
 Contact::Contact(void) {
-    std::cout << "Contructor" << std::endl;
     return;
 };
 
 
 // Destructors
 Contact::~Contact(void) {
-    std::cout << "Destrutor" << std::endl;
     return;
 }
 

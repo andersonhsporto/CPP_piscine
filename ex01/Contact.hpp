@@ -1,7 +1,6 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include <string> //TODO -> REMOVER AO FINAL
 #include "PhoneBookApplication.hpp"
 
 class Contact {
@@ -36,7 +35,6 @@ private:
 		std::string nickname;
 		std::string phoneNumber;
 		std::string darkestSecret;
-
 };
 
 #endif // CONTACT_HPP
