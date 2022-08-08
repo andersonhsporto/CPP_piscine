@@ -5,6 +5,13 @@
 
 class Contact {
 
+private:
+	std::string _firstName;
+	std::string _lastName;
+	std::string _nickname;
+	std::string _phoneNumber;
+	std::string _darkestSecret;
+
 public:
     Contact(void);
     ~Contact(void);
@@ -29,12 +36,6 @@ public:
 
 	void SetDarkestSecret(const std::string& _darkestSecret);
 
-private:
-		std::string _firstName;
-		std::string _lastName;
-		std::string _nickname;
-		std::string _phoneNumber;
-		std::string _darkestSecret;
 };
 
 #endif // CONTACT_HPP

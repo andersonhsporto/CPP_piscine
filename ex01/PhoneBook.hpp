@@ -5,19 +5,18 @@
 
 class PhoneBook
 {
+
 private:
-	Contact		_contacts[8];
-	int			_indexOldest;
-	int			_contactsNumber;
+	Contact				_contacts[8];
+	int					_indexOldest;
+	int					_contactsNumber;
 	static std::string	_truncateString(const std::string& string);
-	static void		_printTableHeader(void);
-	void		_printContact(Contact const& contact, int index);
+	static void			_printTableHeader(void);
+	void				_printContact(Contact const& contact, int index);
 	static std::string	_userPrompt(const std::string& contactInfo);
-	void		_displayContacts(Contact *contacts, int contactNumber);
+	void				_displayContacts(Contact *contacts, int contactNumber);
 
 public:
-	std::string input;
-
 	PhoneBook(void);
 	~PhoneBook(void);
 
