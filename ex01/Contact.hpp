@@ -11,30 +11,30 @@ public:
 
 	const std::string& GetFirstName() const;
 
-	void SetFirstName(const std::string& firstName);
+	void SetFirstName(const std::string& _firstName);
 
 	const std::string& GetLastName() const;
 
-	void SetLastName(const std::string& lastName);
+	void SetLastName(const std::string& _lastName);
 
 	const std::string& GetNickname() const;
 
-	void SetNickname(const std::string& nickname);
+	void SetNickname(const std::string& _nickname);
 
 	const std::string& GetPhoneNumber() const;
 
-	void SetPhoneNumber(const std::string& phoneNumber);
+	void SetPhoneNumber(const std::string& _phoneNumber);
 
 	const std::string& GetDarkestSecret() const;
 
-	void SetDarkestSecret(const std::string& darkestSecret);
+	void SetDarkestSecret(const std::string& _darkestSecret);
 
 private:
-		std::string firstName;
-		std::string lastName;
-		std::string nickname;
-		std::string phoneNumber;
-		std::string darkestSecret;
+		std::string _firstName;
+		std::string _lastName;
+		std::string _nickname;
+		std::string _phoneNumber;
+		std::string _darkestSecret;
 };
 
 #endif // CONTACT_HPP
