@@ -3,6 +3,8 @@
 
 #include "PhoneBook.hpp"
 
+#define CMD "ADD, SEARCH and EXIT"
+
 class PhoneController
 {
 

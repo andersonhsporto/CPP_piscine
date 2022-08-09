@@ -1,4 +1,6 @@
 #include "PhoneBook.hpp"
+#include <iomanip>
+#include <sstream>
 
 PhoneBook::PhoneBook()
 {
@@ -58,18 +60,18 @@ std::string PhoneBook::_truncateString(const std::string& string)
 
 void	PhoneBook::_printTableHeader()
 {
-	std::cout << std::setw(11) << "Index" << "|";
-	std::cout << std::setw(11) << "First Name" << "|";
-	std::cout << std::setw(11) << "Last Name" << "|";
-	std::cout << std::setw(11) << "Nickname" << "|" << std::endl;
+	std::cout << std::setw(10) << "Index" << "|";
+	std::cout << std::setw(10) << "First Name" << "|";
+	std::cout << std::setw(10) << "Last Name" << "|";
+	std::cout << std::setw(10) << "Nickname" << "|" << std::endl;
 }
 
 void	PhoneBook::_printContact(Contact const& contact, int index)
 {
-	std::cout << std::setw(11) << index << "|";
-	std::cout << std::setw(11) << _truncateString(contact.GetFirstName()) << "|";
-	std::cout << std::setw(11) << _truncateString(contact.GetLastName()) << "|";
-	std::cout << std::setw(11) << _truncateString(contact.GetNickname()) << "|" << std::endl;
+	std::cout << std::setw(10) << index << "|";
+	std::cout << std::setw(10) << _truncateString(contact.GetFirstName()) << "|";
+	std::cout << std::setw(10) << _truncateString(contact.GetLastName()) << "|";
+	std::cout << std::setw(10) << _truncateString(contact.GetNickname()) << "|" << std::endl;
 }
 
 std::string	PhoneBook::_userPrompt(const std::string& contactInfo)
