@@ -1,14 +1,11 @@
-#include "PhoneBookApplication.hpp"
+#include "Contact.hpp"
 
-// Constructors
-Contact::Contact(void) {
-    return;
+Contact::Contact()
+{
 };
 
-
-// Destructors
-Contact::~Contact(void) {
-    return;
+Contact::~Contact()
+{
 }
 
 const std::string& Contact::GetFirstName() const

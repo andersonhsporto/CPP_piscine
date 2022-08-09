@@ -1,7 +1,7 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "PhoneBookApplication.hpp"
+#include "Contact.hpp"
 
 class PhoneBook
 {
@@ -11,10 +11,12 @@ private:
 	int					_indexOldest;
 	int					_contactsNumber;
 	static std::string	_truncateString(const std::string& string);
-	static void			_printTableHeader(void);
-	void				_printContact(Contact const& contact, int index);
+	static void			_printTableHeader();
+	static void				_printContact(Contact const& contact, int index);
 	static std::string	_userPrompt(const std::string& contactInfo);
-	void				_displayContacts(Contact *contacts, int contactNumber);
+	static void				_displayContacts(Contact *contacts, int contactNumber);
+	int					_contactPrompt(int index);
+	void				_printContactInfo(int contactIndex);
 
 public:
 	PhoneBook(void);
@@ -25,4 +27,4 @@ public:
 
 };
 
-#endif //EX01_PHONEBOOK_HPP
+#endif

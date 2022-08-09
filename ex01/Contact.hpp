@@ -1,7 +1,7 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include "PhoneBookApplication.hpp"
+#include <iostream>
 
 class Contact {
 
@@ -13,8 +13,8 @@ private:
 	std::string _darkestSecret;
 
 public:
-    Contact(void);
-    ~Contact(void);
+    Contact();
+    ~Contact();
 
 	const std::string& GetFirstName() const;
 
@@ -38,4 +38,4 @@ public:
 
 };
 
-#endif // CONTACT_HPP
+#endif

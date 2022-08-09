@@ -1,7 +1,7 @@
 #ifndef PHONEBOOKSERVICE_HPP
 #define PHONEBOOKSERVICE_HPP
 
-#include "PhoneBookApplication.hpp"
+#include "PhoneBook.hpp"
 
 class PhoneController
 {
@@ -10,10 +10,10 @@ private:
 	PhoneBook	_phoneBook;
 
 public:
-	PhoneController(void);
-	~PhoneController(void);
+	PhoneController();
+	~PhoneController();
 
-	void		phoneBookService(void);
+	void		phoneBookService();
 };
 
-#endif //EX01_PHONEBOOKSERVICE_HPP
+#endif
