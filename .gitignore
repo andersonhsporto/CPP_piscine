@@ -34,4 +34,5 @@
 .idea
 .vscode
 
-imc.js
+*.js
+PPhonebook
