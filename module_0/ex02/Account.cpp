@@ -77,16 +77,16 @@ void Account::makeDeposit(int deposit)
 bool	Account::makeWithdrawal( int withdrawal )
 {
 	_displayTimestamp();
-	if (withdrawal <= _amount)
+	if (withdrawal <= checkAmount())
 	{
 		_totalNbWithdrawals++;
 		_nbWithdrawals++;
 		_totalAmount = _totalAmount - withdrawal;
-		_amount = _amount - withdrawal;
+		_amount = checkAmount() - withdrawal;
 		std::cout << "index:" << _accountIndex;
-		std::cout << ";p_amount:" << _amount + withdrawal;
+		std::cout << ";p_amount:" << checkAmount() + withdrawal;
 		std::cout << ";withdrawal:" << withdrawal;
-		std::cout << ";amount:" << _amount;
+		std::cout << ";amount:" << checkAmount();
 		std::cout << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
 		return true;
 	}
