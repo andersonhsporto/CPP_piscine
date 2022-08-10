@@ -12,9 +12,9 @@ private:
 	int					_contactsNumber;
 	static std::string	_truncateString(const std::string& string);
 	static void			_printTableHeader();
-	static void				_printContact(Contact const& contact, int index);
+	static void			_printContact(Contact const& contact, int index);
 	static std::string	_userPrompt(const std::string& contactInfo);
-	static void				_displayContacts(Contact *contacts, int contactNumber);
+	static void			_displayContacts(Contact *contacts, int contactNumber);
 	int					_contactPrompt(int index);
 	void				_printContactInfo(int contactIndex);
 

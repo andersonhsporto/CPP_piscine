@@ -1,8 +1,8 @@
 #include "PhoneBookApplication.hpp"
 
 int	main() {
-    PhoneController	service;
+    PhoneController	controller;
 
-	service.phoneBookService();
+	controller.phoneBookService();
 	return 0;
 }
