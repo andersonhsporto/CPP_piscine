@@ -9,13 +9,13 @@ class PhoneController
 {
 
 private:
-	PhoneBook	_phoneBook;
+    PhoneBook	_phoneBook;
 
 public:
-	PhoneController();
-	~PhoneController();
+    PhoneController();
+    ~PhoneController();
 
-	void		phoneBookService();
+    void		phoneBookService();
 };
 
 #endif

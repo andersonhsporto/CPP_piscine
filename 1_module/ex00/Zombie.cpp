@@ -11,21 +11,21 @@ Zombie::Zombie(const std::string& name) : name(name)
 
 Zombie::~Zombie()
 {
-	std::cout << name << ":\tzombie has been destroyed" << std::endl;
+    std::cout << name << ":\tzombie has been destroyed" << std::endl;
 }
 
 const std::string& Zombie::GetName() const
 {
-	return name;
+    return name;
 }
 
 void Zombie::SetName(const std::string& name)
 {
-	Zombie::name = name;
+    Zombie::name = name;
 }
 
 
 void Zombie::announce()
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
