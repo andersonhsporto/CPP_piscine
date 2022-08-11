@@ -12,13 +12,20 @@ PhoneBook::~PhoneBook()
 {
 }
 
-void PhoneBook::addContact()
+void PhoneBook::AddContact()
 {
     Contact				temporaryContact;
 
-    if (_indexOldest == 8)
+    temporaryContact.SetFirstName(_UserPrompt("First Name"));
+    temporaryContact.SetLastName(_UserPrompt("Last Name"));
+    temporaryContact.SetNickname(_UserPrompt("Nickname"));
+    temporaryContact.SetPhoneNumber(_UserPrompt("Phone Number"));
+    temporaryContact.SetDarkestSecret(_UserPrompt("Darkest Secret"));
+    std::cout << _indexOldest << std::endl;
+    _contacts[_indexOldest] = temporaryContact;
+    if (_indexOldest == 7)
     {
-        _indexOldest = 1;
+        _indexOldest = 0;
         _contactsNumber = 8;
     }
     else
@@ -27,12 +34,6 @@ void PhoneBook::addContact()
         if (_contactsNumber < 8)
             _contactsNumber++;
     }
-    temporaryContact.SetFirstName(_userPrompt("First Name"));
-    temporaryContact.SetLastName(_userPrompt("Last Name"));
-    temporaryContact.SetNickname(_userPrompt("Nickname"));
-    temporaryContact.SetPhoneNumber(_userPrompt("Phone Number"));
-    temporaryContact.SetDarkestSecret(_userPrompt("Darkest Secret"));
-    _contacts[_indexOldest] = temporaryContact;
 }
 
 
@@ -40,9 +41,9 @@ void PhoneBook::SearchContact()
 {
     if (_contactsNumber > 0)
     {
-        _displayContacts(_contacts, _contactsNumber);
-        int index = _contactPrompt(_contactsNumber);
-        _printContactInfo(index);
+        _DisplayContacts(_contacts, _contactsNumber);
+        int index = _ContactPrompt(_contactsNumber);
+        _PrintContactInfo(index - 1);
     }
     else
     {
@@ -68,10 +69,10 @@ void	PhoneBook::_PrintTableHeader()
 
 void	PhoneBook::_PrintContact(Contact const& contact, int index)
 {
-    std::cout << std::setw(10) << index << "|";
-    std::cout << std::setw(10) << _truncateString(contact.GetFirstName()) << "|";
-    std::cout << std::setw(10) << _truncateString(contact.GetLastName()) << "|";
-    std::cout << std::setw(10) << _truncateString(contact.GetNickname()) << "|" << std::endl;
+    std::cout << std::setw(10) << index + 1 << "|";
+    std::cout << std::setw(10) << _TruncateString(contact.GetFirstName()) << "|";
+    std::cout << std::setw(10) << _TruncateString(contact.GetLastName()) << "|";
+    std::cout << std::setw(10) << _TruncateString(contact.GetNickname()) << "|" << std::endl;
 }
 
 std::string	PhoneBook::_UserPrompt(const std::string& contactInfo)
@@ -94,9 +95,9 @@ int	PhoneBook::_ContactPrompt(int index)
         std::cout << "Please enter the contact index: " << std::endl;
         std::getline(std::cin, commandString);
         std::istringstream(commandString) >> number;
-        if (number > index || number < 1){
+        if (number > index || number <= 0){
             std::cout << "Invalid valid index " << std::endl;
-            _displayContacts(_contacts, _contactsNumber);
+            _DisplayContacts(_contacts, _contactsNumber);
             continue;
         }
         if (!commandString.empty())
@@ -105,14 +106,14 @@ int	PhoneBook::_ContactPrompt(int index)
     return number;
 }
 
-void	PhoneBook::_DisplayContacts()
+void	PhoneBook::_DisplayContacts(Contact *contacts, int contactNumber)
 {
-    _printTableHeader();
-    for (int i = 1; i < _contactsNumber + 1; i++)
-        _printContact(_contacts[i], i);
+    _PrintTableHeader();
+    for (int i = 0; i < contactNumber; i++)
+        _PrintContact(contacts[i], i);
 }
 
-void	PhoneBook::_printContactInfo(int contactIndex)
+void	PhoneBook::_PrintContactInfo(int contactIndex)
 {
     std::cout << "First Name: " << _contacts[contactIndex].GetFirstName() << std::endl;
     std::cout << "Last Name: " << _contacts[contactIndex].GetLastName() << std::endl;

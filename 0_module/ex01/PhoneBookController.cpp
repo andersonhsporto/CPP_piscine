@@ -16,9 +16,9 @@ void	PhoneController::phoneBookService()
         std::cout << "you can use one of the following commands: " << CMD << std::endl;
         std::getline(std::cin, commandString);
         if (commandString == "ADD")
-            _phoneBook.addContact();
+            _phoneBook.AddContact();
         if (commandString == "SEARCH")
-            _phoneBook.searchContact();
+            _phoneBook.SearchContact();
         if (commandString == "EXIT")
             break;
     }
