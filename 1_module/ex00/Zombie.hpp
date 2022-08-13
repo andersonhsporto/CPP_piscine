@@ -1,10 +1,5 @@
-//
-// Created by anderson on 10/08/22.
-//
-
 #ifndef EX00_ZOMBIE_HPP
 #define EX00_ZOMBIE_HPP
-
 
 #include <string>
 

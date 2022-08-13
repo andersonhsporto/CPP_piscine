@@ -1,7 +1,3 @@
-//
-// Created by anderson on 10/08/22.
-//
-
 #include <iostream>
 #include "Zombie.hpp"
 

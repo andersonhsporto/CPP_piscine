@@ -31,7 +31,15 @@
 *.out
 *.app
 
+# Clion project files
 .idea
+
+# Eclipse project files
+.settings
+.cproject
+.project
+
+# Vscode project files
 .vscode
 
 *.js
@@ -41,3 +49,5 @@ GBUBank
 new_log
 old_log
 teste.log
+Zombies
+
