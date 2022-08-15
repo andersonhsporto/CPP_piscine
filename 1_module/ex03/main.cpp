@@ -2,7 +2,6 @@
 // Created by Anderson Porto on 8/15/22.
 //
 
-#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
