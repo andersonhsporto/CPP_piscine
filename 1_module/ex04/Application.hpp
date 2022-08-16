@@ -6,9 +6,13 @@
 #define EX04_APPLICATION_HPP
 
 #include <string>
+#include <fstream>
+#include <iostream>
+#include "Service.hpp"
 
 class Application
 {
+
 public:
 
     Application();
@@ -18,6 +22,5 @@ public:
     static int Controller(int argc, char *argv[]);
 
 };
-
 
 #endif //EX04_APPLICATION_HPP

@@ -1,7 +1,7 @@
 NAME	= cppSED
 
 CC		= clang++
-CFLAGS	= -Wall -Wextra  -std=c++98 #-Werror
+CFLAGS	= -Wall -Wextra  -Werror -std=c++98
 
 SRC		= main.cpp Application.cpp Service.cpp
 
