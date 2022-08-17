@@ -25,7 +25,6 @@ void Service::BuildFile(std::ifstream& file, char** argv)
         getline(file, line);
         ReplaceString(line, argv[2], argv[3]);
         out << line << std::endl;
-        std::cout << line << std::endl;
     }
     out.close();
 }
@@ -34,11 +33,11 @@ bool Service::ValidArgs(int argc)
 {
     if (argc != 4)
     {
+        std::cout << "Invalid parameter" << std::endl;
         return false;
     }
     else
     {
-        std::cout << "Invalid parameter" << std::endl;
         return true;
     }
 
