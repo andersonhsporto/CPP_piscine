@@ -43,6 +43,7 @@
 .vscode
 
 *.js
+*replace
 PPhonebook
 GBUBank
 19920104_091532.log
@@ -50,4 +51,8 @@ new_log
 old_log
 teste.log
 Zombies
-
+Brain
+UnnecessaryViolence
+cppSED
+Harl
+harlFilter
