@@ -1,3 +1,7 @@
+//
+// Created by Anderson Porto on 8/15/22.
+//
+
 #include "Zombie.hpp"
 
 Zombie* zombieHorde( int N, std::string name );
@@ -7,10 +11,13 @@ void    recursiveAnnounce( int N, Zombie *horde );
 int main()
 {
     Zombie* newZombieHorde = zombieHorde( 4, "Michael" );
+
     testAndDeleteHorde(newZombieHorde, 4);
     newZombieHorde = zombieHorde( 2, "Peach" );
+
     testAndDeleteHorde(newZombieHorde, 2);
     newZombieHorde = zombieHorde( 7, "Mario" );
+
     testAndDeleteHorde(newZombieHorde, 7);
     return 0;
 }
