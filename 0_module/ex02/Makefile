@@ -1,6 +1,6 @@
 NAME	= GBUBank
 
-CC		= g++
+CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRC		= tests.cpp Account.cpp

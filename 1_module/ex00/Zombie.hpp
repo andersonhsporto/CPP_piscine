@@ -1,3 +1,7 @@
+//
+// Created by Anderson Porto on 8/15/22.
+//
+
 #ifndef EX00_ZOMBIE_HPP
 #define EX00_ZOMBIE_HPP
 
@@ -5,8 +9,6 @@
 
 class Zombie
 {
-private:
-	std::string name;
 
 public:
 	Zombie(const std::string& name);
@@ -18,6 +20,9 @@ public:
 	const std::string& GetName() const;
 
 	void SetName(const std::string& name);
+
+private:
+	std::string name;
 
 };
 

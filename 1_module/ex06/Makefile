@@ -1,9 +1,9 @@
-NAME	= Zombies
+NAME	= harlFilter
 
 CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRC		= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC		= main.cpp Harl.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)

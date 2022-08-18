@@ -1,3 +1,7 @@
+//
+// Created by Anderson Porto on 8/15/22.
+//
+
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
@@ -15,7 +19,7 @@ public:
 
 	Zombie( void );
 
-	~Zombie(void);
+	~Zombie( void );
 
 	void announce( void );
 
@@ -24,10 +28,8 @@ public:
 	void SetName(const std::string& _name);
 
 private:
-  std::string _name;
-
+	std::string _name;
 
 };
-
 
 #endif
