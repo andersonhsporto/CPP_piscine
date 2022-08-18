@@ -21,6 +21,10 @@ years whereas you started working here since last month.\n"
 
 #define COMPLAINING "[ Probably complaining about insignificant problems ]"
 
+#define END   "\033[0m"
+#define RED   "\033[1m\033[31m"
+#define ORANGE "\033[1m\033[33m"
+
 class Harl
 {
 public:

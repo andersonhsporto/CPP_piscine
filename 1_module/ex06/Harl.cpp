@@ -52,10 +52,10 @@ void Harl::info(void)
 
 void Harl::warning(void)
 {
-    std::cout << "[ WARNING ]\n" << WARNING_MSG << std::endl;
+    std::cout << ORANGE << "[ WARNING ]\n" << WARNING_MSG << END << std::endl;
 }
 
 void Harl::error(void)
 {
-    std::cout << "[ ERROR ]\n" << ERROR_MSG << std::endl;
+    std::cout << RED << "[ ERROR ]\n" << ERROR_MSG << END << std::endl;
 }
