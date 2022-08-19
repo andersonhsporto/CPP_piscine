@@ -4,7 +4,7 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(const std::string& name) : Name(name)
+HumanB::HumanB(const std::string& name) : Name(name), type(NULL)
 {
 }
 
@@ -20,5 +20,8 @@ void HumanB::setWeapon(Weapon& type)
 void HumanB::attack()
 {
     std::cout << Name << " attacks with their ";
-    std::cout << type->getType() << std::endl;
+	if (type != NULL)
+    	std::cout << type->getType() << std::endl;
+	else
+    	std::cout << "bare hands" << std::endl;
 }
