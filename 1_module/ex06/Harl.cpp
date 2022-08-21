@@ -14,30 +14,23 @@ Harl::~Harl()
 
 void Harl::complain(std::string level)
 {
-    void (Harl::*ptr[4])( void ) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
-    std::string comments[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
-    int         index = 0;
+    void (Harl::*ptr[4])(void) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+    int index = findIndex(level);
 
-    while (index < 4 && comments[index] != level) index++;
-    for (int i = index; i < 4; i++)
+    switch (index)
     {
-        switch (i)
-        {
-        case 0:
-            (this->*ptr[i])();
-            break;
-        case 1:
-            (this->*ptr[i])();
-            break;
-        case 2:
-            (this->*ptr[i])();
-            break;
-        case 3:
-            (this->*ptr[i])();
-            return;
-        }
+    case 0:
+        (this->*ptr[index++])();
+    case 1:
+        (this->*ptr[index++])();
+    case 2:
+        (this->*ptr[index++])();
+    case 3:
+        (this->*ptr[index++])();
+        break;
+    default:
+        std::cout << COMPLAINING << std::endl;
     }
-    std::cout << COMPLAINING << std::endl;
 }
 
 void Harl::debug(void)
@@ -58,4 +51,14 @@ void Harl::warning(void)
 void Harl::error(void)
 {
     std::cout << RED << "[ ERROR ]\n" << ERROR_MSG << END << std::endl;
+}
+
+int Harl::findIndex(std::string level)
+{
+    std::string comments[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+    int index = 0;
+
+    while (index < 4 && comments[index] != level)
+        index++;
+    return index;
 }

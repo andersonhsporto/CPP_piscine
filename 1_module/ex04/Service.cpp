@@ -78,7 +78,7 @@ void Service::ReplaceString(
         i = string.find(oldString, i);
         if (i == std::string::npos)
             break;
-        string.erase( i, oldString.length() );
+        string.erase(i, oldString.length());
         string.insert(i, newString);
     }
 }
