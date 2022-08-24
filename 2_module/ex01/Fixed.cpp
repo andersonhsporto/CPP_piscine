@@ -25,7 +25,7 @@ Fixed::Fixed(const float float_nbr): rawBits(roundf(float_nbr * (1 << fractional
 Fixed::Fixed(const Fixed& fixed)
 {
     std::cout << COPY_CONSTRUCTOR << std::endl;
-    this->rawBits = fixed.getRawBits();
+    *this = fixed;
 }
 
 int Fixed::getRawBits( void ) const
@@ -42,7 +42,10 @@ void Fixed::setRawBits(int const raw)
 Fixed& Fixed::operator=(const Fixed& fixed)
 {
     std::cout << ASSIGNMENT << std::endl;
-    this->rawBits = fixed.getRawBits();
+    if (this != &fixed)
+    {
+        this->rawBits = fixed.rawBits;
+    }
     return *this;
 }
 
