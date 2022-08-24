@@ -14,6 +14,7 @@
 #define FLOAT_CONSTRUCTOR   "Float constructor called"
 
 #include <cmath>
+#include <iostream>
 
 class Fixed
 {
@@ -43,5 +44,6 @@ private:
     static const int    fractionalBits;
 };
 
+std::ostream& operator<<(std::ostream& stream, const Fixed& fixed);
 
 #endif //EX01_FIXED_HPP

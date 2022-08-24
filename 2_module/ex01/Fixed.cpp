@@ -17,7 +17,7 @@ Fixed::Fixed(const int integer): rawBits(integer << fractionalBits)
     std::cout << INT_CONSTRUCTOR << std::endl;
 }
 
-Fixed::Fixed(const float float_nbr): rawBits(float_nbr * (float)(1 << fractionalBits))
+Fixed::Fixed(const float float_nbr): rawBits(roundf(float_nbr * (1 << fractionalBits)))
 {
     std::cout << FLOAT_CONSTRUCTOR << std::endl;
 }
@@ -27,7 +27,6 @@ Fixed::Fixed(const Fixed& fixed)
     std::cout << COPY_CONSTRUCTOR << std::endl;
     this->rawBits = fixed.getRawBits();
 }
-
 
 int Fixed::getRawBits( void ) const
 {
@@ -52,10 +51,24 @@ Fixed::~Fixed()
     std::cout << DESTRUCTOR << std::endl;
 }
 
+float Fixed::toFloat(void) const
+{
+    float float_nbr = ((float)rawBits / (float)(1 << fractionalBits));
+
+    return float_nbr;
+}
+
 int Fixed::toInt( void ) const
 {
     int integer = rawBits >> fractionalBits;
 
     return integer;
 }
+
+std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)
+{
+    stream << fixed.toFloat();
+    return stream;
+}
+
 
