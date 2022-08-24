@@ -21,7 +21,7 @@ void HumanB::attack()
 {
     std::cout << Name << " attacks with their ";
 	if (type != NULL)
-    	std::cout << type->getType() << std::endl;
+		std::cout << type->getType() << std::endl;
 	else
-    	std::cout << "bare hands" << std::endl;
+		std::cout << "bare hands" << std::endl;
 }

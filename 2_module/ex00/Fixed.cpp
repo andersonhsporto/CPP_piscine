@@ -5,6 +5,8 @@
 #include "Fixed.hpp"
 #include <iostream>
 
+const int Fixed::fractionalBits(8);
+
 Fixed::Fixed(): rawBits(0)
 {
     std::cout << CONSTRUCTOR << std::endl;
