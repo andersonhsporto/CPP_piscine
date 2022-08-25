@@ -68,6 +68,16 @@ int Fixed::toInt( void ) const
     return integer;
 }
 
+bool Fixed::operator==(const Fixed& rhs) const
+{
+    return rawBits == rhs.rawBits;
+}
+
+bool Fixed::operator!=(const Fixed& rhs) const
+{
+    return !(rhs == *this);
+}
+
 std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)
 {
     stream << fixed.toFloat();
