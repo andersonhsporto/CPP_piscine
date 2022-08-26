@@ -93,18 +93,12 @@ bool Fixed::operator<=(const Fixed& rhs) const
 
 Fixed Fixed::operator+(const Fixed& rhs) const
 {
-    Fixed sum;
-
-    sum.setRawBits(getRawBits() + rhs.getRawBits());
-    return sum;
+    return toFloat() + rhs.toFloat();
 }
 
 Fixed Fixed::operator-(const Fixed& rhs) const
 {
-    Fixed subtraction;
-
-    subtraction.setRawBits(getRawBits() - rhs.getRawBits());
-    return subtraction;
+    return toFloat() - rhs.toFloat();
 }
 
 Fixed Fixed::operator*(const Fixed& rhs) const

@@ -13,6 +13,7 @@ int main( void ) {
 
     if (b < c)
         std::cout << "OK" << std::endl;
+    std::cout << b - c << " " << f << std::endl;
     std::cout << b * c << " " << f << std::endl;
     std::cout << b / c << " " << f << std::endl;
     return 0;
