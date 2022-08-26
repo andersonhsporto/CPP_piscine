@@ -107,6 +107,16 @@ Fixed Fixed::operator-(const Fixed& rhs) const
     return subtraction;
 }
 
+Fixed Fixed::operator*(const Fixed& rhs) const
+{
+    return toFloat() * rhs.toFloat();
+}
+
+Fixed Fixed::operator/(const Fixed& rhs) const
+{
+    return toFloat() / rhs.toFloat();
+}
+
 std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)
 {
     stream << fixed.toFloat();
