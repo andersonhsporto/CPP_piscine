@@ -52,13 +52,17 @@ public:
 
     Fixed operator/(const Fixed& rhs) const;
 
-    Fixed min(Fixed& number_1, Fixed& number_2) const;
+    Fixed& operator++();
 
-    Fixed min(const Fixed& number_1, const Fixed& number_2) const;
+    Fixed& operator--();
 
-    Fixed max(Fixed& number_1, Fixed& number_2) const;
+    static Fixed min(Fixed& number_1, Fixed& number_2);
 
-    Fixed max(const Fixed& number_1, const Fixed& number_2) const;
+    static Fixed min(const Fixed& number_1, const Fixed& number_2);
+
+    static Fixed max(Fixed& number_1, Fixed& number_2);
+
+    static Fixed max(const Fixed& number_1, const Fixed& number_2);
 
 private:
     int                 rawBits;
