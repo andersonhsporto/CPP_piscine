@@ -52,6 +52,14 @@ public:
 
     Fixed operator/(const Fixed& rhs) const;
 
+    Fixed min(Fixed& number_1, Fixed& number_2) const;
+
+    Fixed min(const Fixed& number_1, const Fixed& number_2) const;
+
+    Fixed max(Fixed& number_1, Fixed& number_2) const;
+
+    Fixed max(const Fixed& number_1, const Fixed& number_2) const;
+
 private:
     int                 rawBits;
     static const int    fractionalBits;

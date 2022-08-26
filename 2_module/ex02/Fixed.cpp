@@ -111,6 +111,26 @@ Fixed Fixed::operator/(const Fixed& rhs) const
     return toFloat() / rhs.toFloat();
 }
 
+Fixed Fixed::min(Fixed& number_1, Fixed& number_2) const
+{
+    return number_1 < number_2 ? number_1 : number_2;
+}
+
+Fixed Fixed::min(const Fixed& number_1, const Fixed& number_2) const
+{
+    return number_1 < number_2 ? number_1 : number_2;
+}
+
+Fixed Fixed::max(Fixed& number_1, Fixed& number_2) const
+{
+    return number_1 > number_2 ? number_1 : number_2;
+}
+
+Fixed Fixed::max(const Fixed& number_1, const Fixed& number_2) const
+{
+    return number_1 > number_2 ? number_1 : number_2;
+}
+
 std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)
 {
     stream << fixed.toFloat();

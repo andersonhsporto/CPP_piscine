@@ -13,8 +13,13 @@ int main( void ) {
 
     if (b < c)
         std::cout << "OK" << std::endl;
-    std::cout << b - c << " " << f << std::endl;
-    std::cout << b * c << " " << f << std::endl;
-    std::cout << b / c << " " << f << std::endl;
+    std::cout << b + c << " " << "sum" << std::endl;
+    std::cout << b - c << " " << "sub" << std::endl;
+    std::cout << b * c << " " << "mul" << std::endl;
+    std::cout << b / c << " " << "div" << std::endl;
+    std::cout << f.toFloat() << " " << "div" << std::endl;
+
+    std::cout << d.min(b, c) << "min teste" << std::endl;
+    std::cout << d.min(c, b) << "min teste" << std::endl;
     return 0;
 }
