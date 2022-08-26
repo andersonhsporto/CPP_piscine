@@ -91,6 +91,22 @@ bool Fixed::operator<=(const Fixed& rhs) const
     return rawBits <= rhs.rawBits;
 }
 
+Fixed Fixed::operator+(const Fixed& rhs) const
+{
+    Fixed sum;
+
+    sum.setRawBits(getRawBits() + rhs.getRawBits());
+    return sum;
+}
+
+Fixed Fixed::operator-(const Fixed& rhs) const
+{
+    Fixed subtraction;
+
+    subtraction.setRawBits(getRawBits() - rhs.getRawBits());
+    return subtraction;
+}
+
 std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)
 {
     stream << fixed.toFloat();

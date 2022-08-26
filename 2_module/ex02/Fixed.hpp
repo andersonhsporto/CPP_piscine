@@ -44,6 +44,10 @@ public:
 
     bool operator<=(const Fixed& rhs) const;
 
+    Fixed operator+(const Fixed& rhs) const;
+
+    Fixed operator-(const Fixed& rhs) const;
+
 private:
     int                 rawBits;
     static const int    fractionalBits;
