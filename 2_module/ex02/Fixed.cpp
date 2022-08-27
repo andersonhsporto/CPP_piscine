@@ -153,10 +153,9 @@ Fixed Fixed::operator++(int)
 Fixed Fixed::operator--(int)
 {
     Fixed temp = *this;
-    ++(*this);
+    --(*this);
     return temp;
 }
-
 
 std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)
 {
