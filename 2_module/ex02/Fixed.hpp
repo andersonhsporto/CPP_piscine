@@ -9,6 +9,7 @@
 #include <cmath>
 #include <iostream>
 
+
 class Fixed
 {
 public:
