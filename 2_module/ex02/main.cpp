@@ -34,7 +34,6 @@ int main( void ) {
 }
 
 void tests() {
-    instanceFromFloat();
 	operatorGreaterThan();
 	operatorLessThan();
 	greaterThanOrEqualTo();
@@ -57,14 +56,6 @@ void printOK() {
 	std::cout << "OK" << std::endl;
 }
 
-void instanceFromFloat()
-{
-    Fixed* floatNbrFixed = new Fixed( 4.42f );
-    std::cout << "\nTest:\t Instance from float-point" << std::endl;
-    std::cout << "floatNbr = " << *floatNbrFixed << std::endl;
-	delete(floatNbrFixed);
-}
-
 void operatorGreaterThan()
 {
     Fixed* eight = new Fixed( 8 );
@@ -72,9 +63,9 @@ void operatorGreaterThan()
 
 	std::cout << "\nTest:\t Operator >\t";
 	if ( *eight > *nine )
-		std::cout << "Error" << std::endl;
+		printERROR();
 	else
-		std::cout << "OK" << std::endl;
+		printOK();
 	delete(eight);
 	delete(nine);
 }
@@ -86,9 +77,9 @@ void operatorLessThan()
 
 	std::cout << "\nTest:\t Operator <\t";
 	if ( *nine < *eight )
-		std::cout << "Error" << std::endl;
+		printERROR();
 	else
-		std::cout << "OK" << std::endl;
+		printOK();
 	delete(eight);
 	delete(nine);
 }
@@ -101,9 +92,12 @@ void greaterThanOrEqualTo()
 
 	std::cout << "\nTest:\t Operator >=\t";
 	if ( *four >= *two && *dois >= *two )
-		std::cout << "OK" << std::endl;
+		printOK();
 	else
-		std::cout << "ERROR" << std::endl;
+		printERROR();
+	delete(four);
+	delete(two);
+	delete(dois);
 }
 
 void lessThanOrEqualTo()
@@ -114,9 +108,13 @@ void lessThanOrEqualTo()
 
 	std::cout << "\nTest:\t Operator <=\t";
 	if ( *two <= *four && *dois <= *two )
-		std::cout << "OK" << std::endl;
+		printOK();
 	else
-		std::cout << "ERROR" << std::endl;
+		printERROR();
+
+	delete(four);
+	delete(two);
+	delete(dois);
 }
 
 void equalTo()
@@ -128,9 +126,9 @@ void equalTo()
 
 	std::cout << "\nTest:\t Operator ==\t";
 	if ( one == um && zero == zero && ten == ten )
-		std::cout << "OK" << std::endl;
+		printOK();
 	else
-		std::cout << "ERROR" << std::endl;
+		printERROR();
 }
 
 void notEqualTo()
@@ -140,9 +138,9 @@ void notEqualTo()
 
 	std::cout << "\nTest:\t Operator !=\t";
 	if ( one != um )
-		std::cout << "Error" << std::endl;
+		printERROR();
 	else
-		std::cout << "OK" << std::endl;
+		printOK();
 }
 
 void math()
