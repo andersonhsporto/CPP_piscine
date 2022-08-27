@@ -28,7 +28,6 @@ public:
 
     Fixed absoluteSubtraction();
 
-
 private:
     const Fixed x;
     const Fixed y;
@@ -36,3 +35,5 @@ private:
 
 
 #endif //EX03_POINT_HPP
+
+
