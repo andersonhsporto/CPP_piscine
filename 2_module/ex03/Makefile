@@ -3,7 +3,7 @@ NAME	= bsp
 CC		= c++
 CFLAGS	= -Wall -Wextra  -std=c++98 #-Werror
 
-SRC		= main.cpp Fixed.cpp
+SRC		= main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
