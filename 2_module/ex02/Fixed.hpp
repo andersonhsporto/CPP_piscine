@@ -56,6 +56,10 @@ public:
 
     Fixed& operator--();
 
+    Fixed operator++(int);
+
+    Fixed operator--(int);
+
     static Fixed min(Fixed& number_1, Fixed& number_2);
 
     static Fixed min(const Fixed& number_1, const Fixed& number_2);
