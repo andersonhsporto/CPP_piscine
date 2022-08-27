@@ -1,7 +1,7 @@
-NAME	= Fix
+NAME	= bsp
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 
+CFLAGS	= -Wall -Wextra  -std=c++98 #-Werror
 
 SRC		= main.cpp Fixed.cpp
 
