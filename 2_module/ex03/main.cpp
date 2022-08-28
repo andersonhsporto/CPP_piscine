@@ -18,6 +18,14 @@ void inside()
     Point c( 4,6 );
     Point point( 4,1 );
 
+	std::cout << "\nPoint: x: " << point.GetX().toFloat() << " y: " \
+	<< point.GetY().toFloat() << std::endl;
+
+	std::cout << "Triangle: a: " \
+	<< a.GetX().toFloat() << ", " << a.GetY().toFloat()\
+	<< " b: " << b.GetX().toFloat() << ", " << b.GetY().toFloat()\
+	<< " c: " << c.GetX().toFloat() << ", " << c.GetY().toFloat() << std::endl;
+
     if (bsp(a, b, c, point))
         std::cout << "Point is inside of triangle" << std::endl;
     else
@@ -30,6 +38,14 @@ void outside()
     Point b( 4,0 );
     Point c( 4,6 );
     Point point( 42,42 );
+
+	std::cout << "\nPoint: x: " << point.GetX().toFloat() << " y: " \
+	<< point.GetY().toFloat() << std::endl;
+
+	std::cout << "Triangle: a: " \
+	<< a.GetX().toFloat() << ", " << a.GetY().toFloat()\
+	<< " b: " << b.GetX().toFloat() << ", " << b.GetY().toFloat()\
+	<< " c: " << c.GetX().toFloat() << ", " << c.GetY().toFloat() << std::endl;
 
     if (bsp(a, b, c, point))
         std::cout << "Point is inside of triangle" << std::endl;
