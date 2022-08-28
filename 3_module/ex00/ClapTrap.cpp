@@ -48,16 +48,6 @@ const std::string& ClapTrap::GetName() const
     return name;
 }
 
-int ClapTrap::GetHitPoints() const
-{
-    return hitPoints;
-}
-
-int ClapTrap::GetEnergyPoints() const
-{
-    return energyPoints;
-}
-
 int ClapTrap::GetAttackDamage() const
 {
     return attackDamage;
