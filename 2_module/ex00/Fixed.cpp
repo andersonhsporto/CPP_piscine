@@ -15,7 +15,7 @@ Fixed::Fixed(): rawBits(0)
 Fixed::Fixed(const Fixed& fixed)
 {
     std::cout << COPY_CONSTRUCTOR << std::endl;
-    this->rawBits = fixed.getRawBits();
+    *this = fixed;
 }
 
 
