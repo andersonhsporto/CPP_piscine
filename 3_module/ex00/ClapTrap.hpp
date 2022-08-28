@@ -29,6 +29,10 @@ public:
 
     const std::string& GetName() const;
 
+    int GetHitPoints() const;
+
+    int GetEnergyPoints() const;
+
     int GetAttackDamage() const;
 
     void attack(const std::string& target);
