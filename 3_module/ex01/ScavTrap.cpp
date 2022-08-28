@@ -14,7 +14,6 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
     std::cout << S_PARAM_CONSTRUCTOR << std::endl;
     this->hitPoints = (100);
     this->energyPoints = (50);
-    this->energyPoints = (50);
     this->attackDamage = (20);
 }
 
