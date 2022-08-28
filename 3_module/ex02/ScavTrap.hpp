@@ -22,7 +22,7 @@ class ScavTrap : public ClapTrap
 public:
     ScavTrap();
 
-    explicit ScavTrap(const std::string& name);
+    ScavTrap(const std::string& name);
 
     ScavTrap(const ScavTrap &scavTrap);
 
