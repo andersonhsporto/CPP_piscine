@@ -28,6 +28,8 @@ public:
 
     FragTrap& operator=(const FragTrap& fragTrap);
 
+    void highFivesGuys(void);
+
 
 };
 

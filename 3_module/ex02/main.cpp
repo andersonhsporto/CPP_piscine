@@ -1,10 +1,12 @@
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    ScavTrap scavTrap("CL4P-TP");
+    ClapTrap clapTrap("Original");
+    FragTrap fragTrap("Frag");
 
-    scavTrap.attack("Randy");
-    scavTrap.guardGate();
+    clapTrap.attack("Frag");
+    fragTrap.highFivesGuys();
     return 0;
 }

@@ -3,7 +3,7 @@ NAME	= fragTrap
 CC		= c++
 CFLAGS	= -Wall -Wextra  -std=c++98 #-Werror
 
-SRC		= main.cpp ClapTrap.cpp ScavTrap.cpp
+SRC		= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
