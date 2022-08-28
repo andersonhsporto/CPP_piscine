@@ -2,9 +2,9 @@
 
 int main()
 {
-    ClapTrap clapTrap("TESTE");
+    ClapTrap clapTrap("CL4P-TP");
 
-    clapTrap.attack("FONE");
+    clapTrap.attack("Randy");
     clapTrap.takeDamage(10);
     clapTrap.beRepaired(5);
     return 0;
