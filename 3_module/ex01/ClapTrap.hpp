@@ -6,13 +6,14 @@
 #define EX01_CLAPTRAP_HPP
 
 #include <string>
+#include <iostream>
 
-#define CONSTRUCTOR         "Default constructor called"
-#define PARAM_CONSTRUCTOR   "Parametric constructor called"
-#define COPY_CONSTRUCTOR    "Copy constructor called"
-#define GETTER              "Getter member function called"
-#define ASSIGNMENT          "Copy assignment operator called"
-#define DESTRUCTOR          "Destructor called"
+#define CONSTRUCTOR         "ClapTrap Default constructor called"
+#define PARAM_CONSTRUCTOR   "ClapTrap Parametric constructor called"
+#define COPY_CONSTRUCTOR    "ClapTrap Copy constructor called"
+#define GETTER              "ClapTrap Getter member function called"
+#define ASSIGNMENT          "ClapTrap Copy assignment operator called"
+#define DESTRUCTOR          "ClapTrap Destructor called"
 
 class ClapTrap
 {

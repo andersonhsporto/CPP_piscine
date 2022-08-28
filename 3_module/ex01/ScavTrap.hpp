@@ -6,6 +6,7 @@
 #define EX01_SCAVTRAP_HPP
 
 #include <string>
+#include <iostream>
 #include "ClapTrap.hpp"
 
 #define S_CONSTRUCTOR         "ScavTrap Default constructor called"
@@ -17,6 +18,7 @@
 
 class ScavTrap : public ClapTrap
 {
+
 public:
     ScavTrap();
 

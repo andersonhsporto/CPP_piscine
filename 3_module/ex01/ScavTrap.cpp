@@ -2,7 +2,6 @@
 // Created by Anderson Porto on 8/28/22.
 //
 
-#include <iostream>
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap()
