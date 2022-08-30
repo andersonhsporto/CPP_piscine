@@ -20,7 +20,7 @@ class FragTrap : public virtual ClapTrap
 public:
     FragTrap();
 
-    explicit FragTrap(const std::string& name);
+    FragTrap(const std::string& name);
 
     FragTrap(const FragTrap &fragTrap);
 
@@ -32,6 +32,8 @@ public:
 
 
 };
+
+std::ostream& operator<<(std::ostream &outStream, FragTrap const &fragTrap);
 
 
 #endif //EX03_FRAGTRAP_HPP

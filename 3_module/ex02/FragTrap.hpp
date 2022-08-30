@@ -33,5 +33,7 @@ public:
 
 };
 
+std::ostream& operator<<(std::ostream &outStream, FragTrap const &fragTrap);
+
 
 #endif //EX02_FRAGTRAP_HPP

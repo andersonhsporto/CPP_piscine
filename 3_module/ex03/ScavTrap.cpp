@@ -43,16 +43,31 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& scavTrap)
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap: " << GetName() << " is now in Gate keeper mode" << std::endl;
+    std::cout << CYAN << "ScavTrap: " << GetName()
+		<< " is now in Gate keeper mode" << RESET << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)
 {
-    std::cout << "ScavTrap " << GetName();
-    std::cout << " attacks " << target;
-    std::cout << ", causing " << GetAttackDamage() << " points of damage!" << std::endl;
+	if (this->energyPoints > 0)
+	{
+		std::cout << YELLOW << "ScavTrap " << GetName();
+		std::cout << " attacks " << target;
+		std::cout << ", causing " << GetAttackDamage()
+			<< " points of damage!" << RESET << std::endl;
+		this->energyPoints -= 1;
+		return;
+	}
+	std::cout << RED << "ScavTrap " << GetName() << " is out of energy!" << RESET << std::endl;
 }
 
-
-
-
+std::ostream& operator<<(std::ostream &outStream, ScavTrap const &scavTrap)
+{
+    outStream << GREEN << "\n---------------------------------------\n";
+    outStream << "ScavTrap Name: \t" << scavTrap.GetName() << "\n";
+    outStream << "\n\tHit Points: " << scavTrap.GetHitPoints();
+    outStream << "\n\tEnergy Points: " << scavTrap.GetEnergyPoints();
+    outStream << "\n\tAttack Damage: " << scavTrap.GetAttackDamage();
+    outStream << "\n---------------------------------------\n" << RESET;
+	return outStream;
+}

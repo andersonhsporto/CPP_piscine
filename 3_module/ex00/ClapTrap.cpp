@@ -2,7 +2,6 @@
 // Created by Anderson Porto on 8/28/22.
 //
 
-#include <iostream>
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
@@ -48,37 +47,68 @@ const std::string& ClapTrap::GetName() const
     return name;
 }
 
-int ClapTrap::GetHitPoints() const
+unsigned int ClapTrap::GetHitPoints() const
 {
     return hitPoints;
 }
 
-int ClapTrap::GetEnergyPoints() const
+unsigned int ClapTrap::GetEnergyPoints() const
 {
     return energyPoints;
 }
 
-int ClapTrap::GetAttackDamage() const
+unsigned int ClapTrap::GetAttackDamage() const
 {
     return attackDamage;
 }
 
 void ClapTrap::attack(const std::string& target)
 {
-    std::cout << "ClapTrap " << GetName();
-    std::cout << " attacks " << target;
-    std::cout << ", causing " << GetAttackDamage() << " points of damage!" << std::endl;
+	if (this->energyPoints > 0)
+	{
+		std::cout << YELLOW << "ClapTrap " << GetName();
+		std::cout << " attacks " << target;
+		std::cout << ", causing " << GetAttackDamage() << " points of damage!" << RESET << std::endl;
+		this->energyPoints -= 1;
+		return;
+	}
+	std::cout << "ClapTrap " << GetName() << " is out of energy!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "ClapTrap " << GetName();
-    std::cout << " receive damage of " <<  amount;
-    std::cout << " points of damage!" << std::endl;
+	if (this->hitPoints > 0)
+	{
+		std::cout << RED << "ClapTrap " << GetName();
+		std::cout << " receive damage of " <<  amount;
+		std::cout << " points of damage!" << RESET << std::endl;
+		this->hitPoints -= amount;
+		return;
+	}
+	std::cout << "ClapTrap " << GetName() << " is out of hit points!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    std::cout << "ClapTrap " << GetName();
-    std::cout << " repairs itself, " << amount << " hit points restored!" << std::endl;
+	if (this->energyPoints > 0)
+	{
+		std::cout << BLUE << "ClapTrap " << GetName();
+		std::cout << " repairs itself, " << amount << " hit points restored!" << RESET << std::endl;
+		this->hitPoints += amount;
+		this->energyPoints -= 1;
+		return;
+	}
+	std::cout << "ClapTrap " << GetName() << " is out of energy!" << std::endl;
+}
+
+
+std::ostream& operator<<(std::ostream &outStream, ClapTrap const &clapTrap)
+{
+    outStream << GREEN << "\n---------------------------------------\n";
+    outStream << "Claptrap Name: \t" << clapTrap.GetName() << "\n";
+    outStream << "\n\tHit Points: " << clapTrap.GetHitPoints();
+    outStream << "\n\tEnergy Points: " << clapTrap.GetEnergyPoints();
+    outStream << "\n\tAttack Damage: " << clapTrap.GetAttackDamage();
+    outStream << "\n---------------------------------------\n" << RESET;
+	return outStream;
 }

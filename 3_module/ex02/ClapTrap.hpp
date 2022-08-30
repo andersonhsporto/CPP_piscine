@@ -15,6 +15,12 @@
 #define ASSIGNMENT          "ClapTrap Copy assignment operator called"
 #define DESTRUCTOR          "ClapTrap Destructor called"
 
+#define RED 			   "\033[1;31m"
+#define GREEN 			   "\033[1;32m"
+#define BLUE 			   "\033[1;34m"
+#define YELLOW 			   "\033[1;33m"
+#define RESET 			   "\033[0m"
+
 class ClapTrap
 {
 public:
@@ -30,11 +36,11 @@ public:
 
     const std::string& GetName() const;
 
-    int GetHitPoints() const;
+    unsigned int GetHitPoints() const;
 
-    int GetEnergyPoints() const;
+    unsigned int GetEnergyPoints() const;
 
-    int GetAttackDamage() const;
+    unsigned int GetAttackDamage() const;
 
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
@@ -42,12 +48,13 @@ public:
 
 
 protected:
-    std::string name;
-    int         hitPoints;
-    int         energyPoints;
-    int         attackDamage;
+    std::string 	name;
+    unsigned int    hitPoints;
+    unsigned int    energyPoints;
+    unsigned int    attackDamage;
 
 };
 
+std::ostream& operator<<(std::ostream &outStream, ClapTrap const &claptrap);
 
 #endif //EX02_CLAPTRAP_HPP

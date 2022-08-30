@@ -3,10 +3,10 @@
 
 int main()
 {
-    ClapTrap clapTrap("Original");
     FragTrap fragTrap("Frag");
 
-    clapTrap.attack("Frag");
     fragTrap.highFivesGuys();
+
+	std::cout << fragTrap << std::endl;
     return 0;
 }

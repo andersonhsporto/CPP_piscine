@@ -7,11 +7,21 @@
 
 
 #include <ostream>
+
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+#define D_CONSTRUCTOR         "DiamondTrap Default constructor called"
+#define D_PARAM_CONSTRUCTOR   "DiamondTrap Parametric constructor called"
+#define D_COPY_CONSTRUCTOR    "DiamondTrap Copy constructor called"
+#define D_ASSIGNMENT          "DiamondTrap Copy assignment operator called"
+#define D_DESTRUCTOR          "DiamondTrap Destructor called"
+
+#define BLUE	"\033[1;34m"
+#define RESET	"\033[0m"
+
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 
 public:
@@ -27,10 +37,13 @@ public:
 
     void whoAmI();
 
+    const std::string& GetName1() const;
+
 private:
     std::string name;
 
 };
 
+std::ostream& operator<<(std::ostream &outStream, DiamondTrap const &diamondtrap);
 
 #endif //EX03_DIAMONDTRAP_HPP

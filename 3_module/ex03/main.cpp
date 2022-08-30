@@ -4,10 +4,12 @@
 
 int main()
 {
-    DiamondTrap diamondTrap("Original");
+    DiamondTrap diamondTrap("Diamond");
 
     diamondTrap.attack("Frag");
+	diamondTrap.guardGate();
     diamondTrap.highFivesGuys();
     diamondTrap.whoAmI();
+    std::cout << diamondTrap << std::endl;
     return 0;
 }

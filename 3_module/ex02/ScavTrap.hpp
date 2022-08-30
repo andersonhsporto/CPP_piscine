@@ -16,6 +16,8 @@
 #define S_ASSIGNMENT          "ScavTrap Copy assignment operator called"
 #define S_DESTRUCTOR          "ScavTrap Destructor called"
 
+#define CYAN	"\033[1;36m"
+
 class ScavTrap : public ClapTrap
 {
 
@@ -36,5 +38,6 @@ public:
 
 };
 
+std::ostream& operator<<(std::ostream &outStream, ScavTrap const &scavTrap);
 
 #endif //EX02_SCAVTRAP_HPP

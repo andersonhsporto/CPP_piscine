@@ -12,12 +12,13 @@ FragTrap::FragTrap()
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
     std::cout << F_PARAM_CONSTRUCTOR << std::endl;
+	this->name = name;
     this->hitPoints = (100);
     this->energyPoints = (100);
-    this->attackDamage = (20);
+    this->attackDamage = (30);
 }
 
-FragTrap::FragTrap(const FragTrap& fragTrap)
+FragTrap::FragTrap(const FragTrap& fragTrap) : ClapTrap()
 {
     std::cout << F_COPY_CONSTRUCTOR << std::endl;
     *this = fragTrap;
@@ -43,5 +44,17 @@ FragTrap& FragTrap::operator=(const FragTrap& fragTrap)
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << GetName() << ": Positive high fives!!" << std::endl;
+    std::cout << BLUE << GetName() << ": Positive high fives!!" << RESET << std::endl;
+}
+
+
+std::ostream& operator<<(std::ostream &outStream, FragTrap const &fragTrap)
+{
+    outStream << GREEN << "\n---------------------------------------\n";
+    outStream << "FragTrap Name: \t" << fragTrap.GetName() << "\n";
+    outStream << "\n\tHit Points: " << fragTrap.GetHitPoints();
+    outStream << "\n\tEnergy Points: " << fragTrap.GetEnergyPoints();
+    outStream << "\n\tAttack Damage: " << fragTrap.GetAttackDamage();
+    outStream << "\n---------------------------------------\n" << RESET;
+	return outStream;
 }
