@@ -58,5 +58,7 @@ cppSED
 Harl
 harlFilter
 Fix
-bso
 bsp
+clapTrap
+scavTrap
+fragTrap

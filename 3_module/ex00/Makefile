@@ -1,9 +1,9 @@
-NAME	= bsp
+NAME	= clapTrap
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRC		= main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRC		= main.cpp ClapTrap.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
