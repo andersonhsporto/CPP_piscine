@@ -5,6 +5,9 @@
 #ifndef EX00_ANIMAL_HPP
 #define EX00_ANIMAL_HPP
 
+#define CYAN "\033[0;36m"
+#define RESET "\33[0m"
+
 
 #include <string>
 #include <iostream>
@@ -23,5 +26,6 @@ protected:
     std::string type;
 };
 
+std::ostream& operator<<(std::ostream &outStream, Animal const &animal);
 
 #endif //EX00_ANIMAL_HPP
