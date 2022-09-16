@@ -13,13 +13,17 @@ class Cat : public Animal
 {
 public:
     Cat();
-    Cat(Cat const &src);
+
+    Cat(Cat const& cat);
+
     ~Cat();
+
     Cat& operator=(Cat const& cat);
+
     virtual void makeSound() const;
 
 };
 
-std::ostream& operator<<(std::ostream &outStream, Cat const &cat);
+std::ostream& operator<<(std::ostream& outStream, Cat const& cat);
 
 #endif //EX00_CAT_HPP

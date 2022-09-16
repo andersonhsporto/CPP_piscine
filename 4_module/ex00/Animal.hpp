@@ -16,18 +16,23 @@ class Animal
 {
 public:
     Animal();
+
     Animal(const std::string& type);
+
     ~Animal();
+
     Animal(Animal const& animal);
+
     Animal& operator=(const Animal& animal);
 
     const std::string& GetType() const;
+
     virtual void makeSound() const;
 
 protected:
     std::string type;
 };
 
-std::ostream& operator<<(std::ostream &outStream, Animal const &animal);
+std::ostream& operator<<(std::ostream& outStream, Animal const& animal);
 
 #endif //EX00_ANIMAL_HPP
