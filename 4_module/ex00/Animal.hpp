@@ -5,8 +5,9 @@
 #ifndef EX00_ANIMAL_HPP
 #define EX00_ANIMAL_HPP
 
-#define CYAN "\033[0;36m"
+#define CYAN "\033[0;36m From Animal class: "
 #define RESET "\33[0m"
+#define ANIMAL_DEFAULT "\033[0;36m From Animal class: Default Animal\33[0m"
 
 
 #include <string>
@@ -19,7 +20,7 @@ public:
 
     Animal(const std::string& type);
 
-    ~Animal();
+    virtual ~Animal();
 
     Animal(Animal const& animal);
 

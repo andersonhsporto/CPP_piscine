@@ -6,31 +6,31 @@
 
 Animal::Animal()
 {
-    std::cout << CYAN << "Animal default constructor" << RESET << std::endl;
-    this->type = "Default Animal";
+    std::cout << CYAN << "default constructor\n" << RESET << std::endl;
+    this->type = ANIMAL_DEFAULT;
 }
 
 Animal::Animal(const std::string& type)
 {
-    std::cout << CYAN << "Animal parameterized constructor ->\t";
+    std::cout << CYAN << "parameterized constructor ->\t";
     std::cout << "type is:\t" << type << RESET << std::endl;
-    this->type = type;
+    this->type = (CYAN + type + RESET);
 }
 
 Animal::~Animal()
 {
-    std::cout << CYAN << "Animal destructor" << RESET << std::endl;
+    std::cout << CYAN << "destructor" << RESET << std::endl;
 }
 
 Animal::Animal(const Animal& animal)
 {
-    std::cout << CYAN << "Animal copy constructor" << RESET << std::endl;
+    std::cout << CYAN << "copy constructor" << RESET << std::endl;
     *this = animal;
 }
 
 Animal& Animal::operator=(const Animal& animal)
 {
-    std::cout << CYAN << "Animal assigment operator" << RESET << std::endl;
+    std::cout << CYAN << "assigment operator" << RESET << std::endl;
     if (this != &animal)
     {
         this->type = animal.GetType();
@@ -45,7 +45,7 @@ const std::string& Animal::GetType() const
 
 void Animal::makeSound() const
 {
-    std::cout << CYAN << "Animal: default sound" << RESET << std::endl;
+    std::cout << CYAN << "makeSound: default sound" << RESET << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& outStream, const Animal& animal)

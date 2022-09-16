@@ -5,7 +5,7 @@
 #ifndef EX00_CAT_HPP
 #define EX00_CAT_HPP
 
-#define ORANGE "\033[0;33m"
+#define ORANGE "\033[0;33m From Cat class: "
 
 #include "Animal.hpp"
 

@@ -5,7 +5,7 @@
 #ifndef EX00_DOG_HPP
 #define EX00_DOG_HPP
 
-#define RED "\033[1;31m"
+#define RED "\033[1;31m From Dog class: "
 
 #include "Animal.hpp"
 
@@ -20,7 +20,7 @@ public:
 
     Dog& operator=(Dog const& dog);
 
-    virtual void makesound() const;
+    virtual void makeSound() const;
 
 
 };

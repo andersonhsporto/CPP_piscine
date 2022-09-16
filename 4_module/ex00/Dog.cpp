@@ -6,23 +6,23 @@
 
 Dog::Dog() : Animal("Dog")
 {
-    std::cout << RED << "Dog default constructor" << RESET << std::endl;
+    std::cout << RED << "default constructor\n" << RESET << std::endl;
 }
 
 
 Dog::Dog(const Dog& dog) : Animal(dog)
 {
-    std::cout << RED << "Dog copy constructor" << RESET << std::endl;
+    std::cout << RED << "copy constructor" << RESET << std::endl;
 }
 
 Dog::~Dog()
 {
-    std::cout << RED << "Dog destructor" << RESET << std::endl;
+    std::cout << RED << "destructor" << RESET << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& dog)
 {
-    std::cout << RED << "Cat assigment operator" << RESET << std::endl;
+    std::cout << RED << "assigment operator" << RESET << std::endl;
     if (this != &dog)
     {
         this->type = dog.GetType();
@@ -30,9 +30,9 @@ Dog& Dog::operator=(const Dog& dog)
     return *this;
 }
 
-void Dog::makesound() const
+void Dog::makeSound() const
 {
-    std::cout << RED << "AuAu" << RESET << std::endl;
+    std::cout << RED << "makeSound: AuAu" << RESET << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& outStream, const Dog& dog)
