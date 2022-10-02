@@ -3,7 +3,7 @@ NAME	= Polymorphism
 CC		= c++
 CFLAGS	= -Wall -Wextra -std=c++98 #-Wshadow -Werror
 
-SRC		= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC		= main.cpp Animal.cpp Dog.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)

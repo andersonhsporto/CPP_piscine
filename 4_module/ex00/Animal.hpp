@@ -1,39 +1,36 @@
 //
-// Created by Anderson Porto on 9/10/22.
+// Created by Anderson Porto on 10/2/22.
 //
 
 #ifndef EX00_ANIMAL_HPP
 #define EX00_ANIMAL_HPP
 
-#define CYAN "\033[0;36m From Animal class: "
-#define RESET "\33[0m"
-#define ANIMAL_DEFAULT "\033[0;36m From Animal class: Default Animal\33[0m"
-
-
 #include <string>
 #include <iostream>
+
+#define RED "\033[1;31m"
+#define RESET "\033[0m"
 
 class Animal
 {
 public:
     Animal();
 
-    Animal(const std::string& type);
-
-    virtual ~Animal();
+    Animal(std::string type);
 
     Animal(Animal const& animal);
 
-    Animal& operator=(const Animal& animal);
+    virtual ~Animal();
+
+    Animal& operator=(Animal const& rhs);
+
+    virtual void makeSound() const;
 
     const std::string& GetType() const;
 
-    virtual void makeSound() const;
 
 protected:
     std::string type;
 };
-
-std::ostream& operator<<(std::ostream& outStream, Animal const& animal);
 
 #endif //EX00_ANIMAL_HPP

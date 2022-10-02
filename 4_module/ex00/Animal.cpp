@@ -1,55 +1,49 @@
 //
-// Created by Anderson Porto on 9/10/22.
+// Created by Anderson Porto on 10/2/22.
 //
 
 #include "Animal.hpp"
 
 Animal::Animal()
 {
-    std::cout << CYAN << "default constructor\n" << RESET << std::endl;
-    this->type = ANIMAL_DEFAULT;
+    std::cout << RED << "Animal Default Constructor called" << RESET << std::endl;
+    this->type = "Default Type";
 }
 
-Animal::Animal(const std::string& type)
+Animal::Animal(std::string type)
 {
-    std::cout << CYAN << "parameterized constructor ->\t";
-    std::cout << "type is:\t" << type << RESET << std::endl;
-    this->type = (CYAN + type + RESET);
-}
-
-Animal::~Animal()
-{
-    std::cout << CYAN << "destructor" << RESET << std::endl;
+    std::cout << RED << "Animal Parameterized Constructor called" << RESET << std::endl;
+    this->type = type;
 }
 
 Animal::Animal(const Animal& animal)
 {
-    std::cout << CYAN << "copy constructor" << RESET << std::endl;
+    std::cout << RED << "Animal Copy Constructor called" << RESET << std::endl;
     *this = animal;
 }
 
-Animal& Animal::operator=(const Animal& animal)
+
+Animal::~Animal()
 {
-    std::cout << CYAN << "assigment operator" << RESET << std::endl;
-    if (this != &animal)
+    std::cout << RED << "Animal Destructor called" << RESET << std::endl;
+}
+
+Animal& Animal::operator=(const Animal& rhs)
+{
+    std::cout << RED << "Animal Assignment Operator called" << RESET <<  std::endl;
+    if (this != &rhs)
     {
-        this->type = animal.GetType();
+        this->type = rhs.type;
     }
     return *this;
 }
 
-const std::string& Animal::GetType() const
-{
-    return type;
-}
-
 void Animal::makeSound() const
 {
-    std::cout << CYAN << "makeSound: default sound" << RESET << std::endl;
+    std::cout << RED << "Animal Sound" << RESET <<  std::endl;
 }
 
-std::ostream& operator<<(std::ostream& outStream, const Animal& animal)
+const std::string& Animal::GetType() const
 {
-    outStream << CYAN << "Animal:\t" << animal.GetType() << RESET << std::endl;
-    return outStream;
+    return this->type;
 }

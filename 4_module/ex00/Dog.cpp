@@ -1,43 +1,37 @@
 //
-// Created by Anderson Porto on 9/16/22.
+// Created by Anderson Porto on 10/2/22.
 //
 
 #include "Dog.hpp"
 
+#define BLUE "\033[1;34m"
+
 Dog::Dog() : Animal("Dog")
 {
-    std::cout << RED << "default constructor\n" << RESET << std::endl;
+    std::cout << BLUE << "Dog Default Constructor called" << RESET << std::endl;
 }
 
-
-Dog::Dog(const Dog& dog) : Animal(dog)
+Dog::Dog(std::string& type) : Animal(type)
 {
-    std::cout << RED << "copy constructor" << RESET << std::endl;
+    std::cout << BLUE << "Dog Parameterized Constructor called" << RESET << std::endl;
 }
 
 Dog::~Dog()
 {
-    std::cout << RED << "destructor" << RESET << std::endl;
+    std::cout << BLUE << "Dog Destructor called" << RESET << std::endl;
 }
 
-Dog& Dog::operator=(const Dog& dog)
+Dog& Dog::operator=(const Dog& rhs)
 {
-    std::cout << RED << "assigment operator" << RESET << std::endl;
-    if (this != &dog)
+    std::cout << BLUE << "Dog Assignment Operator called" << RESET << std::endl;
+    if (this != &rhs)
     {
-        this->type = dog.GetType();
+        this->type = rhs.type;
     }
     return *this;
 }
 
 void Dog::makeSound() const
 {
-    std::cout << RED << "makeSound: AuAu" << RESET << std::endl;
+    std::cout << BLUE << "Dog Sound" << RESET << std::endl;
 }
-
-std::ostream& operator<<(std::ostream& outStream, const Dog& dog)
-{
-    outStream << RED << "Dog type:\t" << dog.GetType() << RESET << std::endl;
-    return outStream;
-}
-
