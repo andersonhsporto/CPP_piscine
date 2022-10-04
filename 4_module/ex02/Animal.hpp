@@ -15,21 +15,21 @@ class Animal
 {
 public:
 
+	Animal();
+
+	Animal(std::string type);
+
 	Animal(Animal const &animal);
 
 	virtual ~Animal();
 
 	Animal &operator=(Animal const &rhs);
 
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 
-	const std::string &GetType() const;
+	virtual const std::string &GetType() const;
 
 protected:
-
-	Animal();
-
-	Animal(std::string type);
 
 	std::string type;
 };
