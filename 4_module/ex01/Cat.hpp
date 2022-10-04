@@ -8,11 +8,14 @@
 #define ORANGE "\033[33m"
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
 public:
 	Cat();
+
+    Cat(std::string idea);
 
 	Cat(const Cat &cat);
 
@@ -21,6 +24,11 @@ public:
 	Cat &operator=(Cat const &rhs);
 
 	void makeSound() const;
+
+    Brain* GetBrain() const;
+
+private:
+    Brain *brain;
 };
 
 #endif // EX01_CAT_HPP
