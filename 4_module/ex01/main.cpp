@@ -3,42 +3,48 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
-void test();
+Animal **arrayFactory(int size);
+void deleteAnimal(Animal **animals, int size);
+void deepCopyTest();
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-	std::cout << "Getter: " << j->GetType() << " " << std::endl;
-	std::cout << "Getter: " << i->GetType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound(); //will output the dog sound!
-    meta->makeSound();
+    int size = 10;
+    Animal **animals = arrayFactory(size);
 
-    delete (meta);
-    delete (j);
-    delete (i);
-
-    test();
+    deleteAnimal(animals, size);
+    deepCopyTest();
     return 0;
 }
 
-void test()
+Animal **arrayFactory(int size)
 {
-    std::cout << "\n\n-------------\n\n" << std::endl;
+    Animal **animals = new Animal*[size];
 
-    const WrongAnimal* meta = new WrongAnimal();
-    const WrongAnimal* j = new WrongCat();
+    for (int i = 0; i < size; i++)
+    {
+        if (i < (size / 2))
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
+    }
 
-    std::cout << "Getter: " << meta->GetType() << " " << std::endl;
-    std::cout << "Getter: " << j->GetType() << " " << std::endl;
-    meta->makeSound(); //will output wrong default!
-    j->makeSound(); //will output wrong cat!
+    return animals;
+}
 
-    delete meta;
-    delete j;
+void deleteAnimal(Animal **animals, int size)
+{
+    for (int i = 0; i < size; i++)
+        delete animals[i];
+    delete[] animals;
+}
+
+void deepCopyTest()
+{
+    Cat *cat = new Cat("I am a cat");
+    Cat *deepCopyCat = new Cat(*cat);
+
+    deepCopyCat->GetBrain()->printIdeas();
+    delete cat;
 }
