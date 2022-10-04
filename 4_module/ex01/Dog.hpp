@@ -23,6 +23,8 @@ public:
 
 	void makeSound() const;
 
+    Brain* GetBrain() const;
+
 private:
     Brain *brain;
 };

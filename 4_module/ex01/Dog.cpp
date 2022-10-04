@@ -10,6 +10,7 @@
 Dog::Dog() : Animal("Dog")
 {
     std::cout << BLUE << "Dog Default Constructor called" << RESET << std::endl;
+    this->brain = new Brain();
 }
 
 
@@ -29,6 +30,7 @@ Dog::Dog(const Dog& dog) : Animal(dog)
 Dog::~Dog()
 {
     std::cout << BLUE << "Dog Destructor called" << RESET << std::endl;
+    delete this->brain;
 }
 
 Dog& Dog::operator=(const Dog& rhs)
@@ -46,3 +48,9 @@ void Dog::makeSound() const
 {
     std::cout << BLUE << "Dog Sound" << RESET << std::endl;
 }
+
+Brain* Dog::GetBrain() const
+{
+    return brain;
+}
+
