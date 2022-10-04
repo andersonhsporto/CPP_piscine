@@ -32,8 +32,11 @@ Cat::~Cat()
 Cat& Cat::operator=(const Cat& rhs)
 {
     std::cout << ORANGE << "Cat Assignment Operator called" << RESET << std::endl;
-    this->type = rhs.type;
-    this->brain = new Brain(*rhs.brain);
+    if (this != &rhs)
+    {
+        this->type = rhs.type;
+        this->brain = new Brain(*rhs.brain);
+    }
     return *this;
 }
 

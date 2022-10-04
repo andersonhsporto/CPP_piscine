@@ -17,6 +17,7 @@ WrongCat::WrongCat(std::string& type) : WrongAnimal(type)
 WrongCat::WrongCat(const WrongCat& wrongCat) : WrongAnimal(wrongCat)
 {
     std::cout << YELLOW << "WrongCat copy constructor called" << RESET << std::endl;
+	*this = wrongCat;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& wrongCat)

@@ -6,11 +6,14 @@
 #define EX01_DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
 public:
 	Dog();
+
+    Dog(std::string idea);
 
 	Dog(const Dog &dog);
 
@@ -19,6 +22,9 @@ public:
 	Dog &operator=(Dog const &rhs);
 
 	void makeSound() const;
+
+private:
+    Brain *brain;
 };
 
 #endif // EX01_DOG_HPP
