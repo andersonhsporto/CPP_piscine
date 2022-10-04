@@ -30,7 +30,7 @@ Animal::~Animal()
 
 Animal& Animal::operator=(const Animal& rhs)
 {
-    std::cout << RED << "Animal Assignment Operator called" << RESET <<  std::endl;
+    std::cout << RED << "Animal Assignment Operator called" << RESET << std::endl;
     if (this != &rhs)
     {
         this->type = rhs.type;
@@ -40,7 +40,7 @@ Animal& Animal::operator=(const Animal& rhs)
 
 void Animal::makeSound() const
 {
-    std::cout << RED << "Animal Sound" << RESET <<  std::endl;
+    std::cout << RED << "Animal Sound" << RESET << std::endl;
 }
 
 const std::string& Animal::GetType() const
