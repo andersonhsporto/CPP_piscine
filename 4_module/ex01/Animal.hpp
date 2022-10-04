@@ -2,8 +2,8 @@
 // Created by Anderson Porto on 10/2/22.
 //
 
-#ifndef EX01_ANIMAL_HPP
-#define EX01_ANIMAL_HPP
+#ifndef EX00_ANIMAL_HPP
+#define EX00_ANIMAL_HPP
 
 #include <string>
 #include <iostream>
@@ -14,22 +14,23 @@
 class Animal
 {
 public:
-	Animal();
+    Animal();
 
-	Animal(std::string type);
+    Animal(std::string type);
 
-	Animal(Animal const &animal);
+    Animal(Animal const& animal);
 
-	virtual ~Animal();
+    virtual ~Animal();
 
-	Animal &operator=(Animal const &rhs);
+    Animal& operator=(Animal const& rhs);
 
-	virtual void makeSound() const;
+    virtual void makeSound() const;
 
-	const std::string &GetType() const;
+    const std::string& GetType() const;
+
 
 protected:
-	std::string type;
+    std::string type;
 };
 
-#endif // EX01_ANIMAL_HPP
+#endif //EX01_ANIMAL_HPP
