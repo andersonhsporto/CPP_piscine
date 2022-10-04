@@ -29,13 +29,13 @@ int main()
 
 void test()
 {
+    std::cout << "\n\n-------------\n\n" << std::endl;
+
     const WrongAnimal* meta = new WrongAnimal();
     const WrongAnimal* j = new WrongCat();
 
-    std::cout << "\n\n-------------\n\n" << std::endl;
-    std::cout << meta->GetType() << " " << std::endl;
-    std::cout << j->GetType() << " " << std::endl;
-
+    std::cout << "Getter: " << meta->GetType() << " " << std::endl;
+    std::cout << "Getter: " << j->GetType() << " " << std::endl;
     meta->makeSound(); //will output wrong default!
     j->makeSound(); //will output wrong cat!
 
