@@ -9,9 +9,9 @@ Cat::Cat() : Animal("Cat")
     std::cout << ORANGE << "Cat Default Constructor called" << RESET << std::endl;
 }
 
-Cat::Cat(std::string& type)
+Cat::Cat(const Cat& cat) : Animal(cat)
 {
-    std::cout << ORANGE << "Cat Parameterized Constructor called" << RESET << std::endl;
+    std::cout << ORANGE << "Cat Copy Constructor called" << RESET << std::endl;
 }
 
 Cat::~Cat()

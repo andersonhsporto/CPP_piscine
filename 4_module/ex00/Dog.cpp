@@ -11,9 +11,9 @@ Dog::Dog() : Animal("Dog")
     std::cout << BLUE << "Dog Default Constructor called" << RESET << std::endl;
 }
 
-Dog::Dog(std::string& type) : Animal(type)
+Dog::Dog(const Dog& dog) : Animal(dog)
 {
-    std::cout << BLUE << "Dog Parameterized Constructor called" << RESET << std::endl;
+    std::cout << BLUE << "Dog Copy Constructor called" << RESET << std::endl;
 }
 
 Dog::~Dog()
@@ -35,3 +35,4 @@ void Dog::makeSound() const
 {
     std::cout << BLUE << "Dog Sound" << RESET << std::endl;
 }
+
