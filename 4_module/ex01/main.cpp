@@ -44,7 +44,13 @@ void deepCopyTest()
 {
     Cat *cat = new Cat("I am a cat");
     Cat *deepCopyCat = new Cat(*cat);
+    Dog *dog = new Dog("I am a dog");
+    Dog *deepCopyDog = new Dog(*dog);
 
     deepCopyCat->GetBrain()->printIdeas();
+    deepCopyDog->GetBrain()->printIdeas();
     delete cat;
+    delete deepCopyCat;
+    delete dog;
+    delete deepCopyDog;
 }
