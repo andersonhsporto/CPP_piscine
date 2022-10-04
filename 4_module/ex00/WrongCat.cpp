@@ -6,22 +6,22 @@
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-    std::cout << YELLOW << "WrongCat constructor called" << std::endl;
+    std::cout << YELLOW << "WrongCat constructor called" << RESET << std::endl;
 }
 
 WrongCat::WrongCat(std::string& type) : WrongAnimal(type)
 {
-    std::cout << YELLOW << "WrongCat Parameterized constructor called" << std::endl;
+    std::cout << YELLOW << "WrongCat Parameterized constructor called" << RESET << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& wrongCat) : WrongAnimal(wrongCat)
 {
-    std::cout << YELLOW << "WrongCat copy constructor called" << std::endl;
+    std::cout << YELLOW << "WrongCat copy constructor called" << RESET << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& wrongCat)
 {
-    std::cout << YELLOW << "WrongCat assignation operator called" << std::endl;
+    std::cout << YELLOW << "WrongCat assignation operator called" << RESET << std::endl;
     if (this != &wrongCat)
     {
         this->type = wrongCat.type;
@@ -31,10 +31,10 @@ WrongCat& WrongCat::operator=(const WrongCat& wrongCat)
 
 WrongCat::~WrongCat()
 {
-    std::cout << YELLOW << "WrongCat destructor called" << std::endl;
+    std::cout << YELLOW << "WrongCat destructor called" << RESET << std::endl;
 }
 
 void WrongCat::makeSound() const
 {
-    std::cout << YELLOW << "WrongCat sound" << std::endl;
+    std::cout << YELLOW << "WrongCat sound" << RESET << std::endl;
 }
