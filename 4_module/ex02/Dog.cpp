@@ -13,18 +13,17 @@ Dog::Dog() : Animal("Dog")
     this->brain = new Brain();
 }
 
-
 Dog::Dog(std::string idea) : Animal(idea)
 {
     std::cout << BLUE << "Dog Parameterized Constructor called" << RESET << std::endl;
     this->brain = new Brain(idea);
 }
 
-
 Dog::Dog(const Dog& dog) : Animal(dog)
 {
     std::cout << BLUE << "Dog Copy Constructor called" << RESET << std::endl;
-    *this = dog;
+    this->brain = new Brain(*dog.brain);
+	this->type = dog.type;
 }
 
 Dog::~Dog()
@@ -53,4 +52,3 @@ Brain* Dog::GetBrain() const
 {
     return brain;
 }
-

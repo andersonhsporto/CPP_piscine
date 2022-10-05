@@ -22,7 +22,8 @@ Dog::Dog(std::string idea) : Animal(idea)
 Dog::Dog(const Dog& dog) : Animal(dog)
 {
     std::cout << BLUE << "Dog Copy Constructor called" << RESET << std::endl;
-    *this = dog;
+    this->brain = new Brain(*dog.brain);
+	this->type = dog.type;
 }
 
 Dog::~Dog()

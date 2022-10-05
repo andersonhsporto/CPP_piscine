@@ -19,7 +19,8 @@ Cat::Cat(std::string idea) : Animal(idea)
 Cat::Cat(const Cat& cat) : Animal(cat)
 {
     std::cout << ORANGE << "Cat Copy Constructor called" << RESET << std::endl;
-    *this = cat;
+    this->brain = new Brain(*cat.brain);
+	this->type = cat.type;
 }
 
 Cat::~Cat()

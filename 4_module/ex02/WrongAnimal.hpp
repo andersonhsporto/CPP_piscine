@@ -23,9 +23,9 @@ public:
 
 	WrongAnimal &operator=(const WrongAnimal &wrongAnimal);
 
-	virtual ~WrongAnimal();
+	~WrongAnimal();
 
-	virtual void makeSound() const;
+	void makeSound() const;
 
 	std::string GetType() const;
 

@@ -42,6 +42,7 @@ void deleteAnimal(Animal **animals, int size)
 
 void deepCopyTest()
 {
+	std::cout << "_______________________________________________" << std::endl;
     Cat *cat = new Cat("I am a cat");
     Cat *deepCopyCat = new Cat(*cat);
     Dog *dog = new Dog("I am a dog");
@@ -53,4 +54,8 @@ void deepCopyTest()
     delete deepCopyCat;
     delete dog;
     delete deepCopyDog;
+
+	std::cout << "_______________________________________________" << std::endl;
+	Dog basic;
+	Dog temp = basic;
 }

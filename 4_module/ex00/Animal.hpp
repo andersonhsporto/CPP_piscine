@@ -11,6 +11,9 @@
 #define RED "\033[1;31m"
 #define RESET "\033[0m"
 
+
+// Class with virtual destructor and virtual function the virtual
+// keyword is used to make the function polymorphic ( Overridable )
 class Animal
 {
 public:
