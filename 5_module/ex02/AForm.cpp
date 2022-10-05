@@ -45,18 +45,6 @@ AForm::~AForm() {
   std::cout << "AForm destructor called" << std::endl;
 }
 
-void AForm::beSigned(const Bureaucrat &bureaucrat) {
-  if (bureaucrat.getGrade() > this->gradeToSign) {
-    throw AForm::GradeTooLowException();
-  } else if (this->isSigned) {
-    std::cout << bureaucrat.getName() << " couldn't sign " << this->name
-              << " because it's already signed" << std::endl;
-  } else {
-    this->isSigned = true;
-    std::cout << bureaucrat.getName() << " signs AForm: " << this->name << std::endl;
-  }
-}
-
 const std::string &AForm::getName() const {
   return name;
 }
