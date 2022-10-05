@@ -1,11 +1,15 @@
 
 #define GREEN "\033[1;32m"
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 void testFormGradeTooLow();
+
 void testFormGradeTooHigh();
+
 void testSignFormOk();
+
 void testSignFormLowGrade();
 
 int main() {
