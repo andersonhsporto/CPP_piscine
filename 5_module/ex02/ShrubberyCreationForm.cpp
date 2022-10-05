@@ -3,30 +3,32 @@
 //
 
 #include "ShrubberyCreationForm.hpp"
-#include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm(
+    "ShrubberyCreationForm",
+    145,
+    137), target(target) {
   std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
 
-
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form) : AForm(form), target(form.target) {
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form)
+    : AForm(form), target(form.target) {
   std::cout << "ShrubberyCreationForm copy constructor" << std::endl;
-    *this = form;
+  *this = form;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &form) {
-    std::cout << "ShrubberyCreationForm assignation operator" << std::endl;
-    if (this != &form) {
-        this->setIsSigned(form.isSigned1());
-      this->setGradeToExecute(form.getGradeToExecute());
-        this->setGradeToSign(form.getGradeToSign());
-    }
-    return *this;
+  std::cout << "ShrubberyCreationForm assignation operator" << std::endl;
+  if (this != &form) {
+    this->setIsSigned(form.isSigned1());
+    this->setGradeToExecute(form.getGradeToExecute());
+    this->setGradeToSign(form.getGradeToSign());
+  }
+  return *this;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
-    std::cout << "ShrubberyCreationForm destructor called" << std::endl;
+  std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
 void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
@@ -42,22 +44,22 @@ void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm() {
-    std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
+  std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
-    std::string filename = this->target + "_shrubbery";
-    std::ofstream file(filename.c_str());
+  std::string filename = this->target + "_shrubbery";
+  std::ofstream file(filename.c_str());
 
-    std::cout << executor.getName() << " executes " << this->getName() << std::endl;
-    file << "       _-_" << std::endl;
-    file << "    /~~   ~~\\" << std::endl;
-    file << " /~~         ~~\\" << std::endl;
-    file << "{               }" << std::endl;
-    file << " \\  _-     -_  /" << std::endl;
-    file << "   ~  \\\\ //  ~" << std::endl;
-    file << "_- -   | | _- _" << std::endl;
-    file << "  _ -  | |   -_" << std::endl;
-    file << "      // \\\\" << std::endl;
-    file.close();
+  std::cout << executor.getName() << " executes " << this->getName() << std::endl;
+  file << "       _-_" << std::endl;
+  file << "    /~~   ~~\\" << std::endl;
+  file << " /~~         ~~\\" << std::endl;
+  file << "{               }" << std::endl;
+  file << " \\  _-     -_  /" << std::endl;
+  file << "   ~  \\\\ //  ~" << std::endl;
+  file << "_- -   | | _- _" << std::endl;
+  file << "  _ -  | |   -_" << std::endl;
+  file << "      // \\\\" << std::endl;
+  file.close();
 }

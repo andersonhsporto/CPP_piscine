@@ -6,24 +6,27 @@
 #define EX02_SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
+#include <fstream>
 
 class ShrubberyCreationForm : public AForm {
 
-    public:
-    ShrubberyCreationForm(const std::string &target);
+ public:
+  ShrubberyCreationForm(const std::string &target);
 
-    ShrubberyCreationForm(const ShrubberyCreationForm &form);
+  ShrubberyCreationForm(const ShrubberyCreationForm &form);
 
-    ShrubberyCreationForm &operator=(const ShrubberyCreationForm &form);
+  ShrubberyCreationForm &operator=(const ShrubberyCreationForm &form);
 
-    ~ShrubberyCreationForm();
+  ~ShrubberyCreationForm();
 
-    void beSigned(const Bureaucrat &bureaucrat);
+  void beSigned(const Bureaucrat &bureaucrat);
 
   void execute(const Bureaucrat &executor) const;
 
  private:
-    const std::string target;
-    ShrubberyCreationForm();
+  const std::string target;
+
+  ShrubberyCreationForm();
 };
+
 #endif //EX02_SHRUBBERYCREATIONFORM_HPP

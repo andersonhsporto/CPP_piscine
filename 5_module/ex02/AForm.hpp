@@ -11,26 +11,25 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
-class AForm
-{
-public:
-	AForm();
+class AForm {
+ public:
+  AForm();
 
-	AForm(const std::string &name, int gradeToSign, int gradeToExecute);
+  AForm(const std::string &name, int gradeToSign, int gradeToExecute);
 
-	AForm(const AForm &form);
+  AForm(const AForm &form);
 
-	AForm &operator=(const AForm &form);
+  AForm &operator=(const AForm &form);
 
-	virtual ~AForm();
+  virtual ~AForm();
 
-	const std::string &getName() const;
+  const std::string &getName() const;
 
-	bool isSigned1() const;
+  bool isSigned1() const;
 
-	int getGradeToSign() const;
+  int getGradeToSign() const;
 
-	int getGradeToExecute() const;
+  int getGradeToExecute() const;
 
   void setIsSigned(bool is_signed);
 
@@ -40,33 +39,29 @@ public:
 
   virtual void beSigned(const Bureaucrat &bureaucrat) = 0;
 
-  virtual void execute(Bureaucrat const & executor) const = 0;
+  virtual void execute(Bureaucrat const &executor) const = 0;
 
  protected:
 
-	class GradeTooHighException : public std::exception
-	{
-	public:
-		const char *what() const throw()
-		{
-			return "AForm exception: Grade too high";
-		}
-	};
+  class GradeTooHighException : public std::exception {
+   public:
+    const char *what() const throw() {
+      return "AForm exception: Grade too high";
+    }
+  };
 
-	class GradeTooLowException : public std::exception
-	{
-	public:
-		const char *what() const throw()
-		{
-			return "AForm exception: Grade too low";
-		}
-	};
+  class GradeTooLowException : public std::exception {
+   public:
+    const char *what() const throw() {
+      return "AForm exception: Grade too low";
+    }
+  };
 
-private:
-	const std::string name;
-	bool isSigned;
-	int gradeToSign;
-	int gradeToExecute;
+ private:
+  const std::string name;
+  bool isSigned;
+  int gradeToSign;
+  int gradeToExecute;
 };
 
 std::ostream &operator<<(std::ostream &out, const AForm &form);

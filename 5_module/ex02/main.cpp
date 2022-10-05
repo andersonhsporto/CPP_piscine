@@ -8,8 +8,8 @@ int main() {
   ShrubberyCreationForm *shrub = new ShrubberyCreationForm("home");
   Bureaucrat *bureaucrat = new Bureaucrat("Bureaucrat", 1);
 
-    std::cout << GREEN << "Bureaucrat sign form" << std::endl;
-    shrub->beSigned(*bureaucrat);
-    shrub->execute(*bureaucrat);
+  std::cout << GREEN << "Bureaucrat sign form" << std::endl;
+  shrub->beSigned(*bureaucrat);
+  shrub->execute(*bureaucrat);
   return 0;
 }
