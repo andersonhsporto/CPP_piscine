@@ -11,41 +11,44 @@
 #include <string>
 #include <iostream>
 
-class Bureaucrat
-{
+class Bureaucrat {
 
-public:
-	Bureaucrat();
-	Bureaucrat(const std::string &name, int grade);
-	~Bureaucrat();
-	Bureaucrat(const Bureaucrat &other);
-	Bureaucrat &operator=(const Bureaucrat &other);
-	void incrementGrade();
-	void decrementGrade();
-	const std::string &getName() const;
-	int getGrade() const;
+ public:
+  Bureaucrat();
 
-	class GradeTooHighException : public std::exception
-	{
-	public:
-		const char *what() const throw()
-		{
-			return "Grade too high Exception";
-		}
-	};
+  Bureaucrat(const std::string &name, int grade);
 
-	class GradeTooLowException : public std::exception
-	{
-	public:
-		const char *what() const throw()
-		{
-			return "Grade too low Exception";
-		}
-	};
+  ~Bureaucrat();
 
-private:
-	std::string const name;
-	int grade;
+  Bureaucrat(const Bureaucrat &other);
+
+  Bureaucrat &operator=(const Bureaucrat &other);
+
+  void incrementGrade();
+
+  void decrementGrade();
+
+  const std::string &getName() const;
+
+  int getGrade() const;
+
+  class GradeTooHighException : public std::exception {
+   public:
+    const char *what() const throw() {
+      return "Grade too high Exception";
+    }
+  };
+
+  class GradeTooLowException : public std::exception {
+   public:
+    const char *what() const throw() {
+      return "Grade too low Exception";
+    }
+  };
+
+ private:
+  std::string const name;
+  int grade;
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
