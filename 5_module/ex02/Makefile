@@ -1,9 +1,9 @@
 NAME	= Bureaucrat
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98
+CFLAGS	= -Wall -Wextra -std=c++98 #-Werror 
 
-SRC		= main.cpp Bureaucrat.cpp Form.cpp
+SRC		= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
