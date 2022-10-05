@@ -1,33 +1,73 @@
-#include "Bureaucrat.hpp"
 
-void testGradeTooHighException();
-void testGradeTooLowException();
+#define GREEN "\033[1;32m"
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
+
+void testFormGradeTooLow();
+void testFormGradeTooHigh();
+void testSignFormOk();
+void testSignFormLowGrade();
 
 int main() {
-  testGradeTooHighException();
-  std::cout << "---------------------------------" << std::endl;
-  testGradeTooLowException();
+  testFormGradeTooHigh();
+  testFormGradeTooLow();
+  testSignFormOk();
+  testSignFormLowGrade();
   return 0;
 }
 
-void testGradeTooHighException() {
-  Bureaucrat bureaucrat("Anderson", 1);
-
+void testFormGradeTooHigh() {
+  std::cout << GREEN << "------------BEGIN TEST------------" << RESET << std::endl;
   try {
-    bureaucrat.incrementGrade();
+    Form *form = new Form("Form", 0, 1);
+
+    std::cout << *form << std::endl;
   } catch (std::exception &e) {
-    std::cout << bureaucrat << std::endl;
-    std::cout << e.what() << std::endl;
+    std::cout << RED << e.what() << RESET << std::endl;
   }
+  std::cout << GREEN << "------------END TEST------------" << RESET << std::endl;
 }
 
-void testGradeTooLowException() {
-  Bureaucrat bureaucrat("Anderson", 150);
+void testFormGradeTooLow() {
+  std::cout << GREEN << "------------BEGIN TEST------------" << RESET << std::endl;
+  try {
+    Form *form = new Form("Form", 151, 1);
+
+    std::cout << *form << std::endl;
+  } catch (std::exception &e) {
+    std::cout << RED << e.what() << RESET << std::endl;
+  }
+  std::cout << GREEN << "------------END TEST------------" << RESET << std::endl;
+}
+
+void testSignFormOk() {
+  std::cout << GREEN << "------------BEGIN TEST------------" << RESET << std::endl;
+  Bureaucrat *bureaucrat = new Bureaucrat("Anderson", 1);
+  Form *form = new Form("42a", 1, 1);
 
   try {
-    bureaucrat.decrementGrade();
+    form->beSigned(*bureaucrat);
+    std::cout << *form << std::endl;
   } catch (std::exception &e) {
-    std::cout << bureaucrat << std::endl;
-    std::cout << e.what() << std::endl;
+    std::cout << RED << e.what() << RESET << std::endl;
   }
+  delete bureaucrat;
+  delete form;
+  std::cout << GREEN << "------------END TEST------------" << RESET << std::endl;
+}
+
+void testSignFormLowGrade() {
+  std::cout << GREEN << "------------BEGIN TEST------------" << RESET << std::endl;
+  Bureaucrat *bureaucrat = new Bureaucrat("Anderson", 150);
+  Form *form = new Form("42a", 1, 1);
+
+  try {
+    form->beSigned(*bureaucrat);
+    std::cout << *form << std::endl;
+  } catch (std::exception &e) {
+    std::cout << RED << e.what() << RESET << std::endl;
+  }
+  delete bureaucrat;
+  delete form;
+  std::cout << GREEN << "------------END TEST------------" << RESET << std::endl;
 }
