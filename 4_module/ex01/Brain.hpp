@@ -15,12 +15,17 @@ class Brain
 {
 public:
     Brain();
+
     Brain(std::string ideaName);
+
     Brain(const Brain &copy);
+
     Brain &operator=(const Brain &copy);
+
     ~Brain();
 
     const std::string* GetIdeas() const;
+
     void printIdeas() const;
 
 private:
