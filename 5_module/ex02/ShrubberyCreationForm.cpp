@@ -10,7 +10,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm(
 }
 
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form) {
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form) : AForm(form), target(form.target) {
   std::cout << "ShrubberyCreationForm copy constructor" << std::endl;
     *this = form;
 }
@@ -22,6 +22,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
       this->setGradeToExecute(form.getGradeToExecute());
         this->setGradeToSign(form.getGradeToSign());
     }
+    return *this;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
@@ -49,7 +50,6 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
     std::ofstream file(filename.c_str());
 
     std::cout << executor.getName() << " executes " << this->getName() << std::endl;
-    file.open(this->target + "_shrubbery");
     file << "       _-_" << std::endl;
     file << "    /~~   ~~\\" << std::endl;
     file << " /~~         ~~\\" << std::endl;
