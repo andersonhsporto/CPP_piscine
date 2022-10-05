@@ -9,7 +9,10 @@
 #define RESET "\033[0m"
 
 #include <string>
+#include <iostream>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class AForm {
  public:
@@ -37,7 +40,7 @@ class AForm {
 
   void setGradeToExecute(int grade_to_execute);
 
-  virtual void beSigned(const Bureaucrat &bureaucrat) = 0;
+  void beSigned(const Bureaucrat &bureaucrat);
 
   virtual void execute(Bureaucrat const &executor) const = 0;
 
@@ -54,6 +57,13 @@ class AForm {
    public:
     const char *what() const throw() {
       return "AForm exception: Grade too low";
+    }
+  };
+
+  class FormNotSignedException : public std::exception {
+   public:
+    const char *what() const throw() {
+      return "AForm exception: Form not signed";
     }
   };
 

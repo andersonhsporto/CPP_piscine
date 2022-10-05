@@ -2,7 +2,6 @@
 // Created by Anderson Porto on 10/5/22.
 //
 
-#include <iostream>
 #include "AForm.hpp"
 
 AForm::AForm() : name("default"), isSigned(false), gradeToSign(1), gradeToExecute(1) {
@@ -71,6 +70,33 @@ void AForm::setGradeToSign(int grade_to_sign) {
 
 void AForm::setGradeToExecute(int grade_to_execute) {
   gradeToExecute = grade_to_execute;
+}
+
+void AForm::beSigned(const Bureaucrat &bureaucrat) {
+  if (bureaucrat.getGrade() > this->gradeToSign) {
+    throw AForm::GradeTooLowException();
+  } else if (this->isSigned) {
+    std::cout << bureaucrat.getName() << " couldn't sign " << this->name
+              << " because it's already signed" << std::endl;
+  } else {
+    this->isSigned = true;
+    std::cout << bureaucrat.getName() << " signs Form: " << this->name << std::endl;
+  }
+}
+
+void AForm::execute(const Bureaucrat &executor) const {
+  if (this->isSigned) {
+    if (executor.getGrade() > this->gradeToExecute) {
+      throw AForm::GradeTooLowException();
+    } else {
+      std::cout << executor.getName() << " executes Form: " << this->name << std::endl;
+    }
+  } else {
+    std::cout << executor.getName() << " couldn't execute " << this->name
+              << " because it's not signed" << std::endl;
+    throw AForm::FormNotSignedException();
+  }
+
 }
 
 std::ostream &operator<<(std::ostream &out, const AForm &form) {

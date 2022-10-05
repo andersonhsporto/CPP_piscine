@@ -19,9 +19,7 @@ class ShrubberyCreationForm : public AForm {
 
   ~ShrubberyCreationForm();
 
-  void beSigned(const Bureaucrat &bureaucrat);
-
-  void execute(const Bureaucrat &executor) const;
+  virtual void execute(const Bureaucrat &executor) const;
 
  private:
   const std::string target;

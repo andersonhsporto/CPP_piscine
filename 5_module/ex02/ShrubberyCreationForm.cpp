@@ -31,27 +31,15 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
   std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
-void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
-  if (bureaucrat.getGrade() > this->getGradeToSign()) {
-    throw AForm::GradeTooLowException();
-  } else if (this->isSigned1()) {
-    std::cout << bureaucrat.getName() << " couldn't sign " << getName()
-              << " because it's already signed" << std::endl;
-  } else {
-    this->setIsSigned(true);
-    std::cout << bureaucrat.getName() << " signs AForm: " << this->getName() << std::endl;
-  }
-}
-
 ShrubberyCreationForm::ShrubberyCreationForm() {
   std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
+  AForm::execute(executor);
   std::string filename = this->target + "_shrubbery";
   std::ofstream file(filename.c_str());
 
-  std::cout << executor.getName() << " executes " << this->getName() << std::endl;
   file << "       _-_" << std::endl;
   file << "    /~~   ~~\\" << std::endl;
   file << " /~~         ~~\\" << std::endl;

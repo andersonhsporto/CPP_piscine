@@ -3,7 +3,7 @@ NAME	= Bureaucrat
 CC		= c++
 CFLAGS	= -Wall -Wextra -std=c++98 #-Werror 
 
-SRC		= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRC		= main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
