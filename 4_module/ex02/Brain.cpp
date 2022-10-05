@@ -3,7 +3,6 @@
 //
 
 #include "Brain.hpp"
-#include <sstream>
 
 Brain::Brain()
 {
@@ -14,7 +13,6 @@ Brain::Brain()
         ss << "Idea " << i;
         this->ideas[i] = ss.str();
     }
-
 }
 
 Brain::Brain(std::string ideaName)

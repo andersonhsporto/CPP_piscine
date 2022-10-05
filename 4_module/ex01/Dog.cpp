@@ -13,13 +13,11 @@ Dog::Dog() : Animal("Dog")
     this->brain = new Brain();
 }
 
-
 Dog::Dog(std::string idea) : Animal(idea)
 {
     std::cout << BLUE << "Dog Parameterized Constructor called" << RESET << std::endl;
     this->brain = new Brain(idea);
 }
-
 
 Dog::Dog(const Dog& dog) : Animal(dog)
 {
@@ -53,4 +51,3 @@ Brain* Dog::GetBrain() const
 {
     return brain;
 }
-

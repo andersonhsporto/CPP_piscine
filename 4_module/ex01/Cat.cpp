@@ -10,7 +10,6 @@ Cat::Cat() : Animal("Cat")
     this->brain = new Brain();
 }
 
-
 Cat::Cat(std::string idea) : Animal(idea)
 {
     std::cout << ORANGE << "Cat Parameterized Constructor called" << RESET << std::endl;

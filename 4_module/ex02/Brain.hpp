@@ -7,6 +7,7 @@
 
 #include <string>
 #include <iostream>
+#include <sstream>
 
 #define CYAN "\033[0;36m"
 #define RESET "\033[0m"
