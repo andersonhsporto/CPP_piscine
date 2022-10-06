@@ -8,7 +8,7 @@
 
 int main() {
   Bureaucrat *bureaucrat = new Bureaucrat("Bureaucrat", 1);
-  ShrubberyCreationForm *shrub = new ShrubberyCreationForm("Shrubbery");
+  ShrubberyCreationForm *shrub = new ShrubberyCreationForm("file");
   RobotomyRequestForm *robotomy = new RobotomyRequestForm("Robotomy");
   PresidentialPardonForm *presidential = new PresidentialPardonForm("Presidential");
 
