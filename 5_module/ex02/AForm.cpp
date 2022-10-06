@@ -88,8 +88,6 @@ void AForm::execute(const Bureaucrat &executor) const {
   if (this->isSigned) {
     if (executor.getGrade() > this->gradeToExecute) {
       throw AForm::GradeTooLowException();
-    } else {
-      std::cout << executor.getName() << " executes Form: " << this->name << std::endl;
     }
   } else {
     std::cout << executor.getName() << " couldn't execute " << this->name
