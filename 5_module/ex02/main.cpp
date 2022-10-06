@@ -3,14 +3,27 @@
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "AForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main() {
-  ShrubberyCreationForm *shrub = new ShrubberyCreationForm("teste");
   Bureaucrat *bureaucrat = new Bureaucrat("Bureaucrat", 1);
+  ShrubberyCreationForm *shrub = new ShrubberyCreationForm("Shrubbery");
+  RobotomyRequestForm *robotomy = new RobotomyRequestForm("Robotomy");
+  PresidentialPardonForm *presidential = new PresidentialPardonForm("Presidential");
 
-//  std::cout << GREEN << "Bureaucrat sign form" << std::endl;
-//  shrub.beSigned(*bureaucrat);
-  shrub->execute(*bureaucrat);
+  std::cout << GREEN << "Bureaucrat sign form" << RESET << std::endl;
+  robotomy->beSigned(*bureaucrat);
+  shrub->beSigned(*bureaucrat);
+  presidential->beSigned(*bureaucrat);
+  std::cout << GREEN << "Bureaucrat execute form" << RESET << std::endl;
+  bureaucrat->executeForm(*shrub);
+  bureaucrat->executeForm(*robotomy);
+  bureaucrat->executeForm(*presidential);
+
+  delete bureaucrat;
+  delete shrub;
+  delete robotomy;
+  delete presidential;
   return 0;
 }
