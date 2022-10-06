@@ -7,25 +7,25 @@
 
 #include "AForm.hpp"
 #include <cstdlib>
+#include <ctime>
 
-class RobotomyRequestForm : public AForm
-{
+class RobotomyRequestForm : public AForm {
 
-public:
-	RobotomyRequestForm(const std::string &target);
+ public:
+  RobotomyRequestForm(const std::string &target);
 
-	RobotomyRequestForm(const RobotomyRequestForm &form);
+  RobotomyRequestForm(const RobotomyRequestForm &form);
 
-	RobotomyRequestForm &operator=(const RobotomyRequestForm &form);
+  RobotomyRequestForm &operator=(const RobotomyRequestForm &form);
 
-	~RobotomyRequestForm();
+  ~RobotomyRequestForm();
 
-	virtual void execute(const Bureaucrat &executor) const;
+  virtual void execute(const Bureaucrat &executor) const;
 
-private:
-	const std::string target;
+ private:
+  const std::string target;
 
-	RobotomyRequestForm();
+  RobotomyRequestForm();
 };
 
 #endif // EX03_ROBOTOMYREQUESTFORM_HPP

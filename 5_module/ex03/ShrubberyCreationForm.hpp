@@ -8,24 +8,23 @@
 #include "AForm.hpp"
 #include <fstream>
 
-class ShrubberyCreationForm : public AForm
-{
+class ShrubberyCreationForm : public AForm {
 
-public:
-	ShrubberyCreationForm(const std::string &target);
+ public:
+  ShrubberyCreationForm(const std::string &target);
 
-	ShrubberyCreationForm(const ShrubberyCreationForm &form);
+  ShrubberyCreationForm(const ShrubberyCreationForm &form);
 
-	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &form);
+  ShrubberyCreationForm &operator=(const ShrubberyCreationForm &form);
 
-	~ShrubberyCreationForm();
+  ~ShrubberyCreationForm();
 
-	virtual void execute(const Bureaucrat &executor) const;
+  virtual void execute(const Bureaucrat &executor) const;
 
-private:
-	const std::string target;
+ private:
+  const std::string target;
 
-	ShrubberyCreationForm();
+  ShrubberyCreationForm();
 };
 
 #endif // EX03_SHRUBBERYCREATIONFORM_HPP
