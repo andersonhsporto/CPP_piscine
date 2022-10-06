@@ -22,6 +22,12 @@ class Intern {
  private:
   int formSelector(const std::string &name);
 
+  AForm *createShrubberyCreationForm(const std::string &target);
+
+  AForm *createRobotomyRequestForm(const std::string &target);
+
+  AForm *createPresidentialPardonForm(const std::string &target);
+
   enum FormType {
     SHUBBERRY_CREATION_FORM,
     ROBOTOMY_REQUEST_FORM,
