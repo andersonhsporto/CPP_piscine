@@ -1,9 +1,9 @@
-NAME	= Static
+NAME	= convert
 
 CC		= c++
 CFLAGS	= -Wall -Wextra -std=c++98 #-Werror 
 
-SRC		= main.cpp
+SRC		= main.cpp ConvertService.cpp ValidationService.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
