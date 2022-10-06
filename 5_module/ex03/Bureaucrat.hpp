@@ -14,51 +14,46 @@
 
 class AForm;
 
-class Bureaucrat
-{
+class Bureaucrat {
 
-public:
-	Bureaucrat();
+ public:
+  Bureaucrat();
 
-	Bureaucrat(const std::string &name, int grade);
+  Bureaucrat(const std::string &name, int grade);
 
-	~Bureaucrat();
+  ~Bureaucrat();
 
-	Bureaucrat(const Bureaucrat &other);
+  Bureaucrat(const Bureaucrat &other);
 
-	Bureaucrat &operator=(const Bureaucrat &other);
+  Bureaucrat &operator=(const Bureaucrat &other);
 
-	void incrementGrade();
+  void incrementGrade();
 
-	void decrementGrade();
+  void decrementGrade();
 
-	const std::string &getName() const;
+  const std::string &getName() const;
 
-	int getGrade() const;
+  int getGrade() const;
 
-	void executeForm(const AForm &form);
+  void executeForm(const AForm &form);
 
-	class GradeTooHighException : public std::exception
-	{
-	public:
-		const char *what() const throw()
-		{
-			return "Grade too high Exception";
-		}
-	};
+  class GradeTooHighException : public std::exception {
+   public:
+    const char *what() const throw() {
+      return "Grade too high Exception";
+    }
+  };
 
-	class GradeTooLowException : public std::exception
-	{
-	public:
-		const char *what() const throw()
-		{
-			return "Grade too low Exception";
-		}
-	};
+  class GradeTooLowException : public std::exception {
+   public:
+    const char *what() const throw() {
+      return "Grade too low Exception";
+    }
+  };
 
-private:
-	std::string const name;
-	int grade;
+ private:
+  std::string const name;
+  int grade;
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
