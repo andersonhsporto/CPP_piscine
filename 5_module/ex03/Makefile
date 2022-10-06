@@ -1,7 +1,7 @@
 NAME	= Intern
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -std=c++98 #-Werror 
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 
 
 SRC		= main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp \
 	      RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
