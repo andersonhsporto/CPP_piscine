@@ -1,29 +1,54 @@
-
-#define GREEN "\033[1;32m"
-
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
+
+void testShubberyCreationForm(std::string target);
+
+void testRobotomyRequestForm(std::string target);
+
+void testPresidentialPardonForm(std::string target);
 
 int main() {
-  Bureaucrat *bureaucrat = new Bureaucrat("Bureaucrat", 1);
-  ShrubberyCreationForm *shrub = new ShrubberyCreationForm("file");
-  RobotomyRequestForm *robotomy = new RobotomyRequestForm("Robotomy");
-  PresidentialPardonForm *presidential = new PresidentialPardonForm("Presidential");
-
-  std::cout << GREEN << "Bureaucrat sign form" << RESET << std::endl;
-  robotomy->beSigned(*bureaucrat);
-  shrub->beSigned(*bureaucrat);
-  presidential->beSigned(*bureaucrat);
-  std::cout << GREEN << "Bureaucrat execute form" << RESET << std::endl;
-  bureaucrat->executeForm(*shrub);
-  bureaucrat->executeForm(*robotomy);
-  bureaucrat->executeForm(*presidential);
-
-  delete bureaucrat;
-  delete shrub;
-  delete robotomy;
-  delete presidential;
+  testShubberyCreationForm("ARQUIVO");
+  testRobotomyRequestForm("BENDER");
+  testPresidentialPardonForm("MARVIN");
   return 0;
+}
+
+void testShubberyCreationForm(std::string target) {
+  std::cout << RED << "\n\nTest ShrubberyCreationForm" << RESET << std::endl;
+  Intern intern;
+  Bureaucrat *bureaucrat = new Bureaucrat("Anderson", 1);
+  AForm *form;
+
+  form = intern.makeForm("shrubbery creation", target);
+  form->beSigned(*bureaucrat);
+  form->execute(*bureaucrat);
+  delete bureaucrat;
+  delete form;
+}
+
+void testRobotomyRequestForm(std::string target) {
+  std::cout << RED << "\n\nTest RobotomyRequestForm" << RESET << std::endl;
+  Intern intern;
+  Bureaucrat *bureaucrat = new Bureaucrat("Anderson", 1);
+  AForm *form;
+
+  form = intern.makeForm("robotomy request", target);
+  form->beSigned(*bureaucrat);
+  form->execute(*bureaucrat);
+  delete bureaucrat;
+  delete form;
+}
+
+void testPresidentialPardonForm(std::string target) {
+  std::cout << RED << "\n\nTest PresidentialPardonForm" << RESET << std::endl;
+  Intern intern;
+  Bureaucrat *bureaucrat = new Bureaucrat("Anderson", 1);
+  AForm *form;
+
+  form = intern.makeForm("presidential pardon", target);
+  form->beSigned(*bureaucrat);
+  form->execute(*bureaucrat);
+  delete bureaucrat;
+  delete form;
 }
