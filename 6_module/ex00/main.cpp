@@ -30,7 +30,6 @@ void tests() {
   delete nam;
   std::cout << ">>>>>>>>>>>>>>>>>>>Fim do teste 1\n" << std::endl;
 
-
   std::cout << ">>>>>>>>>>>>>>>>>>>Teste 2; " << std::endl;
   ConvertService *ft = new ConvertService("42.0f");
   ft->convert();
