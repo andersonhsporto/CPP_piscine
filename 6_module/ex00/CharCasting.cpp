@@ -70,7 +70,7 @@ bool CharCasting::isValueValid() {
       return true;
     }
   } else {
-  return false;
+    return false;
   }
 }
 

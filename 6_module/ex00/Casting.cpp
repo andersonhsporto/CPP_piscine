@@ -41,18 +41,76 @@ bool Casting::isValueValid() {
 }
 
 void Casting::isNotValid() {
-  size_t numberOfChars = 0;
-  std::string validChars = "0123456789+-.f";
-
-  for(long unsigned int i = 0; i < this->getCastString().length(); i++) {
-    for(long unsigned int j = 0; j < validChars.length(); j++) {
-        if (this->getCastString().c_str()[i] != validChars.c_str()[j]) {
-          numberOfChars++;
-          continue;
-        }
-      }
-    }
-  if (numberOfChars > (validChars.length() + 1)){
+  if (!isChar() && !isInt() && !isFloat() && !isDouble()) {
     throw ImpossibleException();
   }
+}
+
+bool Casting::isChar() {
+  if (getCastString().length() == 1) {
+    if (!std::isprint(getCastString()[0]) || std::isdigit(getCastString()[0])) {
+      return false;
+    } else {
+      return true;
+    }
   }
+  return false;
+}
+
+bool Casting::isInt() {
+  size_t i = 0;
+
+  if (getCastString()[0] == '-' || getCastString()[0] == '+') {
+    i++;
+  }
+  while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
+    i++;
+  }
+  if (i == getCastString().length()) {
+    return true;
+  }
+  return false;
+
+}
+
+bool Casting::isFloat() {
+  size_t i = 0;
+
+  if (getCastString()[0] == '-' || getCastString()[0] == '+') {
+    i++;
+  }
+  while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
+    i++;
+  }
+  if (i < getCastString().length() && getCastString()[i] == '.') {
+    i++;
+    while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
+      i++;
+    }
+  }
+  if (i == getCastString().length() - 1 && getCastString()[i] == 'f') {
+    return true;
+  }
+  return false;
+}
+
+bool Casting::isDouble() {
+  size_t i = 0;
+
+  if (getCastString()[0] == '-' || getCastString()[0] == '+') {
+    i++;
+  }
+  while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
+    i++;
+  }
+  if (i < getCastString().length() && getCastString()[i] == '.') {
+    i++;
+    while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
+      i++;
+    }
+  }
+  if (i == getCastString().length()) {
+    return true;
+  }
+  return false;
+}

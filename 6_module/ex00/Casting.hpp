@@ -41,6 +41,14 @@ class Casting {
 
   std::string castString;
 
+ private:
+  bool isChar();
+
+  bool isInt();
+
+  bool isFloat();
+
+  bool isDouble();
 
 };
 
