@@ -43,6 +43,8 @@ class CharCasting : public Casting {
 
   bool isNumber();
 
+  void parseToChar();
+
   char c;
 };
 

@@ -36,21 +36,26 @@ void CharCasting::printCasting() {
 }
 
 void CharCasting::castTo() {
+  Casting::isNotValid();
   if (isValueValid()) {
     this->c = static_cast<char>(this->getCastString().c_str()[0]);
   } else {
-    long double value = std::strtod(this->getCastString().c_str(), NULL);
-    if (value > std::numeric_limits<char>::max() || value < std::numeric_limits<char>::min()) {
-      throw ImpossibleException();
-    } else if (!std::isprint(static_cast<char>(value))) {
-      throw NonDisplayableException();
-    } else if (std::isdigit(this->getCastString().length() == 1 && static_cast<char>(value))) {
-      throw NonDisplayableException();
-    } else {
-      this->c = static_cast<char>(value);
-    }
+    parseToChar();
   }
+}
 
+void CharCasting::parseToChar() {
+  long double value = std::strtod(this->getCastString().c_str(), NULL);
+
+  if (value > std::numeric_limits<char>::max() || value < std::numeric_limits<char>::min()) {
+    throw ImpossibleException();
+  } else if (!std::isprint(static_cast<char>(value))) {
+    throw NonDisplayableException();
+  } else if (std::isdigit(this->getCastString().length() == 1 && static_cast<char>(value))) {
+    throw NonDisplayableException();
+  } else {
+    this->c = static_cast<char>(value);
+  }
 }
 
 bool CharCasting::isValueValid() {
