@@ -39,3 +39,20 @@ void Casting::castTo() {
 bool Casting::isValueValid() {
   return true;
 }
+
+void Casting::isNotValid() {
+  size_t numberOfChars = 0;
+  std::string validChars = "0123456789+-.f";
+
+  for(long unsigned int i = 0; i < this->getCastString().length(); i++) {
+    for(long unsigned int j = 0; j < validChars.length(); j++) {
+        if (this->getCastString().c_str()[i] != validChars.c_str()[j]) {
+          numberOfChars++;
+          continue;
+        }
+      }
+    }
+  if (numberOfChars > (validChars.length() + 1)){
+    throw ImpossibleException();
+  }
+  }

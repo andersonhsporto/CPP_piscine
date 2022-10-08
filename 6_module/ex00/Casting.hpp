@@ -37,7 +37,10 @@ class Casting {
 
   virtual bool isValueValid();
 
+  void isNotValid();
+
   std::string castString;
+
 
 };
 
