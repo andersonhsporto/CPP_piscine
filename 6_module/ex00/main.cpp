@@ -6,6 +6,8 @@ int main(int argc, char **argv) {
     std::cout << "Usage: ./convert [value]" << std::endl;
     return 1;
   }
-  ConvertService::convert(argv[1]);
+  ConvertService *convertService = new ConvertService(argv[1]);
+  convertService->convert();
+  delete convertService;
   return 0;
 }
