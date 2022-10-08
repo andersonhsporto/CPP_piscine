@@ -73,6 +73,10 @@ int Form::getGradeToExecute() const {
   return gradeToExecute;
 }
 
+void Form::setIsSigned(bool is_signed) {
+  isSigned = is_signed;
+}
+
 std::ostream &operator<<(std::ostream &out, const Form &form) {
   out << "Form name: " << form.getName() << std::endl;
   out << "Form grade to sign: " << form.getGradeToSign() << std::endl;
