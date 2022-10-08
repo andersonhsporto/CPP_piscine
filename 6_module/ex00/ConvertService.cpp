@@ -3,13 +3,18 @@
 //
 
 #include "ConvertService.hpp"
-#include "ValidationService.hpp"
+#include "IntegerCasting.hpp"
 
 ConvertService::ConvertService(std::string str) {
-
+  this->string = str;
+  this->charCasting = new CharCasting(str);
+  this->integerCasting = new IntegerCasting(str);
 }
 
-ConvertService::~ConvertService() {}
+ConvertService::~ConvertService() {
+  delete charCasting;
+  delete integerCasting;
+}
 
 ConvertService::ConvertService(const ConvertService &other) {
   *this = other;
@@ -17,18 +22,21 @@ ConvertService::ConvertService(const ConvertService &other) {
 
 ConvertService &ConvertService::operator=(const ConvertService &other) {
   if (this != &other) {
-    this->character = other.character;
-    this->integer = other.integer;
-    this->floating = other.floating;
-    this->doublePrecision = other.doublePrecision;
+    this->string = other.string;
+    this->charCasting = other.charCasting;
+    this->integerCasting = other.integerCasting;
   }
+  return *this;
 }
 
-void ConvertService::convert(char *str) {
-  ValidationService validationService;
-
-  validationService.validateString(str);
+void ConvertService::convert() {
+  charCasting->printCasting();
+  integerCasting->printCasting();
 }
 
-ConvertService::ConvertService() {}
+ConvertService::ConvertService() {
+  this->string = "42";
+  this->charCasting = new CharCasting("42");
+  this->integerCasting = new IntegerCasting("42");
+}
 

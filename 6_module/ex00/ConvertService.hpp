@@ -6,6 +6,8 @@
 #define EX00_CONVERTSERVICE_HPP
 
 #include <string>
+#include "IntegerCasting.hpp"
+#include "CharCasting.hpp"
 
 class ConvertService {
 
@@ -18,15 +20,15 @@ class ConvertService {
 
   ConvertService &operator=(ConvertService const &other);
 
-  static void convert(char *str);
+  void convert();
 
  private:
   ConvertService();
 
-  char character;
-  int integer;
-  float floating;
-  double doublePrecision;
+  std::string string;
+
+  CharCasting *charCasting;
+  IntegerCasting *integerCasting;
 
 };
 
