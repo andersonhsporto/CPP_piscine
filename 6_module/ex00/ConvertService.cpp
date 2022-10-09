@@ -45,7 +45,7 @@ ConvertService::ConvertService() {
   this->string = "42";
   this->charCasting = new CharCasting("42");
   this->integerCasting = new IntegerCasting("42");
-  this->floatCasting = new FloatCasting("42.0f");
-  this->doubleCasting = new DoubleCasting("42.0");
+  this->floatCasting = new FloatCasting("42");
+  this->doubleCasting = new DoubleCasting("42");
 }
 
