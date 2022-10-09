@@ -9,6 +9,7 @@
 #include "IntegerCasting.hpp"
 #include "CharCasting.hpp"
 #include "FloatCasting.hpp"
+#include "DoubleCasting.hpp"
 
 class ConvertService {
 
@@ -29,8 +30,12 @@ class ConvertService {
   std::string string;
 
   CharCasting *charCasting;
+
   IntegerCasting *integerCasting;
+
   FloatCasting *floatCasting;
+
+  DoubleCasting *doubleCasting;
 
 };
 
