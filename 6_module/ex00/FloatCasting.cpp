@@ -2,11 +2,7 @@
 // Created by Anderson Porto on 10/8/22.
 //
 
-#include <cmath>
-#include <iomanip>
 #include "FloatCasting.hpp"
-#include <cstdlib>
-#include <limits>
 
 FloatCasting::FloatCasting(const std::string &str) : Casting(str) {
   this->floatNumber = 0;

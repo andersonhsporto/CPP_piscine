@@ -6,6 +6,9 @@
 #define EX00_FLOATCASTING_HPP
 
 #include "Casting.hpp"
+#include <cmath>
+#include <iomanip>
+#include <cstdlib>
 
 class FloatCasting : public Casting {
  public:
