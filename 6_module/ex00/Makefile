@@ -3,7 +3,8 @@ NAME	= convert
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 
 
-SRC		= main.cpp ConvertService.cpp Casting.cpp IntegerCasting.cpp
+SRC		= main.cpp ConvertService.cpp Casting.cpp IntegerCasting.cpp \
+CharCasting.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
