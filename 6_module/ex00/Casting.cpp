@@ -113,3 +113,12 @@ bool Casting::isDouble() {
   }
   return false;
 }
+
+bool Casting::IsPseudoLiteral() {
+  if (this->getCastString() == "nan" || this->getCastString() == "+inf" ||
+      this->getCastString() == "-inf") {
+    return true;
+  } else {
+    return false;
+  }
+}

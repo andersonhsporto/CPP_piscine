@@ -29,6 +29,8 @@ class Casting {
 
   virtual void printCasting() = 0;
 
+  bool IsPseudoLiteral();
+
   class ImpossibleException : public std::exception {
    public:
     const char *what() const throw() {
@@ -53,7 +55,6 @@ class Casting {
   bool isFloat();
 
   bool isDouble();
-
 };
 
 #endif //EX00_CASTING_HPP

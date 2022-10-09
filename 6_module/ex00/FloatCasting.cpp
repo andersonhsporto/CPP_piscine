@@ -37,7 +37,11 @@ void FloatCasting::printCasting() {
     castTo();
     std::cout << "float: " << std::fixed << std::setprecision(1) << floatNumber << "f" << std::endl;
   } catch (std::exception &e) {
-    std::cout << "float: " << e.what() << std::endl;
+    if (Casting::IsPseudoLiteral()) {
+      std::cout << "float: " << getCastString() << "f" << std::endl;
+    } else {
+      std::cout << "float: impossible" << std::endl;
+    }
     return;
   }
 }
@@ -62,4 +66,3 @@ bool FloatCasting::isValueValid() {
     return true;
   }
 }
-
