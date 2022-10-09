@@ -8,6 +8,7 @@
 #include <string>
 #include "IntegerCasting.hpp"
 #include "CharCasting.hpp"
+#include "FloatCasting.hpp"
 
 class ConvertService {
 
@@ -29,6 +30,7 @@ class ConvertService {
 
   CharCasting *charCasting;
   IntegerCasting *integerCasting;
+  FloatCasting *floatCasting;
 
 };
 
