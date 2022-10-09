@@ -5,7 +5,7 @@
 #include "Casting.hpp"
 
 Casting::Casting() {
-
+  this->castString = "42";
 }
 
 Casting::Casting(const std::string &str) {
@@ -31,94 +31,30 @@ const std::string &Casting::getCastString() const {
   return castString;
 }
 
-void Casting::castTo() {
+void Casting::parseChar() {
 
 }
 
-bool Casting::isValueValid() {
-  return true;
-}
-
-void Casting::isNotValid() {
-  if (!isChar() && !isInt() && !isFloat() && !isDouble()) {
-    throw ImpossibleException();
-  }
-}
-
-bool Casting::isChar() {
-  if (getCastString().length() == 1) {
-    if (!std::isprint(getCastString()[0]) || std::isdigit(getCastString()[0])) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-  return false;
-}
-
-bool Casting::isInt() {
-  size_t i = 0;
-
-  if (getCastString()[0] == '-' || getCastString()[0] == '+') {
-    i++;
-  }
-  while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
-    i++;
-  }
-  if (i == getCastString().length()) {
-    return true;
-  }
-  return false;
+void Casting::parseFloat() {
 
 }
 
-bool Casting::isFloat() {
-  size_t i = 0;
+void Casting::parseDouble() {
 
-  if (getCastString()[0] == '-' || getCastString()[0] == '+') {
-    i++;
-  }
-  while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
-    i++;
-  }
-  if (i < getCastString().length() && getCastString()[i] == '.') {
-    i++;
-    while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
-      i++;
-    }
-  }
-  if (i == getCastString().length() - 1 && getCastString()[i] == 'f') {
-    return true;
-  }
-  return false;
 }
 
-bool Casting::isDouble() {
-  size_t i = 0;
+void Casting::printInt() {
 
-  if (getCastString()[0] == '-' || getCastString()[0] == '+') {
-    i++;
-  }
-  while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
-    i++;
-  }
-  if (i < getCastString().length() && getCastString()[i] == '.') {
-    i++;
-    while (i < getCastString().length() && std::isdigit(getCastString()[i])) {
-      i++;
-    }
-  }
-  if (i == getCastString().length()) {
-    return true;
-  }
-  return false;
 }
 
-bool Casting::IsPseudoLiteral() {
-  if (this->getCastString() == "nan" || this->getCastString() == "+inf" ||
-      this->getCastString() == "-inf") {
-    return true;
-  } else {
-    return false;
-  }
+void Casting::printChar() {
+
+}
+
+void Casting::printFloat() {
+
+}
+
+void Casting::printDouble() {
+
 }

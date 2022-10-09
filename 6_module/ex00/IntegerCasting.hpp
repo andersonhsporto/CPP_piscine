@@ -1,40 +1,53 @@
 //
-// Created by Anderson Porto on 10/7/22.
+// Created by Anderson Porto on 10/9/22.
 //
 
 #ifndef EX00_INTEGERCASTING_HPP
 #define EX00_INTEGERCASTING_HPP
 
 #include "Casting.hpp"
-#include <iostream>
-#include <cmath>
+#include <cstdlib>
 #include <limits>
 #include <iomanip>
-#include <cstdlib>
 
 class IntegerCasting : public Casting {
-
  public:
+  IntegerCasting();
+
   IntegerCasting(const std::string &str);
 
-  ~IntegerCasting();
+  virtual ~IntegerCasting();
 
   IntegerCasting(IntegerCasting const &other);
 
   IntegerCasting &operator=(IntegerCasting const &other);
 
-  void printCasting();
+  virtual void print();
 
  private:
-  IntegerCasting();
+  void parseInt();
 
-  virtual void castTo();
+  void parseChar();
 
-  virtual bool isValueValid();
+  void parseFloat();
 
-  bool numberIsInteger();
+  void parseDouble();
 
-  int integer;
+  void printInt();
+
+  void printChar();
+
+  void printFloat();
+
+  void printDouble();
+
+  int intValue;
+
+  char charValue;
+
+  float floatValue;
+
+  double doubleValue;
 
 };
 

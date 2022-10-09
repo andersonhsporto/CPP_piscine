@@ -7,9 +7,6 @@
 
 #include <string>
 #include "IntegerCasting.hpp"
-#include "CharCasting.hpp"
-#include "FloatCasting.hpp"
-#include "DoubleCasting.hpp"
 
 class ConvertService {
 
@@ -27,15 +24,19 @@ class ConvertService {
  private:
   ConvertService();
 
+  bool isChar();
+
+  bool integerNumber();
+
+  bool isValidInt();
+
+  bool isFloat();
+
+  bool isDouble();
+
   std::string string;
 
-  CharCasting *charCasting;
-
   IntegerCasting *integerCasting;
-
-  FloatCasting *floatCasting;
-
-  DoubleCasting *doubleCasting;
 
 };
 

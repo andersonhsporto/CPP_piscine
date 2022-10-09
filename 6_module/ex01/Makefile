@@ -1,9 +1,9 @@
-NAME	= convert
+NAME	= Serialization
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 
+CFLAGS	= -Wall -Wextra -std=c++98 #-Werror 
 
-SRC		= main.cpp ConvertService.cpp Casting.cpp IntegerCasting.cpp
+SRC		= main.cpp 
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)

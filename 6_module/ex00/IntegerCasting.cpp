@@ -1,15 +1,14 @@
 //
-// Created by Anderson Porto on 10/7/22.
+// Created by Anderson Porto on 10/9/22.
 //
 
 #include "IntegerCasting.hpp"
 
-IntegerCasting::IntegerCasting() {
-  this->integer = 0;
+IntegerCasting::IntegerCasting() : Casting() {
+
 }
 
 IntegerCasting::IntegerCasting(const std::string &str) : Casting(str) {
-  this->integer = 0;
 }
 
 IntegerCasting::~IntegerCasting() {
@@ -23,53 +22,102 @@ IntegerCasting::IntegerCasting(const IntegerCasting &other) : Casting(other) {
 IntegerCasting &IntegerCasting::operator=(const IntegerCasting &other) {
   if (this != &other) {
     Casting::operator=(other);
-    this->integer = other.integer;
+    this->intValue = other.intValue;
+    this->charValue = other.charValue;
+    this->floatValue = other.floatValue;
+    this->doubleValue = other.doubleValue;
   }
   return *this;
 }
 
-void IntegerCasting::printCasting() {
+void IntegerCasting::print() {
+  printChar();
+  printInt();
+  printFloat();
+  printDouble();
+}
+
+void IntegerCasting::printInt() {
   try {
-    castTo();
-    std::cout << "int: " << integer << std::endl;
+    parseInt();
+    std::cout << "int: " << intValue << std::endl;
   } catch (std::exception &e) {
-    std::cout << "int: " << e.what() << std::endl;
-    return;
+    std::cout << RED << "int: " << e.what() << RESET << std::endl;
   }
 }
 
-void IntegerCasting::castTo() {
-  if (isValueValid() && numberIsInteger()) {
-    Casting::isNotValid();
-    long double value = std::strtod(this->getCastString().c_str(), NULL);
-    this->integer = static_cast<int>(value);
-  } else {
+void IntegerCasting::printChar() {
+  try {
+    parseChar();
+    std::cout << "char: " << charValue << std::endl;
+  } catch (std::exception &e) {
+    std::cout << RED << "char: " << e.what() << RESET << std::endl;
+  }
+}
+
+void IntegerCasting::printFloat() {
+  try {
+    parseFloat();
+    std::cout << "float: " << floatValue << std::fixed << std::setprecision(1) << "f" << std::endl;
+  } catch (std::exception &e) {
+    std::cout << RED << "float: " << e.what() << RESET << std::endl;
+  }
+}
+
+void IntegerCasting::printDouble() {
+  try {
+    parseDouble();
+    std::cout << "double: " << doubleValue << std::fixed << std::setprecision(1) << std::endl;
+  } catch (std::exception &e) {
+    std::cout << RED << "double: " << e.what() << RESET << std::endl;
+  }
+}
+
+void IntegerCasting::parseInt() {
+  long double number = std::strtod(this->getCastString().c_str(), NULL);
+
+  if (static_cast<long long>(number) > std::numeric_limits<int>::max() ||
+      static_cast<long long>(number) < std::numeric_limits<int>::min()) {
     throw ImpossibleException();
-  }
-}
-
-bool IntegerCasting::isValueValid() {
-  std::string input = this->getCastString();
-  long double value = std::strtod(input.c_str(), NULL);
-
-  if (static_cast<long long>(value) > std::numeric_limits<int>::max() ||
-      static_cast<long long>(value) < std::numeric_limits<int>::min()) {
-    return false;
-  } else if (std::isinf(value) && std::isnan(value)) {
-    return false;
   } else {
-    return true;
+    this->intValue = static_cast<int>(number);
   }
 }
 
-bool IntegerCasting::numberIsInteger() {
-  long double number = std::strtod(getCastString().c_str(), NULL);
+void IntegerCasting::parseChar() {
+  long double number = std::strtod(this->getCastString().c_str(), NULL);
 
-  if (number > std::numeric_limits<int>::max() || number < std::numeric_limits<int>::min()) {
-    return false;
-  } else if (std::isinf(number) || std::isnan(number)) {
-    return false;
+  if (static_cast<long long>(number) > std::numeric_limits<char>::max() ||
+      static_cast<long long>(number) < std::numeric_limits<char>::min()) {
+    throw ImpossibleException();
+  } else if (!std::isprint(static_cast<char>(number))) {
+    throw NonDisplayableException();
   } else {
-    return true;
+    this->charValue = static_cast<char>(number);
   }
 }
+
+void IntegerCasting::parseFloat() {
+  long double number = std::strtod(this->getCastString().c_str(), NULL);
+
+  if (number > +std::numeric_limits<float>::infinity() ||
+      number < -std::numeric_limits<float>::infinity()) {
+    throw ImpossibleException();
+  } else {
+    this->floatValue = static_cast<float>(number);
+  }
+}
+
+void IntegerCasting::parseDouble() {
+  long double number = std::strtod(this->getCastString().c_str(), NULL);
+
+  if (number > +std::numeric_limits<double>::infinity() ||
+      number < -std::numeric_limits<double>::infinity()) {
+    throw ImpossibleException();
+  } else {
+    this->doubleValue = static_cast<double>(number);
+  }
+}
+
+
+

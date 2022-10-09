@@ -25,11 +25,9 @@ class Casting {
 
   Casting &operator=(Casting const &other);
 
+  virtual void print() = 0;
+
   const std::string &getCastString() const;
-
-  virtual void printCasting() = 0;
-
-  bool IsPseudoLiteral();
 
   class ImpossibleException : public std::exception {
    public:
@@ -38,23 +36,32 @@ class Casting {
     }
   };
 
- protected:
-  virtual void castTo();
+  class NonDisplayableException : public std::exception {
+   public:
+    const char *what() const throw() {
+      return "Non displayable";
+    }
+  };
 
-  virtual bool isValueValid();
+ private:
+  virtual void parseInt() = 0;
 
-  void isNotValid();
+  virtual void parseChar();
+
+  virtual void parseFloat();
+
+  virtual void parseDouble();
+
+  virtual void printInt();
+
+  virtual void printChar();
+
+  virtual void printFloat();
+
+  virtual void printDouble();
 
   std::string castString;
 
- private:
-  bool isChar();
-
-  bool isInt();
-
-  bool isFloat();
-
-  bool isDouble();
 };
 
 #endif //EX00_CASTING_HPP
