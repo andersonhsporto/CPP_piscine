@@ -47,7 +47,14 @@ void Casting::parseChar() {
 }
 
 void Casting::parseFloat() {
+  long double number = std::strtod(this->getCastString().c_str(), NULL);
 
+  if (number > +std::numeric_limits<float>::infinity() ||
+      number < -std::numeric_limits<float>::infinity()) {
+    throw ImpossibleException();
+  } else {
+    this->floatValue = static_cast<float>(number);
+  }
 }
 
 void Casting::parseDouble() {

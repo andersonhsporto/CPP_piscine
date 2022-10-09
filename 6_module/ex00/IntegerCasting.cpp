@@ -35,21 +35,21 @@ void IntegerCasting::print() {
   printDouble();
 }
 
-void IntegerCasting::printInt() {
-  try {
-    parseInt();
-    std::cout << "int: " << intValue << std::endl;
-  } catch (std::exception &e) {
-    std::cout << RED << "int: " << e.what() << RESET << std::endl;
-  }
-}
-
 void IntegerCasting::printChar() {
   try {
     parseChar();
     std::cout << "char: " << charValue << std::endl;
   } catch (std::exception &e) {
     std::cout << RED << "char: " << e.what() << RESET << std::endl;
+  }
+}
+
+void IntegerCasting::printInt() {
+  try {
+    parseInt();
+    std::cout << "int: " << intValue << std::endl;
+  } catch (std::exception &e) {
+    std::cout << RED << "int: " << e.what() << RESET << std::endl;
   }
 }
 
@@ -87,14 +87,7 @@ Casting::parseChar();
 }
 
 void IntegerCasting::parseFloat() {
-  long double number = std::strtod(this->getCastString().c_str(), NULL);
-
-  if (number > +std::numeric_limits<float>::infinity() ||
-      number < -std::numeric_limits<float>::infinity()) {
-    throw ImpossibleException();
-  } else {
-    this->floatValue = static_cast<float>(number);
-  }
+  Casting::parseFloat();
 }
 
 void IntegerCasting::parseDouble() {

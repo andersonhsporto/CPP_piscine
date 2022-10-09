@@ -25,9 +25,9 @@ class IntegerCasting : public Casting {
  private:
   IntegerCasting();
 
-  void parseInt();
-
   void parseChar();
+
+  void parseInt();
 
   void parseFloat();
 

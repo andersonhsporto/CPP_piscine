@@ -44,9 +44,9 @@ class Casting {
   };
 
  protected:
-  virtual void parseInt() = 0;
+  virtual void parseChar() = 0;
 
-  virtual void parseChar();
+  virtual void parseInt() = 0;
 
   virtual void parseFloat();
 
