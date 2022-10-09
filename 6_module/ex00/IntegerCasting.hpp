@@ -12,8 +12,6 @@
 
 class IntegerCasting : public Casting {
  public:
-  IntegerCasting();
-
   IntegerCasting(const std::string &str);
 
   virtual ~IntegerCasting();
@@ -25,6 +23,8 @@ class IntegerCasting : public Casting {
   virtual void print();
 
  private:
+  IntegerCasting();
+
   void parseInt();
 
   void parseChar();
@@ -40,15 +40,6 @@ class IntegerCasting : public Casting {
   void printFloat();
 
   void printDouble();
-
-  int intValue;
-
-  char charValue;
-
-  float floatValue;
-
-  double doubleValue;
-
 };
 
 #endif //EX00_INTEGERCASTING_HPP

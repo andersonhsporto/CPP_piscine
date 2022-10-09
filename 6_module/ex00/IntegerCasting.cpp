@@ -5,14 +5,12 @@
 #include "IntegerCasting.hpp"
 
 IntegerCasting::IntegerCasting() : Casting() {
-
 }
 
 IntegerCasting::IntegerCasting(const std::string &str) : Casting(str) {
 }
 
 IntegerCasting::~IntegerCasting() {
-
 }
 
 IntegerCasting::IntegerCasting(const IntegerCasting &other) : Casting(other) {
@@ -85,16 +83,7 @@ void IntegerCasting::parseInt() {
 }
 
 void IntegerCasting::parseChar() {
-  long double number = std::strtod(this->getCastString().c_str(), NULL);
-
-  if (static_cast<long long>(number) > std::numeric_limits<char>::max() ||
-      static_cast<long long>(number) < std::numeric_limits<char>::min()) {
-    throw ImpossibleException();
-  } else if (!std::isprint(static_cast<char>(number))) {
-    throw NonDisplayableException();
-  } else {
-    this->charValue = static_cast<char>(number);
-  }
+Casting::parseChar();
 }
 
 void IntegerCasting::parseFloat() {
