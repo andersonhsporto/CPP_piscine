@@ -2,38 +2,32 @@
 // Created by Anderson Porto on 10/6/22.
 //
 
-#include <cstdlib>
-#include <limits>
-#include <cmath>
 #include "ConvertService.hpp"
 
 ConvertService::ConvertService(std::string str) {
   this->string = str;
-  this->integerCasting = new IntegerCasting(str);
 }
 
 ConvertService::~ConvertService() {
-  delete this->integerCasting;
-
 }
 
 ConvertService::ConvertService(const ConvertService &other) {
   this->string = other.string;
-  this->integerCasting = other.integerCasting;
 
 }
 
 ConvertService &ConvertService::operator=(const ConvertService &other) {
   if (this != &other) {
     this->string = other.string;
-    this->integerCasting = other.integerCasting;
   }
   return *this;
 }
 
 void ConvertService::convert() {
+  std::cout << string << std::endl;
   if (integerNumber()) {
-    integerCasting->print();
+    IntegerCasting integerCasting(string);
+    integerCasting.print();
     return;
   }
   std::cout << GREEN << "ELSE IF" << RESET << std::endl;
@@ -44,7 +38,7 @@ ConvertService::ConvertService() {
 }
 
 bool ConvertService::isChar() {
-  return false;
+  return string.length() == 1 && !isdigit(string[0]);
 }
 
 bool ConvertService::integerNumber() {

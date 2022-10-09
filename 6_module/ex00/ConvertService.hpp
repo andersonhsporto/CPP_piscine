@@ -36,8 +36,6 @@ class ConvertService {
 
   std::string string;
 
-  IntegerCasting *integerCasting;
-
 };
 
 #endif //EX00_CONVERTSERVICE_HPP
