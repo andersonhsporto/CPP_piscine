@@ -3,6 +3,7 @@
 //
 
 #include "ConvertService.hpp"
+#include "CharCasting.hpp"
 
 ConvertService::ConvertService(std::string str) {
   this->string = str;
@@ -24,8 +25,11 @@ ConvertService &ConvertService::operator=(const ConvertService &other) {
 }
 
 void ConvertService::convert() {
-  std::cout << string << std::endl;
-  if (integerNumber()) {
+  if (isChar()) {
+    CharCasting charCasting(string);
+    charCasting.print();
+    return;
+  } else if (integerNumber()) {
     IntegerCasting integerCasting(string);
     integerCasting.print();
     return;
