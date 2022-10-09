@@ -18,21 +18,21 @@ int main(int argc, char **argv) {
 }
 
 void tests() {
-  std::cout << ">>>>>>>>>>>>>>>>>>>Teste 0; " << std::endl;
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 0; " << RESET << std::endl;
   ConvertService *zero = new ConvertService("0");
   zero->convert();
   delete zero;
-  std::cout << ">>>>>>>>>>>>>>>>>>>Fim do teste 0\n" << std::endl;
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 0\n" << RESET << std::endl;
 
-  std::cout << ">>>>>>>>>>>>>>>>>>>Teste 1; " << std::endl;
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 1; " << RESET << std::endl;
   ConvertService *nam = new ConvertService("nam");
   nam->convert();
   delete nam;
-  std::cout << ">>>>>>>>>>>>>>>>>>>Fim do teste 1\n" << std::endl;
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 1\n" << RESET << std::endl;
 
-  std::cout << ">>>>>>>>>>>>>>>>>>>Teste 2; " << std::endl;
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 2; " << RESET << std::endl;
   ConvertService *ft = new ConvertService("42.0f");
   ft->convert();
   delete ft;
-  std::cout << ">>>>>>>>>>>>>>>>>>>Fim do teste 2\n" << std::endl;
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 2\n" << RESET << std::endl;
 }
