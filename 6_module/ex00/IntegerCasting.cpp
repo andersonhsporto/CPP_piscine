@@ -52,14 +52,14 @@ bool IntegerCasting::isValueValid() {
   std::string input = this->getCastString();
   long double value = std::strtod(input.c_str(), NULL);
 
-    if (static_cast<long long>(value) > std::numeric_limits<int>::max() ||
-    static_cast<long long>(value) < std::numeric_limits<int>::min()) {
-        return false;
-    } else if (std::isinf(value) && std::isnan(value)) {
-      return false;
-    } else {
-      return true;
-    }
+  if (static_cast<long long>(value) > std::numeric_limits<int>::max() ||
+      static_cast<long long>(value) < std::numeric_limits<int>::min()) {
+    return false;
+  } else if (std::isinf(value) && std::isnan(value)) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 bool IntegerCasting::numberIsInteger() {
