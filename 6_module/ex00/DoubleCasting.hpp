@@ -6,6 +6,9 @@
 #define EX00_DOUBLECASTING_HPP
 
 #include "Casting.hpp"
+#include <cmath>
+#include <iomanip>
+#include <cstdlib>
 
 class DoubleCasting : public Casting {
  public:
@@ -26,7 +29,7 @@ class DoubleCasting : public Casting {
 
   virtual bool isValueValid();
 
-  double doublefloatingPoint;
+  double doubleFloatingNumber;
 
 };
 
