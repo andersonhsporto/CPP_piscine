@@ -26,8 +26,6 @@ class DoubleCasting : public Casting {
 
   virtual bool isValueValid();
 
-  bool numberIsDoublePoint();
-
   double doublefloatingPoint;
 
 };

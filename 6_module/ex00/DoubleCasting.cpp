@@ -2,6 +2,8 @@
 // Created by Anderson Porto on 10/8/22.
 //
 
+#include <cmath>
+#include <iomanip>
 #include "DoubleCasting.hpp"
 
 DoubleCasting::DoubleCasting(const std::string &str) : Casting(str) {
@@ -21,10 +23,22 @@ DoubleCasting &DoubleCasting::operator=(const DoubleCasting &other) {
     Casting::operator=(other);
     this->doublefloatingPoint = other.doublefloatingPoint;
   }
-    return *this;
+  return *this;
 }
 
 void DoubleCasting::printCasting() {
+  try {
+    castTo();
+    std::cout << "double: " << std::fixed << std::setprecision(1) << doublefloatingPoint
+              << std::endl;
+  } catch (std::exception &e) {
+    if (Casting::IsPseudoLiteral()) {
+      std::cout << "double: " << getCastString() << std::endl;
+    } else {
+      std::cout << "double: impossible" << std::endl;
+    }
+    return;
+  }
 
 }
 
@@ -33,13 +47,22 @@ DoubleCasting::DoubleCasting() : Casting() {
 }
 
 void DoubleCasting::castTo() {
-  Casting::castTo();
+  if (isValueValid()) {
+    Casting::isNotValid();
+    long double value = std::strtod(this->getCastString().c_str(), NULL);
+    this->doublefloatingPoint = static_cast<double>(value);
+  } else {
+    throw ImpossibleException();
+  }
 }
 
 bool DoubleCasting::isValueValid() {
-  return Casting::isValueValid();
-}
+  std::string input = this->getCastString();
+  long double value = std::strtod(input.c_str(), NULL);
 
-bool DoubleCasting::numberIsDoublePoint() {
-  return false;
+  if (std::isinf(value) && std::isnan(value)) {
+    return false;
+  } else {
+    return true;
+  }
 }
