@@ -32,16 +32,16 @@ void IntegerCasting::printCasting() {
   try {
     castTo();
     std::cout << "int: " << integer << std::endl;
-  } catch (Casting::ImpossibleException &e) {
-    std::cout << "int: impossible" << std::endl;
+  } catch (std::exception &e) {
+    std::cout << "int: " << e.what() << std::endl;
     return;
   }
 }
 
 void IntegerCasting::castTo() {
   if (isValueValid() && numberIsInteger()) {
+    Casting::isNotValid();
     long double value = std::strtod(this->getCastString().c_str(), NULL);
-
     this->integer = static_cast<int>(value);
   } else {
     throw ImpossibleException();
@@ -50,18 +50,16 @@ void IntegerCasting::castTo() {
 
 bool IntegerCasting::isValueValid() {
   std::string input = this->getCastString();
-  size_t index = 0;
+  long double value = std::strtod(input.c_str(), NULL);
 
-  if (input.c_str()[0] == '-' || input.c_str()[0] == '+') {
-    index = 1;
-  }
-  while (index < input.length()) {
-    if (!isdigit(input.c_str()[index])) {
+    if (static_cast<long long>(value) > std::numeric_limits<int>::max() ||
+    static_cast<long long>(value) < std::numeric_limits<int>::min()) {
+        return false;
+    } else if (std::isinf(value) && std::isnan(value)) {
       return false;
+    } else {
+      return true;
     }
-    index++;
-  }
-  return index == input.length();
 }
 
 bool IntegerCasting::numberIsInteger() {
