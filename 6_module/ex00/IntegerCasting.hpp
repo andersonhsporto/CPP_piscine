@@ -6,9 +6,6 @@
 #define EX00_INTEGERCASTING_HPP
 
 #include "Casting.hpp"
-#include <cstdlib>
-#include <limits>
-#include <iomanip>
 
 class IntegerCasting : public Casting {
  public:

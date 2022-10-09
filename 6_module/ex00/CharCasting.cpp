@@ -79,7 +79,7 @@ void CharCasting::printInt() {
 void CharCasting::printFloat() {
   try {
     parseFloat();
-    std::cout << "float: " << floatValue << std::fixed << std::setprecision(1) << "f" << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
   } catch (std::exception &e) {
     std::cout << RED << "float: " << e.what() << RESET << std::endl;
   }
@@ -88,7 +88,7 @@ void CharCasting::printFloat() {
 void CharCasting::printDouble() {
   try {
     parseDouble();
-    std::cout << "double: " << doubleValue << std::fixed << std::setprecision(1) << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(1) << doubleValue << std::endl;
   } catch (std::exception &e) {
     std::cout << RED << "double: " << e.what() << RESET << std::endl;
   }

@@ -3,11 +3,15 @@
 //
 
 #include "IntegerCasting.hpp"
+#include <cstdlib>
+#include <limits>
+#include <iomanip>
 
 IntegerCasting::IntegerCasting() : Casting() {
 }
 
 IntegerCasting::IntegerCasting(const std::string &str) : Casting(str) {
+
 }
 
 IntegerCasting::~IntegerCasting() {
@@ -56,7 +60,7 @@ void IntegerCasting::printInt() {
 void IntegerCasting::printFloat() {
   try {
     parseFloat();
-    std::cout << "float: " << floatValue << std::fixed << std::setprecision(1) << "f" << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
   } catch (std::exception &e) {
     std::cout << RED << "float: " << e.what() << RESET << std::endl;
   }
@@ -65,7 +69,7 @@ void IntegerCasting::printFloat() {
 void IntegerCasting::printDouble() {
   try {
     parseDouble();
-    std::cout << "double: " << doubleValue << std::fixed << std::setprecision(1) << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(1) << doubleValue << std::endl;
   } catch (std::exception &e) {
     std::cout << RED << "double: " << e.what() << RESET << std::endl;
   }
@@ -87,7 +91,14 @@ Casting::parseChar();
 }
 
 void IntegerCasting::parseFloat() {
-  Casting::parseFloat();
+  long double number = std::strtod(this->getCastString().c_str(), NULL);
+
+  if (number > +std::numeric_limits<float>::infinity() ||
+      number < -std::numeric_limits<float>::infinity()) {
+    throw ImpossibleException();
+  } else {
+    this->floatValue = static_cast<float>(number);
+  }
 }
 
 void IntegerCasting::parseDouble() {

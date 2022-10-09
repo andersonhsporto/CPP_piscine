@@ -4,6 +4,7 @@
 
 #include "ConvertService.hpp"
 #include "CharCasting.hpp"
+#include "FloatCasting.hpp"
 
 ConvertService::ConvertService(std::string str) {
   this->string = str;
@@ -33,6 +34,10 @@ void ConvertService::convert() {
     IntegerCasting integerCasting(string);
     integerCasting.print();
     return;
+  } else if (isFloat()) {
+    FloatCasting floatCasting(string);
+    floatCasting.print();
+    return;
   }
   std::cout << GREEN << "ELSE IF" << RESET << std::endl;
 }
@@ -60,7 +65,18 @@ bool ConvertService::integerNumber() {
 }
 
 bool ConvertService::isFloat() {
-  return false;
+  std::string input = this->string;
+
+  for (unsigned long i = 0; i < input.length(); i++) {
+    if ((input[0] == '-') || (input[0] == '+')) {
+      continue;
+    }
+    if (std::isdigit(input[i]) == false && input[i] != '.' && input[i] != 'f') {
+      return false;
+    }
+  }
+  return (input[input.length() - 1] == 'f')
+      && (input.find_first_not_of('.', 1) != input.find_last_of('.'));
 }
 
 bool ConvertService::isDouble() {
