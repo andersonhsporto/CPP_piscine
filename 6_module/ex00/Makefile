@@ -4,7 +4,7 @@ CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 
 
 SRC		= main.cpp ConvertService.cpp Casting.cpp IntegerCasting.cpp \
-CharCasting.cpp
+		  CharCasting.cpp FloatCasting.cpp #DoubleCasting.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
