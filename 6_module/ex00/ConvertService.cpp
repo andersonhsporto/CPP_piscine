@@ -27,21 +27,18 @@ void ConvertService::convert() {
   if (isChar()) {
     CharCasting charCasting(string);
     charCasting.print();
-    return;
-  } else if (integerNumber()) {
-    IntegerCasting integerCasting(string);
-    integerCasting.print();
-    return;
   } else if (isFloat()) {
     FloatCasting floatCasting(string);
     floatCasting.print();
-    return;
   } else if (isDouble()) {
     DoubleCasting doubleCasting(string);
     doubleCasting.print();
-    return;
+    std::cout << "TESTE\n";
+  } else if (integerNumber()) {
+    IntegerCasting integerCasting(string);
+    integerCasting.print();
   } else {
-    std::cout << RED << "\nImpossible to convert" << RESET << std::endl;
+    std::cout << RED << "\nImpossible to convert\n" << RESET << std::endl;
   }
 
 }
@@ -58,10 +55,10 @@ bool ConvertService::integerNumber() {
   std::string input = this->string;
 
   for (unsigned long i = 0; i < input.length(); i++) {
-    if ((input[0] == '-') || (input[0] == '+')) {
+    if ((i == 0 && input[i] == '-') || (i == 0 && input[i] == '+')) {
       continue;
     }
-    if (std::isdigit(input[i]) == false) {
+    if (std::isdigit(input.c_str()[i]) == false) {
       return false;
     }
   }
@@ -75,7 +72,7 @@ bool ConvertService::isFloat() {
     return true;
   }
   for (unsigned long i = 0; i < input.length(); i++) {
-    if ((input[0] == '-') || (input[0] == '+')) {
+    if ((i == 0 && input[i] == '-') || (i == 0 && input[i] == '+')) {
       continue;
     }
     if (std::isdigit(input[i]) == false && input[i] != '.' && input[i] != 'f') {
@@ -93,12 +90,13 @@ bool ConvertService::isDouble() {
     return true;
   }
   for (unsigned long i = 0; i < input.length(); i++) {
-    if ((input[0] == '-') || (input[0] == '+')) {
+    if ((i == 0 && input[i] == '-') || (i == 0 && input[i] == '+')) {
       continue;
     }
     if (std::isdigit(input[i]) == false && input[i] != '.' && input[i] != 'f') {
       return false;
     }
   }
+  std::cout << "<<<<<<<<<<<<<<" << input << std::endl;
   return (input.find_first_not_of('.', 1) != input.find_last_of('.'));
 }
