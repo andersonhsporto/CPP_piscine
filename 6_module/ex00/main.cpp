@@ -25,9 +25,9 @@ void tests() {
   std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 0\n" << RESET << std::endl;
 
   std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 1; " << RESET << std::endl;
-  ConvertService *nam = new ConvertService("nam");
-  nam->convert();
-  delete nam;
+  ConvertService *nan = new ConvertService("nan");
+  nan->convert();
+  delete nan;
   std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 1\n" << RESET << std::endl;
 
   std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 2; " << RESET << std::endl;
