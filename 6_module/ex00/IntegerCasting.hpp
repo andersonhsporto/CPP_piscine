@@ -32,9 +32,9 @@ class IntegerCasting : public Casting {
 
   virtual bool isValueValid();
 
-  int integer;
-
   bool numberIsInteger();
+
+  int integer;
 
 };
 
