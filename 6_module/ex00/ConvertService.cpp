@@ -33,7 +33,6 @@ void ConvertService::convert() {
   } else if (isDouble()) {
     DoubleCasting doubleCasting(string);
     doubleCasting.print();
-    std::cout << "TESTE\n";
   } else if (integerNumber()) {
     IntegerCasting integerCasting(string);
     integerCasting.print();
@@ -97,6 +96,5 @@ bool ConvertService::isDouble() {
       return false;
     }
   }
-  std::cout << "<<<<<<<<<<<<<<" << input << std::endl;
   return (input.find_first_not_of('.', 1) != input.find_last_of('.'));
 }
