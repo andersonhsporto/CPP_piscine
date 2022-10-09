@@ -5,7 +5,6 @@
 #include "Casting.hpp"
 
 Casting::Casting() {
-  std::cout << "Casting default constructor called" << std::endl;
 
 }
 
