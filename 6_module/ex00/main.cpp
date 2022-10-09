@@ -8,7 +8,7 @@ int main(int argc, char **argv) {
     tests();
     return 0;
   } else if (argc != 2) {
-    std::cout << "Usage: ./convert [value]" << std::endl;
+    std::cout << "Usage: ./convert [value] or ./convert -t to run tests" << std::endl;
     return 1;
   }
   ConvertService *convertService = new ConvertService(argv[1]);
