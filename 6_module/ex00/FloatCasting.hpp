@@ -17,10 +17,10 @@ class FloatCasting : public Casting {
 
   FloatCasting &operator=(FloatCasting const &other);
 
+  void printCasting();
+
  private:
   FloatCasting();
-
-  void printCasting();
 
   void castTo();
 

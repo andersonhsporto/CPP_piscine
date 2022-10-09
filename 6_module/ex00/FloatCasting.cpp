@@ -56,10 +56,7 @@ bool FloatCasting::isValueValid() {
   std::string input = this->getCastString();
   long double value = std::strtod(input.c_str(), NULL);
 
-  if (value > std::numeric_limits<float>::max() ||
-      value < std::numeric_limits<float>::min()) {
-    return false;
-  } else if (std::isinf(value) && std::isnan(value)) {
+  if (std::isinf(value) && std::isnan(value)) {
     return false;
   } else {
     return true;
