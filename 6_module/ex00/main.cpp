@@ -1,11 +1,10 @@
-#include <iostream>
 #include "ConvertService.hpp"
 
 void tests();
 
 int main(int argc, char **argv) {
   if (argc == 2 && std::string(argv[1]) == "-t") {
-//    tests();
+    tests();
     return 0;
   } else if (argc != 2) {
     std::cout << "Usage: ./convert [value] or ./convert -t to run tests" << std::endl;
@@ -16,23 +15,23 @@ int main(int argc, char **argv) {
   delete convertService;
   return 0;
 }
-//
-//void tests() {
-//  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 0; " << RESET << std::endl;
-//  ConvertService *zero = new ConvertService("0");
-//  zero->convert();
-//  delete zero;
-//  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 0\n" << RESET << std::endl;
-//
-//  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 1; " << RESET << std::endl;
-//  ConvertService *nan = new ConvertService("nan");
-//  nan->convert();
-//  delete nan;
-//  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 1\n" << RESET << std::endl;
-//
-//  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 2; " << RESET << std::endl;
-//  ConvertService *ft = new ConvertService("42.0f");
-//  ft->convert();
-//  delete ft;
-//  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 2\n" << RESET << std::endl;
-//}
+
+void tests() {
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 0; " << RESET << std::endl;
+  ConvertService *zero = new ConvertService("0");
+  zero->convert();
+  delete zero;
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 0\n" << RESET << std::endl;
+
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 1; " << RESET << std::endl;
+  ConvertService *nan = new ConvertService("nan");
+  nan->convert();
+  delete nan;
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 1\n" << RESET << std::endl;
+
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Teste 2; " << RESET << std::endl;
+  ConvertService *ft = new ConvertService("42.0f");
+  ft->convert();
+  delete ft;
+  std::cout << GREEN << ">>>>>>>>>>>>>>>>>>>Fim do teste 2\n" << RESET << std::endl;
+}

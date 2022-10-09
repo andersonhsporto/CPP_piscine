@@ -3,9 +3,6 @@
 //
 
 #include "IntegerCasting.hpp"
-#include <cstdlib>
-#include <limits>
-#include <iomanip>
 
 IntegerCasting::IntegerCasting() : Casting() {
 }
@@ -87,29 +84,17 @@ void IntegerCasting::parseInt() {
 }
 
 void IntegerCasting::parseChar() {
-Casting::parseChar();
+  Casting::parseChar();
 }
 
 void IntegerCasting::parseFloat() {
-  long double number = std::strtod(this->getCastString().c_str(), NULL);
-
-  if (number > +std::numeric_limits<float>::infinity() ||
-      number < -std::numeric_limits<float>::infinity()) {
-    throw ImpossibleException();
-  } else {
-    this->floatValue = static_cast<float>(number);
-  }
+  parseInt();
+  this->floatValue = static_cast<float>(intValue);
 }
 
 void IntegerCasting::parseDouble() {
-  long double number = std::strtod(this->getCastString().c_str(), NULL);
-
-  if (number > +std::numeric_limits<double>::infinity() ||
-      number < -std::numeric_limits<double>::infinity()) {
-    throw ImpossibleException();
-  } else {
-    this->doubleValue = static_cast<double>(number);
-  }
+  parseInt();
+  this->doubleValue = static_cast<double>(intValue);
 }
 
 

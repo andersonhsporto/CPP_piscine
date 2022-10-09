@@ -88,7 +88,15 @@ void FloatCasting::printFloat() {
     parseFloat();
     std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
   } catch (std::exception &e) {
-    std::cout << RED << "float: " << e.what() << RESET << std::endl;
+    if (Casting::getCastString() == "nanf") {
+      std::cout << "float: " << "nanf" << std::endl;
+    } else if (Casting::getCastString() == "+inff") {
+      std::cout << "float: " << "+inff" << std::endl;
+    } else if (Casting::getCastString() == "-inff") {
+      std::cout << "float: " << "-inff" << std::endl;
+    } else {
+      std::cout << RED << "float: " << e.what() << RESET << std::endl;
+    }
   }
 }
 
@@ -97,6 +105,14 @@ void FloatCasting::printDouble() {
     parseDouble();
     std::cout << "double: " << std::fixed << std::setprecision(1) << doubleValue << std::endl;
   } catch (std::exception &e) {
-    std::cout << RED << "double: " << e.what() << RESET << std::endl;
+    if (Casting::getCastString() == "nanf") {
+      std::cout << "double: " << "nan" << std::endl;
+    } else if (Casting::getCastString() == "+inff") {
+      std::cout << "double: " << "+inf" << std::endl;
+    } else if (Casting::getCastString() == "-inff") {
+      std::cout << "double: " << "-inf" << std::endl;
+    } else {
+      std::cout << RED << "double: " << e.what() << RESET << std::endl;
+    }
   }
 }

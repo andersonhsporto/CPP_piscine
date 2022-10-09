@@ -6,6 +6,9 @@
 #define EX00_DOUBLECASTING_HPP
 
 #include "Casting.hpp"
+#include <cstdlib>
+#include <limits>
+#include <iomanip>
 
 class DoubleCasting : public Casting {
  public:

@@ -7,6 +7,8 @@
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
+#include <limits>
 
 #define RED "\033[1;31m"
 #define GREEN "\033[1;32m"

@@ -2,8 +2,6 @@
 // Created by Anderson Porto on 10/7/22.
 //
 
-#include <cstdlib>
-#include <limits>
 #include "Casting.hpp"
 
 Casting::Casting() {

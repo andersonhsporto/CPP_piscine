@@ -2,8 +2,6 @@
 // Created by Anderson Porto on 10/9/22.
 //
 
-#include <iomanip>
-#include <limits>
 #include "DoubleCasting.hpp"
 
 DoubleCasting::DoubleCasting() : Casting() {
@@ -61,7 +59,15 @@ void DoubleCasting::printFloat() {
     parseFloat();
     std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
   } catch (std::exception &e) {
-    std::cout << RED << "float: " << e.what() << RESET << std::endl;
+    if (Casting::getCastString() == "nan") {
+      std::cout << "float: " << "nanf" << std::endl;
+    } else if (Casting::getCastString() == "+inf") {
+      std::cout << "float: " << "+inff" << std::endl;
+    } else if (Casting::getCastString() == "-inf") {
+      std::cout << "float: " << "-inff" << std::endl;
+    } else {
+      std::cout << RED << "float: " << e.what() << RESET << std::endl;
+    }
   }
 }
 
@@ -70,7 +76,15 @@ void DoubleCasting::printDouble() {
     parseDouble();
     std::cout << "double: " << std::fixed << std::setprecision(1) << doubleValue << std::endl;
   } catch (std::exception &e) {
-    std::cout << RED << "double: " << e.what() << RESET << std::endl;
+    if (Casting::getCastString() == "nan") {
+      std::cout << "double: " << "nan" << std::endl;
+    } else if (Casting::getCastString() == "+inf") {
+      std::cout << "double: " << "+inf" << std::endl;
+    } else if (Casting::getCastString() == "-inf") {
+      std::cout << "double: " << "-inf" << std::endl;
+    } else {
+      std::cout << RED << "double: " << e.what() << RESET << std::endl;
+    }
   }
 }
 

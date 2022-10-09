@@ -3,8 +3,6 @@
 //
 
 #include "ConvertService.hpp"
-#include "CharCasting.hpp"
-#include "FloatCasting.hpp"
 
 ConvertService::ConvertService(std::string str) {
   this->string = str;
@@ -38,8 +36,14 @@ void ConvertService::convert() {
     FloatCasting floatCasting(string);
     floatCasting.print();
     return;
+  } else if (isDouble()) {
+    DoubleCasting doubleCasting(string);
+    doubleCasting.print();
+    return;
+  } else {
+    std::cout << RED << "\nImpossible to convert" << RESET << std::endl;
   }
-  std::cout << GREEN << "ELSE IF" << RESET << std::endl;
+
 }
 
 ConvertService::ConvertService() {
@@ -67,6 +71,9 @@ bool ConvertService::integerNumber() {
 bool ConvertService::isFloat() {
   std::string input = this->string;
 
+  if (input == "nanf" || input == "+inff" || input == "-inff") {
+    return true;
+  }
   for (unsigned long i = 0; i < input.length(); i++) {
     if ((input[0] == '-') || (input[0] == '+')) {
       continue;
@@ -80,5 +87,18 @@ bool ConvertService::isFloat() {
 }
 
 bool ConvertService::isDouble() {
-  return false;
+  std::string input = this->string;
+
+  if (input == "nan" || input == "+inf" || input == "-inf") {
+    return true;
+  }
+  for (unsigned long i = 0; i < input.length(); i++) {
+    if ((input[0] == '-') || (input[0] == '+')) {
+      continue;
+    }
+    if (std::isdigit(input[i]) == false && input[i] != '.' && input[i] != 'f') {
+      return false;
+    }
+  }
+  return (input.find_first_not_of('.', 1) != input.find_last_of('.'));
 }

@@ -6,6 +6,7 @@
 #define EX00_CHARCASTING_HPP
 
 #include "Casting.hpp"
+#include <iomanip>
 
 class CharCasting : public Casting {
  public:

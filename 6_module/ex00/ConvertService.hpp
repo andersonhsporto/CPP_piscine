@@ -5,8 +5,11 @@
 #ifndef EX00_CONVERTSERVICE_HPP
 #define EX00_CONVERTSERVICE_HPP
 
-#include <string>
 #include "IntegerCasting.hpp"
+#include "CharCasting.hpp"
+#include "FloatCasting.hpp"
+#include "DoubleCasting.hpp"
+#include <string>
 
 class ConvertService {
 
