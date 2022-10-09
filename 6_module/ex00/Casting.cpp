@@ -2,6 +2,8 @@
 // Created by Anderson Porto on 10/7/22.
 //
 
+#include <cstdlib>
+#include <limits>
 #include "Casting.hpp"
 
 Casting::Casting() {
@@ -32,7 +34,16 @@ const std::string &Casting::getCastString() const {
 }
 
 void Casting::parseChar() {
+  long double number = std::strtod(this->getCastString().c_str(), NULL);
 
+  if (static_cast<long long>(number) > std::numeric_limits<char>::max() ||
+      static_cast<long long>(number) < std::numeric_limits<char>::min()) {
+    throw ImpossibleException();
+  } else if (!std::isprint(static_cast<char>(number))) {
+    throw NonDisplayableException();
+  } else {
+    this->charValue = static_cast<char>(number);
+  }
 }
 
 void Casting::parseFloat() {

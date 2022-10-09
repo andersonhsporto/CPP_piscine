@@ -43,7 +43,7 @@ class Casting {
     }
   };
 
- private:
+ protected:
   virtual void parseInt() = 0;
 
   virtual void parseChar();
@@ -61,6 +61,14 @@ class Casting {
   virtual void printDouble();
 
   std::string castString;
+
+  int intValue;
+
+  char charValue;
+
+  float floatValue;
+
+  double doubleValue;
 
 };
 
