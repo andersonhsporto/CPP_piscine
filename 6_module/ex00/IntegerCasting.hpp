@@ -22,14 +22,6 @@ class IntegerCasting : public Casting {
  private:
   IntegerCasting();
 
-  void parseChar();
-
-  void parseInt();
-
-  void parseFloat();
-
-  void parseDouble();
-
   void printInt();
 
   void printChar();
@@ -37,6 +29,14 @@ class IntegerCasting : public Casting {
   void printFloat();
 
   void printDouble();
+
+  void parseChar();
+
+  void parseInt();
+
+  void parseFloat();
+
+  void parseDouble();
 };
 
 #endif //EX00_INTEGERCASTING_HPP
