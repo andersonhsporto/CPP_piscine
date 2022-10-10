@@ -1,12 +1,14 @@
 NAME	= Array
 
 CC		= c++
-CFLAGS	= -Wall -Wextra  -std=c++98 #-Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
+INCLUDE =	-I ./
+HEADERS	= Array.hpp
 
 SRC		= main.cpp
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
+%.o: %.cpp $(HEADER)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:%.cpp=%.o)
 
 OBJ		= $(SRC:%.cpp=%.o)
 
