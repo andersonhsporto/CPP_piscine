@@ -42,7 +42,10 @@
 # Vscode project files
 .vscode
 
+# Javascript project files
 *.js
+
+# Binary files
 *replace
 PPhonebook
 GBUBank
@@ -66,3 +69,4 @@ Polymorphism
 Bureaucrat
 Intern
 convert
+Serialization
