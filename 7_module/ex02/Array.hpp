@@ -7,6 +7,10 @@
 
 #include <exception>
 #include <cstdlib>
+#include <iostream>
+
+#define GREEN "\033[1;32m"
+#define RESET "\033[0m"
 
 template<typename T>
 class Array {
@@ -51,10 +55,32 @@ class Array {
     return array[index];
   }
 
+  const T &operator[](int index) const {
+    if (static_cast<unsigned int>(index) >= length || index < 0)
+      throw IndexOutOfBoundsException();
+    return array[index];
+  }
+
   // member function size() that returns the number of elements in the array.
   // This member function takes no parameter and returns an unsigned int.
   unsigned int size() const {
-    return this->size;
+    return this->length;
+  }
+
+  void print() const {
+    if (this->length == 1) {
+      std::cout << GREEN << '{' << this->array[0] << '}' << RESET << std::endl;
+      return;
+    }
+    for (unsigned int i = 0; i < length; i++) {
+      if (i == 0) {
+        std::cout << GREEN << "{";
+      } else if (i == length - 1) {
+        std::cout << array[i] << "}" << RESET << std::endl;
+        break;
+      }
+      std::cout << array[i] << ", ";
+    }
   }
 
   // Exception class iherited from std::exception that is thrown when an index is out of bounds.
@@ -71,5 +97,21 @@ class Array {
   unsigned int length;
 
 };
+
+void testEmptyArray();
+
+void testArrayWithSize();
+
+void testNegativeIndex();
+
+void testIndexSizeOfArray();
+
+void testAccesibleReading();
+
+void testAccesibleWriting();
+
+void testCopy();
+
+void testConstWriting();
 
 #endif //EX02_ARRAY_HPP
