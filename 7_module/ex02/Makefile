@@ -7,7 +7,7 @@ HEADERS	= Array.hpp
 
 SRC		= main.cpp
 
-%.o: %.cpp $(HEADER)
+%.o: %.cpp $(HEADERS)
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:%.cpp=%.o)
 
 OBJ		= $(SRC:%.cpp=%.o)
