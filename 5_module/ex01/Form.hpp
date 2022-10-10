@@ -33,6 +33,8 @@ class Form {
 
   void beSigned(const Bureaucrat &bureaucrat);
 
+  void setIsSigned(bool is_signed);
+
   class GradeTooHighException : public std::exception {
    public:
     const char *what() const throw() {

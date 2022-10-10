@@ -1,10 +1,9 @@
-NAME	= Intern
+NAME	= Serialization
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRC		= main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp \
-	      RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+SRC		= main.cpp 
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)

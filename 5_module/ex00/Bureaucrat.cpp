@@ -55,6 +55,10 @@ int Bureaucrat::getGrade() const {
   return grade;
 }
 
+void Bureaucrat::setGrade(int grade) {
+  Bureaucrat::grade = grade;
+}
+
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {
   out <<
       BLUE <<

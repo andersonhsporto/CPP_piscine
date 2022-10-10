@@ -1,10 +1,13 @@
-NAME	= Intern
+NAME	= Identify
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRC		= main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp \
-	      RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+SRC		= main.cpp \
+		  Base.cpp \
+		  A.cpp \
+		  B.cpp \
+		  C.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)

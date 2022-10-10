@@ -42,7 +42,10 @@
 # Vscode project files
 .vscode
 
+# Javascript project files
 *.js
+
+# Binary files
 *replace
 PPhonebook
 GBUBank
@@ -65,3 +68,6 @@ fragTrap
 Polymorphism
 Bureaucrat
 Intern
+convert
+Serialization
+Identify

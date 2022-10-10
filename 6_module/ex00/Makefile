@@ -1,10 +1,10 @@
-NAME	= Intern
+NAME	= convert
 
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 
 
-SRC		= main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp \
-	      RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+SRC		= main.cpp ConvertService.cpp Casting.cpp IntegerCasting.cpp \
+		  CharCasting.cpp FloatCasting.cpp DoubleCasting.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)

@@ -1,6 +1,7 @@
 #include "Bureaucrat.hpp"
 
 void testGradeTooHighException();
+
 void testGradeTooLowException();
 
 int main() {
