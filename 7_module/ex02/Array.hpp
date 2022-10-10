@@ -21,6 +21,13 @@ class Array {
   // Construction with a size parameter: Creates an array of the given size
   Array(unsigned int length) : array(new T[length]), length(length) {}
 
+  // Construction using *int as parameter
+  Array(const int *array, unsigned int length) : array(new T[length]), length(length) {
+    for (unsigned int i = 0; i < length; i++) {
+      this->array[i] = array[i];
+    }
+  }
+
   // Construction by copy and assignment operator. In both cases, modifying either the
   //original or the copy should not affect the other.
   Array(const Array &other) : array(new T[other.length]()), length(other.length) {
