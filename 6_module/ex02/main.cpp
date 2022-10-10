@@ -40,7 +40,6 @@ Base *generate(void) {
 
 void identify(Base *p) {
 
-  A *a = dynamic_cast<A *>(p);
   B *b = dynamic_cast<B *>(p);
   C *c = dynamic_cast<C *>(p);
 
@@ -51,7 +50,7 @@ void identify(Base *p) {
   } else if (c) {
     std::cout << "Identify type by *: C" << std::endl;
   } else {
-    std::cout << "Identify type by *: is unknown" << std::endl;
+    std::cout << "Identify type by *: unknown" << std::endl;
   }
 }
 
