@@ -11,5 +11,4 @@ class C : public Base {
 
 };
 
-
 #endif //EX02_C_HPP

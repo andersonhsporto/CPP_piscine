@@ -1,9 +1,13 @@
-NAME	= Serialization
+NAME	= Identify
 
 CC		= c++
 CFLAGS	= -Wall -Wextra -std=c++98 #-Werror
 
-SRC		= main.cpp
+SRC		= main.cpp \
+		  Base.cpp \
+		  A.cpp \
+		  B.cpp \
+		  C.cpp
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=%.o)
