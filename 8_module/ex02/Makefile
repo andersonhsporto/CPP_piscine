@@ -3,9 +3,9 @@ NAME	= Mutated
 CC		= c++
 CFLAGS	= -Wall -Wextra  -std=c++98 #-Werror
 INCLUDE =	-I ./
-HEADERS	= MutantStack.hpp
+HEADERS	= main.cpp MutantStack.hpp
 
-SRC		= main.cpp MutantStack.cpp
+SRC		= main.cpp
 
 %.o: %.cpp $(HEADERS)
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:%.cpp=%.o)
