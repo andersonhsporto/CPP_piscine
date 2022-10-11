@@ -21,7 +21,29 @@ int main() {
   iter(tab2, 5, print );
 
   std::cout << "END OF 42 TEST" << std::endl;
-  printArray(tab, 5);
-  printArray(tab2, 5);
+  testIntArrayPlusOne();
+  testStringArrayReplaceWord();
   return 0;
+}
+
+void testIntArrayPlusOne() {
+  std::cout << "\nTeste Somar numero inteiro" << std::endl;
+  int tab3[] = {0, 1, 2, 3, 4};
+
+  std::cout << "Before plusOne: ";
+  printArray(tab3, 5);
+  iter(tab3, 5, plusOne);
+  std::cout << "After plusOne: ";
+  printArray(tab3, 5);
+}
+
+void testStringArrayReplaceWord() {
+  std::cout << "\nTeste Substituicao de Palavra" << std::endl;
+  std::string tab4[] = {"Olá", "Teste", "Palavra"};
+
+  std::cout << "Before replaceWord: ";
+  printArray(tab4, 3);
+  iter(tab4, 3, replaceWord);
+  std::cout << "After replaceWord: ";
+  printArray(tab4, 3);
 }

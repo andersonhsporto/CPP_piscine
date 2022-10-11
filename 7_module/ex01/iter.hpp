@@ -8,7 +8,14 @@
 #include <iostream>
 
 template<typename T>
-void iter(T *arrayAddress, size_t arrayLength, void (*function)(T const &arrayElement)) {
+void iter(const T *arrayAddress, size_t arrayLength, void (*function)(T const &arrayElement)) {
+  for (size_t i = 0; i < arrayLength; i++) {
+    function(arrayAddress[i]);
+  }
+}
+
+template<typename T>
+void iter(T *arrayAddress, size_t arrayLength, void (*function)(T &arrayElement)) {
   for (size_t i = 0; i < arrayLength; i++) {
     function(arrayAddress[i]);
   }
@@ -37,14 +44,8 @@ void printArray(T *arrayAddress, size_t arrayLength) {
   }
 }
 
-void intArrayTest();
+void testIntArrayPlusOne();
 
-void stringArrayTest();
-
-void charArrayTest();
-
-void doubleArrayTest();
-
-void floatArrayTest();
+void testStringArrayReplaceWord();
 
 #endif //EX01_ITER_HPP
