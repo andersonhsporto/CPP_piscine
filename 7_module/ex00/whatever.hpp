@@ -29,7 +29,5 @@ T max(T a, T b) {
 }
 
 void swapTest();
-void minTest();
-void maxTest();
 
 #endif //EX00_WHATEVER_HPP

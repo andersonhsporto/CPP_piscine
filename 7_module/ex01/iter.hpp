@@ -8,7 +8,7 @@
 #include <iostream>
 
 template<typename T>
-void iter(T *arrayAddress, size_t arrayLength, void (*function)(T &arrayElement)) {
+void iter(T *arrayAddress, size_t arrayLength, void (*function)(T const &arrayElement)) {
   for (size_t i = 0; i < arrayLength; i++) {
     function(arrayAddress[i]);
   }
