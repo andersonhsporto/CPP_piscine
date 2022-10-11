@@ -2,6 +2,7 @@
 // Created by Anderson Porto on 10/10/22.
 //
 
+#include <numeric>
 #include "Span.hpp"
 
 Span::Span() {
@@ -38,25 +39,30 @@ void Span::addNumber(int number) {
 }
 
 int Span::shortestSpan() {
-  if (this->numbers.size() < 2)
+  if (this->numbers.size() < 2) {
     throw SpanEmptyException();
+  }
   std::list<int> sorted = this->numbers;
   sorted.sort();
-  int shortest = std::numeric_limits<int>::max();
+
+  int min = std::numeric_limits<int>::max();
+
   for (std::list<int>::iterator it = sorted.begin(); it != --sorted.end(); it++) {
     int diff = *++it - *--it;
-    if (diff < shortest)
-      shortest = diff;
+
+    if (diff < min) {
+      min = diff;
+    }
   }
-  return shortest;
+  return min;
 }
 
 int Span::longestSpan() {
   if (this->numbers.size() < 2)
     throw SpanEmptyException();
-  std::list<int> sorted = this->numbers;
-  sorted.sort();
-  return *--sorted.end() - *sorted.begin();
+  return std::abs(
+      *std::max_element(this->numbers.begin(), this->numbers.end()) -
+          *std::min_element(this->numbers.begin(), this->numbers.end()));
 }
 
 void Span::addRange(std::list<int>::iterator begin, std::list<int>::iterator end) {

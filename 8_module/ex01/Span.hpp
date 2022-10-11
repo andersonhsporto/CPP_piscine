@@ -9,6 +9,7 @@
 #include <iostream>
 #include <exception>
 #include <list>
+#include <algorithm>
 
 class Span {
  public:
