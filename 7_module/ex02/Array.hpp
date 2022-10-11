@@ -62,6 +62,8 @@ class Array {
     return array[index];
   }
 
+  // When accessing an element with the [ ] operator, if its index is out of bounds, an
+  // std::exception is thrown
   const T &operator[](int index) const {
     if (static_cast<unsigned int>(index) >= length || index < 0)
       throw IndexOutOfBoundsException();
@@ -74,6 +76,7 @@ class Array {
     return this->length;
   }
 
+  // member function print() that prints the content of the array.
   void print() const {
     if (this->length == 1) {
       std::cout << GREEN << '{' << this->array[0] << '}' << RESET << std::endl;
