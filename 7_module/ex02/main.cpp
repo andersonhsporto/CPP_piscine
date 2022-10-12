@@ -113,11 +113,11 @@ void testCopy() {
 }
 
 void testConstWriting() {
-  int *array = new int[2];
-  array[0] = 4;
-  array[1] = 2;
-  const Array<int> arrayWithSize(array, 2);
-  delete[] array;
+  int *intArray = new int[2];
+  intArray[0] = 4;
+  intArray[1] = 2;
+  const Array<int> arrayWithSize(intArray, 2);
+  delete[] intArray;
   std::cout << "Testing const writing" << std::endl;
   std::cout << "arrayWithSize[0]: " << arrayWithSize[0] << std::endl;
   std::cout << "arrayWithSize[1]: " << arrayWithSize[1] << std::endl;
