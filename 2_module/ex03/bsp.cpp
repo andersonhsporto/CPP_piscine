@@ -10,7 +10,7 @@ Fixed determinantPart2(Point const a, Point const b, Point const c);
 
 Fixed findDeterminant(Point const a, Point const b, Point const c);
 
-Fixed findTriangleArea(const Point a, const Point b, const Point c);
+Fixed findTriangleArea(Point const a, const Point b, const Point c);
 
 Fixed areaSum(Point const a, Point const b, Point const c, Point const point);
 
