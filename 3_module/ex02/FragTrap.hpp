@@ -14,26 +14,23 @@
 #define F_ASSIGNMENT          "FragTrap Copy assignment operator called"
 #define F_DESTRUCTOR          "FragTrap Destructor called"
 
-class FragTrap : public ClapTrap
-{
+class FragTrap : public ClapTrap {
 
-public:
-    FragTrap();
+ public:
+  FragTrap();
 
-    FragTrap(const std::string& name);
+  FragTrap(const std::string &name);
 
-    FragTrap(const FragTrap &fragTrap);
+  FragTrap(const FragTrap &fragTrap);
 
-    ~FragTrap();
+  ~FragTrap();
 
-    FragTrap& operator=(const FragTrap& fragTrap);
+  FragTrap &operator=(const FragTrap &fragTrap);
 
-    void highFivesGuys(void);
-
+  void highFivesGuys(void);
 
 };
 
-std::ostream& operator<<(std::ostream &outStream, FragTrap const &fragTrap);
-
+std::ostream &operator<<(std::ostream &outStream, FragTrap const &fragTrap);
 
 #endif //EX02_FRAGTRAP_HPP

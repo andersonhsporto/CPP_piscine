@@ -7,23 +7,21 @@
 
 #include <iostream>
 
-class Weapon
-{
+class Weapon {
 
-public:
-    Weapon(const std::string& type);
+ public:
+  Weapon(const std::string &type);
 
-    Weapon( void );
+  Weapon(void);
 
-    ~Weapon( void );
+  ~Weapon(void);
 
-    const std::string& getType() const;
+  const std::string &getType() const;
 
-    void setType(const std::string& type);
+  void setType(const std::string &type);
 
-
-private:
-    std::string type;
+ private:
+  std::string type;
 
 };
 

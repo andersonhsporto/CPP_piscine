@@ -5,9 +5,7 @@
 #ifndef EX01_SCAVTRAP_HPP
 #define EX01_SCAVTRAP_HPP
 
-
 #include "ClapTrap.hpp"
-
 
 #define S_CONSTRUCTOR         "ScavTrap Default constructor called"
 #define S_PARAM_CONSTRUCTOR   "ScavTrap Parametric constructor called"
@@ -16,28 +14,27 @@
 #define S_ASSIGNMENT          "ScavTrap Copy assignment operator called"
 #define S_DESTRUCTOR          "ScavTrap Destructor called"
 
-#define CYAN	"\033[1;36m"
+#define CYAN    "\033[1;36m"
 
-class ScavTrap : public ClapTrap
-{
+class ScavTrap : public ClapTrap {
 
-public:
-    ScavTrap();
+ public:
+  ScavTrap();
 
-    ScavTrap(const std::string& name);
+  ScavTrap(const std::string &name);
 
-    ScavTrap(const ScavTrap &scavTrap);
+  ScavTrap(const ScavTrap &scavTrap);
 
-    ~ScavTrap();
+  ~ScavTrap();
 
-    ScavTrap& operator=(const ScavTrap& scavTrap);
+  ScavTrap &operator=(const ScavTrap &scavTrap);
 
-    void guardGate();
+  void guardGate();
 
-	void attack(const std::string& target);
+  void attack(const std::string &target);
 
 };
 
-std::ostream& operator<<(std::ostream &outStream, ScavTrap const &scavTrap);
+std::ostream &operator<<(std::ostream &outStream, ScavTrap const &scavTrap);
 
 #endif //EX01_SCAVTRAP_HPP

@@ -16,34 +16,34 @@
 #include <cmath>
 #include <iostream>
 
-class Fixed
-{
-public:
-    Fixed();
+class Fixed {
+ public:
+  Fixed();
 
-    Fixed (const int integer);
+  Fixed(const int integer);
 
-    Fixed (const float float_nbr);
+  Fixed(const float float_nbr);
 
-    Fixed(const Fixed &fixed);
+  Fixed(const Fixed &fixed);
 
-    Fixed& operator=(const Fixed& fixed);
+  Fixed &operator=(const Fixed &fixed);
 
-    ~Fixed();
+  ~Fixed();
 
-    int getRawBits( void ) const;
+  int getRawBits(void) const;
 
-    void setRawBits(int const raw);
+  void setRawBits(int const raw);
 
-    float toFloat ( void ) const;
+  float toFloat(void) const;
 
-    int toInt( void ) const;
+  int toInt(void) const;
 
-private:
-    int                 rawBits;
-    static const int    fractionalBits;
+ private:
+  int rawBits;
+
+  static const int fractionalBits;
 };
 
-std::ostream& operator<<(std::ostream& stream, const Fixed& fixed);
+std::ostream &operator<<(std::ostream &stream, const Fixed &fixed);
 
 #endif //EX01_FIXED_HPP

@@ -5,22 +5,19 @@
 #ifndef EX00_DOG_HPP
 #define EX00_DOG_HPP
 
-
 #include "Animal.hpp"
 
-class Dog : public Animal
-{
-public:
-    Dog();
+class Dog : public Animal {
+ public:
+  Dog();
 
-    Dog(const Dog &dog);
+  Dog(const Dog &dog);
 
-    ~Dog();
+  ~Dog();
 
-    Dog& operator=(Dog const& rhs);
+  Dog &operator=(Dog const &rhs);
 
-    void makeSound() const;
+  void makeSound() const;
 };
-
 
 #endif //EX00_DOG_HPP

@@ -25,25 +25,24 @@ years whereas you started working here since last month.\n"
 #define RED   "\033[1m\033[31m"
 #define ORANGE "\033[1m\033[33m"
 
-class Harl
-{
-public:
-    Harl();
+class Harl {
+ public:
+  Harl();
 
-    ~Harl();
+  ~Harl();
 
-    void complain(std::string level);
+  void complain(std::string level);
 
-private:
-    void debug(void);
+ private:
+  void debug(void);
 
-    void info(void);
+  void info(void);
 
-    void warning(void);
+  void warning(void);
 
-    void error(void);
+  void error(void);
 
-    int findIndex(std::string level);
+  int findIndex(std::string level);
 
 };
 

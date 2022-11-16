@@ -7,25 +7,24 @@
 
 #include "Weapon.hpp"
 
-class HumanA
-{
+class HumanA {
 
-public:
-    HumanA(const std::string& name, Weapon& type);
+ public:
+  HumanA(const std::string &name, Weapon &type);
 
-    ~HumanA();
+  ~HumanA();
 
-    const Weapon& getType() const;
+  const Weapon &getType() const;
 
-    void setType(const Weapon& type);
+  void setType(const Weapon &type);
 
-    void attack();
+  void attack();
 
-private:
-    std::string Name;
-    Weapon      &Type;
+ private:
+  std::string Name;
+
+  Weapon &Type;
 
 };
-
 
 #endif //EX03_HUMANA_HPP

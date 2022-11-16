@@ -14,9 +14,9 @@
 #define RESET "\033[0m"
 
 typedef struct s_data {
-    std::string name;
-    std::string lastName;
-    int number;
+  std::string name;
+  std::string lastName;
+  int number;
 } Data;
 
 uintptr_t serialize(Data *ptr);

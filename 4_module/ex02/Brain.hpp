@@ -12,20 +12,24 @@
 #define CYAN "\033[0;36m"
 #define RESET "\033[0m"
 
-class Brain
-{
-public:
-	Brain();
-	Brain(std::string ideaName);
-	Brain(const Brain &copy);
-	Brain &operator=(const Brain &copy);
-	~Brain();
+class Brain {
+ public:
+  Brain();
 
-	const std::string *GetIdeas() const;
-	void printIdeas() const;
+  Brain(std::string ideaName);
 
-private:
-	std::string ideas[100];
+  Brain(const Brain &copy);
+
+  Brain &operator=(const Brain &copy);
+
+  ~Brain();
+
+  const std::string *GetIdeas() const;
+
+  void printIdeas() const;
+
+ private:
+  std::string ideas[100];
 };
 
 #endif // EX02_BRAIN_HPP

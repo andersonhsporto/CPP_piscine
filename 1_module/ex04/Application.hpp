@@ -10,16 +10,15 @@
 #include <iostream>
 #include "Service.hpp"
 
-class Application
-{
+class Application {
 
-public:
+ public:
 
-    Application();
+  Application();
 
-    ~Application();
+  ~Application();
 
-    static int Controller(int argc, char *argv[]);
+  static int Controller(int argc, char *argv[]);
 
 };
 

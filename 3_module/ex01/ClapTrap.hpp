@@ -5,7 +5,6 @@
 #ifndef EX01_CLAPTRAP_HPP
 #define EX01_CLAPTRAP_HPP
 
-
 #include <string>
 #include <iostream>
 
@@ -16,51 +15,49 @@
 #define ASSIGNMENT          "ClapTrap Copy assignment operator called"
 #define DESTRUCTOR          "ClapTrap Destructor called"
 
-#define RED 			   "\033[1;31m"
-#define GREEN 			   "\033[1;32m"
-#define BLUE 			   "\033[1;34m"
-#define YELLOW 			   "\033[1;33m"
-#define RESET 			   "\033[0m"
+#define RED               "\033[1;31m"
+#define GREEN               "\033[1;32m"
+#define BLUE               "\033[1;34m"
+#define YELLOW               "\033[1;33m"
+#define RESET               "\033[0m"
 
-class ClapTrap
-{
-public:
-    ClapTrap();
+class ClapTrap {
+ public:
+  ClapTrap();
 
-    ClapTrap(const std::string& name);
+  ClapTrap(const std::string &name);
 
-    ClapTrap(const ClapTrap &claptrap);
+  ClapTrap(const ClapTrap &claptrap);
 
-    ~ClapTrap();
+  ~ClapTrap();
 
-    ClapTrap& operator=(const ClapTrap& clapTrap);
+  ClapTrap &operator=(const ClapTrap &clapTrap);
 
-    const std::string& GetName() const;
+  const std::string &GetName() const;
 
-    unsigned int GetHitPoints() const;
+  unsigned int GetHitPoints() const;
 
-    unsigned int GetEnergyPoints() const;
+  unsigned int GetEnergyPoints() const;
 
-    unsigned int GetAttackDamage() const;
+  unsigned int GetAttackDamage() const;
 
-    void attack(const std::string& target);
+  void attack(const std::string &target);
 
-    void takeDamage(unsigned int amount);
+  void takeDamage(unsigned int amount);
 
-    void beRepaired(unsigned int amount);
+  void beRepaired(unsigned int amount);
 
+ protected:
+  std::string name;
 
-protected:
-    std::string 	name;
+  unsigned int hitPoints;
 
-    unsigned int    hitPoints;
+  unsigned int energyPoints;
 
-    unsigned int    energyPoints;
-
-    unsigned int    attackDamage;
+  unsigned int attackDamage;
 
 };
 
-std::ostream& operator<<(std::ostream &outStream, ClapTrap const &claptrap);
+std::ostream &operator<<(std::ostream &outStream, ClapTrap const &claptrap);
 
 #endif //EX01_CLAPTRAP_HPP

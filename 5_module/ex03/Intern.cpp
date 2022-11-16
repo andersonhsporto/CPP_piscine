@@ -39,17 +39,13 @@ AForm *Intern::makeForm(const std::string &name, const std::string &target) {
       &Intern::createPresidentialPardonForm
   };
   switch (formSelector(name)) {
-    case SHUBBERRY_CREATION_FORM:
-      std::cout << "Intern creates " << name << std::endl;
+    case SHUBBERRY_CREATION_FORM:std::cout << "Intern creates " << name << std::endl;
       return (this->*formCreators[0])(target);
-    case ROBOTOMY_REQUEST_FORM:
-      std::cout << "Intern creates " << name << std::endl;
+    case ROBOTOMY_REQUEST_FORM:std::cout << "Intern creates " << name << std::endl;
       return (this->*formCreators[1])(target);
-    case PRESIDENTIAL_PARDON_FORM:
-      std::cout << "Intern creates " << name << std::endl;
+    case PRESIDENTIAL_PARDON_FORM:std::cout << "Intern creates " << name << std::endl;
       return (this->*formCreators[2])(target);
-    default:
-      std::cout << "Intern can't create " << name << std::endl;
+    default:std::cout << "Intern can't create " << name << std::endl;
       return NULL;
   }
 }

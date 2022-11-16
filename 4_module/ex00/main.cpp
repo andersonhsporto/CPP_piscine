@@ -6,38 +6,36 @@
 
 void test();
 
-int main()
-{
-    const Animal* meta = new Animal();
-    const Animal* dog = new Dog();
-    const Animal* cat = new Cat();
+int main() {
+  const Animal *meta = new Animal();
+  const Animal *dog = new Dog();
+  const Animal *cat = new Cat();
 
-	std::cout << "Getter: " << dog->GetType() << " " << std::endl;
-	std::cout << "Getter: " << cat->GetType() << " " << std::endl;
-    dog->makeSound(); //will output the dog sound!
-    cat->makeSound(); //will output the cat sound!
-    meta->makeSound();
+  std::cout << "Getter: " << dog->GetType() << " " << std::endl;
+  std::cout << "Getter: " << cat->GetType() << " " << std::endl;
+  dog->makeSound(); //will output the dog sound!
+  cat->makeSound(); //will output the cat sound!
+  meta->makeSound();
 
-    delete (meta);
-    delete (dog);
-    delete (cat);
+  delete (meta);
+  delete (dog);
+  delete (cat);
 
-    test();
-    return 0;
+  test();
+  return 0;
 }
 
-void test()
-{
-    std::cout << "\n\n-------------\n\n" << std::endl;
+void test() {
+  std::cout << "\n\n-------------\n\n" << std::endl;
 
-    const WrongAnimal* meta = new WrongAnimal();
-    const WrongAnimal* j = new WrongCat();
+  const WrongAnimal *meta = new WrongAnimal();
+  const WrongAnimal *j = new WrongCat();
 
-    std::cout << "Getter: " << meta->GetType() << " " << std::endl;
-    std::cout << "Getter: " << j->GetType() << " " << std::endl;
-    meta->makeSound(); //will output wrong default!
-    j->makeSound(); //will output wrong cat!
+  std::cout << "Getter: " << meta->GetType() << " " << std::endl;
+  std::cout << "Getter: " << j->GetType() << " " << std::endl;
+  meta->makeSound(); //will output wrong default!
+  j->makeSound(); //will output wrong cat!
 
-    delete meta;
-    delete j;
+  delete meta;
+  delete j;
 }

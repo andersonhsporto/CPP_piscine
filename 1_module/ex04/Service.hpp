@@ -8,33 +8,30 @@
 #include <iostream>
 #include <fstream>
 
-class Service
-{
+class Service {
 
-public:
-    Service();
+ public:
+  Service();
 
-    ~Service();
+  ~Service();
 
-    static bool         ValidParameter(int argc, char *argv[]);
+  static bool ValidParameter(int argc, char *argv[]);
 
-    static void         OpenFile(const char* address, std::ifstream &file);
+  static void OpenFile(const char *address, std::ifstream &file);
 
-    static void         BuildFile(std::ifstream &file, char *argv[]);
+  static void BuildFile(std::ifstream &file, char *argv[]);
 
+ private:
+  static bool ValidArgs(int argc);
 
+  static bool IsValidFile(const char *address);
 
-private:
-    static bool         ValidArgs(int argc);
+  static std::string GetFileName(const char *fileName);
 
-    static bool         IsValidFile(const char* address);
-
-    static std::string  GetFileName(const char *fileName);
-
-    static void         ReplaceString(
-                std::string& string,
-                const std::string& oldString,
-                const std::string& newString);
+  static void ReplaceString(
+      std::string &string,
+      const std::string &oldString,
+      const std::string &newString);
 
 };
 

@@ -5,7 +5,6 @@
 #ifndef EX03_DIAMONDTRAP_HPP
 #define EX03_DIAMONDTRAP_HPP
 
-
 #include <ostream>
 
 #include "FragTrap.hpp"
@@ -18,32 +17,31 @@
 #define D_ASSIGNMENT          "DiamondTrap Copy assignment operator called"
 #define D_DESTRUCTOR          "DiamondTrap Destructor called"
 
-#define BLUE	"\033[1;34m"
-#define RESET	"\033[0m"
+#define BLUE    "\033[1;34m"
+#define RESET    "\033[0m"
 
-class DiamondTrap : public FragTrap, public ScavTrap
-{
+class DiamondTrap : public FragTrap, public ScavTrap {
 
-public:
-    DiamondTrap();
+ public:
+  DiamondTrap();
 
-    explicit DiamondTrap(const std::string& name);
+  explicit DiamondTrap(const std::string &name);
 
-    DiamondTrap(DiamondTrap const &src);
+  DiamondTrap(DiamondTrap const &src);
 
-    ~DiamondTrap();
+  ~DiamondTrap();
 
-    DiamondTrap& operator=(DiamondTrap const &src);
+  DiamondTrap &operator=(DiamondTrap const &src);
 
-    void whoAmI();
+  void whoAmI();
 
-    const std::string& GetName1() const;
+  const std::string &GetName1() const;
 
-private:
-    std::string name;
+ private:
+  std::string name;
 
 };
 
-std::ostream& operator<<(std::ostream &outStream, DiamondTrap const &diamondtrap);
+std::ostream &operator<<(std::ostream &outStream, DiamondTrap const &diamondtrap);
 
 #endif //EX03_DIAMONDTRAP_HPP

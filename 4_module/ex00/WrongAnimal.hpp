@@ -12,28 +12,25 @@
 
 #include <iostream>
 
-
 // Class without virtual destructor and virtual function
-class WrongAnimal
-{
-public:
-    WrongAnimal();
+class WrongAnimal {
+ public:
+  WrongAnimal();
 
-    WrongAnimal(std::string type);
+  WrongAnimal(std::string type);
 
-    WrongAnimal(const WrongAnimal& wrongAnimal);
+  WrongAnimal(const WrongAnimal &wrongAnimal);
 
-    WrongAnimal& operator=(const WrongAnimal& wrongAnimal);
+  WrongAnimal &operator=(const WrongAnimal &wrongAnimal);
 
-    ~WrongAnimal();
+  ~WrongAnimal();
 
-    void makeSound() const;
+  void makeSound() const;
 
-    std::string GetType() const;
+  std::string GetType() const;
 
-protected:
-    std::string type;
+ protected:
+  std::string type;
 };
-
 
 #endif //EX00_WRONGANIMAL_HPP

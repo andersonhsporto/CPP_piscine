@@ -12,16 +12,19 @@
 
 #define YELLOW "\033[1;33m"
 
-class WrongCat : public WrongAnimal
-{
-public:
-	WrongCat();
-	WrongCat(std::string &type);
-	WrongCat(const WrongCat &wrongCat);
-	WrongCat &operator=(const WrongCat &wrongCat);
-	~WrongCat();
+class WrongCat : public WrongAnimal {
+ public:
+  WrongCat();
 
-	void makeSound() const;
+  WrongCat(std::string &type);
+
+  WrongCat(const WrongCat &wrongCat);
+
+  WrongCat &operator=(const WrongCat &wrongCat);
+
+  ~WrongCat();
+
+  void makeSound() const;
 };
 
 #endif // EX02_WRONGCAT_HPP

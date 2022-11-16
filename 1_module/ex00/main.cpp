@@ -4,16 +4,16 @@
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std:: string name);
-void    randomChump(std::string name);
+Zombie *newZombie(std::string name);
 
-int main()
-{
-    Zombie* zombieHeap = newZombie("Heap");
+void randomChump(std::string name);
 
-    zombieHeap->announce();
-    delete zombieHeap;
+int main() {
+  Zombie *zombieHeap = newZombie("Heap");
 
-    randomChump("Stack");
-    return 0;
+  zombieHeap->announce();
+  delete zombieHeap;
+
+  randomChump("Stack");
+  return 0;
 }

@@ -33,7 +33,9 @@ typename T::iterator easyfind(T &container, int value) {
 }
 
 void testVectorContainer();
+
 void testListContainer();
+
 void testDequeContainer();
 
 #endif //EX00_EASYFIND_HPP

@@ -5,34 +5,32 @@
 #ifndef EX03_POINT_HPP
 #define EX03_POINT_HPP
 
-
 #include "Fixed.hpp"
 
-class Point
-{
+class Point {
 
-public:
-    Point();
+ public:
+  Point();
 
-    Point(float x, float y);
+  Point(float x, float y);
 
-    Point(const Point &point);
+  Point(const Point &point);
 
-    Point& operator=(const Point& point);
+  Point &operator=(const Point &point);
 
-    ~Point();
+  ~Point();
 
-    const Fixed& GetX() const;
+  const Fixed &GetX() const;
 
-    const Fixed& GetY() const;
+  const Fixed &GetY() const;
 
-    Fixed absoluteSubtraction();
+  Fixed absoluteSubtraction();
 
-private:
-    const Fixed x;
-    const Fixed y;
+ private:
+  const Fixed x;
+
+  const Fixed y;
 };
-
 
 #endif //EX03_POINT_HPP
 

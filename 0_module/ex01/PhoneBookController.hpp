@@ -5,17 +5,17 @@
 
 #define CMD "ADD, SEARCH and EXIT"
 
-class PhoneController
-{
+class PhoneController {
 
-private:
-    PhoneBook	_phoneBook;
+ private:
+  PhoneBook _phoneBook;
 
-public:
-    PhoneController();
-    ~PhoneController();
+ public:
+  PhoneController();
 
-    void		phoneBookService();
+  ~PhoneController();
+
+  void phoneBookService();
 };
 
 #endif

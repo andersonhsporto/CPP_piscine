@@ -10,25 +10,24 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
-{
-public:
-	Cat();
+class Cat : public Animal {
+ public:
+  Cat();
 
-	Cat(std::string idea);
+  Cat(std::string idea);
 
-	Cat(const Cat &cat);
+  Cat(const Cat &cat);
 
-	~Cat();
+  ~Cat();
 
-	Cat &operator=(Cat const &rhs);
+  Cat &operator=(Cat const &rhs);
 
-	void makeSound() const;
+  void makeSound() const;
 
-	Brain *GetBrain() const;
+  Brain *GetBrain() const;
 
-private:
-	Brain *brain;
+ private:
+  Brain *brain;
 };
 
 #endif // EX02_CAT_HPP

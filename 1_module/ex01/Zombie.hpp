@@ -11,24 +11,23 @@
 #define END   "\033[0m"
 #define RED   "\n\t\033[1m\033[31m"
 
-class Zombie
-{
+class Zombie {
 
-public:
-	Zombie(const std::string& _name);
+ public:
+  Zombie(const std::string &_name);
 
-	Zombie( void );
+  Zombie(void);
 
-	~Zombie( void );
+  ~Zombie(void);
 
-	void announce( void );
+  void announce(void);
 
-	const std::string& GetName() const;
+  const std::string &GetName() const;
 
-	void SetName(const std::string& _name);
+  void SetName(const std::string &_name);
 
-private:
-	std::string _name;
+ private:
+  std::string _name;
 
 };
 

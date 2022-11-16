@@ -11,26 +11,24 @@
 #define ASSIGNMENT          "Copy assignment operator called"
 #define DESTRUCTOR          "Destructor called"
 
+class Fixed {
+ public:
+  Fixed();
 
-class Fixed
-{
-public:
-    Fixed();
+  Fixed(const Fixed &fixed);
 
-    Fixed(const Fixed &fixed);
+  Fixed &operator=(const Fixed &fixed);
 
-    Fixed& operator=(const Fixed& fixed);
+  ~Fixed();
 
-    ~Fixed();
+  int getRawBits(void) const;
 
-    int getRawBits( void ) const;
+  void setRawBits(int const raw);
 
-    void setRawBits(int const raw);
+ private:
+  int rawBits;
 
-private:
-    int                 rawBits;
-    static const int    fractionalBits;
+  static const int fractionalBits;
 };
-
 
 #endif //EX00_FIXED_HPP

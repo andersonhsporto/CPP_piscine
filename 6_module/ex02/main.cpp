@@ -26,21 +26,18 @@ Base *generate(void) {
   int random = rand() % 3;
 
   switch (random) {
-    case 0:
-      std::cout << "Type A generated" << std::endl;
+    case 0:std::cout << "Type A generated" << std::endl;
       return new A;
-    case 1:
-      std::cout << "Type B generated" << std::endl;
+    case 1:std::cout << "Type B generated" << std::endl;
       return new B;
-    default:
-      std::cout << "Type C generated" << std::endl;
+    default:std::cout << "Type C generated" << std::endl;
       return new C;
   }
 }
 
 void identify(Base *p) {
 
-A *a = dynamic_cast<A *>(p);
+  A *a = dynamic_cast<A *>(p);
   B *b = dynamic_cast<B *>(p);
   C *c = dynamic_cast<C *>(p);
 

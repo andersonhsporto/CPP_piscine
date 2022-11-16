@@ -19,22 +19,23 @@ years whereas you started working here since last month."
 
 #define ERROR_MSG "This is unacceptable! I want to speak to the manager now."
 
-class Harl
-{
-public:
-    Harl();
+class Harl {
+ public:
+  Harl();
 
-    ~Harl();
+  ~Harl();
 
-    void complain ( std::string level );
+  void complain(std::string level);
 
-private:
-    void debug ( void );
-    void info ( void );
-    void warning ( void );
-    void error ( void );
+ private:
+  void debug(void);
+
+  void info(void);
+
+  void warning(void);
+
+  void error(void);
 
 };
-
 
 #endif //EX05_HARL_HPP

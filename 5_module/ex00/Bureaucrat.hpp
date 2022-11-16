@@ -50,6 +50,7 @@ class Bureaucrat {
 
  private:
   std::string const name;
+
   int grade;
 };
 

@@ -7,24 +7,22 @@
 
 #include "HumanA.hpp"
 
-class HumanB
-{
+class HumanB {
 
-public:
-    HumanB(const std::string& name);
+ public:
+  HumanB(const std::string &name);
 
-    ~HumanB();
+  ~HumanB();
 
-    void attack();
+  void attack();
 
-    void setWeapon(Weapon& type);
+  void setWeapon(Weapon &type);
 
+ private:
+  std::string Name;
 
-private:
-    std::string Name;
-    Weapon      *type;
+  Weapon *type;
 
 };
-
 
 #endif //EX03_HUMANB_HPP

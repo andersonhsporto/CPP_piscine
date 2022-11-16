@@ -16,9 +16,9 @@ int main() {
   Data *deserializedData = deserialize(serializedData);
 
   std::cout << CYAN << "\nData after serialization:" << RESET << std::endl;
-  std::cout << CYAN <<  "Name: " << deserializedData->name << RESET << std::endl;
-  std::cout << CYAN <<  "Last name: " << deserializedData->lastName << RESET << std::endl;
-  std::cout << CYAN <<  "Number: " << deserializedData->number << RESET << std::endl;
+  std::cout << CYAN << "Name: " << deserializedData->name << RESET << std::endl;
+  std::cout << CYAN << "Last name: " << deserializedData->lastName << RESET << std::endl;
+  std::cout << CYAN << "Number: " << deserializedData->number << RESET << std::endl;
   delete andersonData;
 }
 

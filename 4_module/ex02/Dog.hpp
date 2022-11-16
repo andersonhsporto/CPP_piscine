@@ -8,25 +8,24 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal
-{
-public:
-	Dog();
+class Dog : public Animal {
+ public:
+  Dog();
 
-	Dog(std::string idea);
+  Dog(std::string idea);
 
-	Dog(const Dog &dog);
+  Dog(const Dog &dog);
 
-	~Dog();
+  ~Dog();
 
-	Dog &operator=(Dog const &rhs);
+  Dog &operator=(Dog const &rhs);
 
-	void makeSound() const;
+  void makeSound() const;
 
-	Brain *GetBrain() const;
+  Brain *GetBrain() const;
 
-private:
-	Brain *brain;
+ private:
+  Brain *brain;
 };
 
 #endif // EX02_DOG_HPP

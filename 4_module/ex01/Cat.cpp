@@ -4,48 +4,40 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
-{
-    std::cout << ORANGE << "Cat Default Constructor called" << RESET << std::endl;
-    this->brain = new Brain();
+Cat::Cat() : Animal("Cat") {
+  std::cout << ORANGE << "Cat Default Constructor called" << RESET << std::endl;
+  this->brain = new Brain();
 }
 
-Cat::Cat(std::string idea) : Animal(idea)
-{
-    std::cout << ORANGE << "Cat Parameterized Constructor called" << RESET << std::endl;
-    this->brain = new Brain(idea);
+Cat::Cat(std::string idea) : Animal(idea) {
+  std::cout << ORANGE << "Cat Parameterized Constructor called" << RESET << std::endl;
+  this->brain = new Brain(idea);
 }
 
-Cat::Cat(const Cat& cat) : Animal(cat)
-{
-    std::cout << ORANGE << "Cat Copy Constructor called" << RESET << std::endl;
-    this->brain = new Brain(*cat.brain);
-	this->type = cat.type;
+Cat::Cat(const Cat &cat) : Animal(cat) {
+  std::cout << ORANGE << "Cat Copy Constructor called" << RESET << std::endl;
+  this->brain = new Brain(*cat.brain);
+  this->type = cat.type;
 }
 
-Cat::~Cat()
-{
-    std::cout << ORANGE << "Cat Destructor called" << RESET << std::endl;
-    delete this->brain;
+Cat::~Cat() {
+  std::cout << ORANGE << "Cat Destructor called" << RESET << std::endl;
+  delete this->brain;
 }
 
-Cat& Cat::operator=(const Cat& rhs)
-{
-    std::cout << ORANGE << "Cat Assignment Operator called" << RESET << std::endl;
-    if (this != &rhs)
-    {
-        this->type = rhs.type;
-        this->brain = new Brain(*rhs.brain);
-    }
-    return *this;
+Cat &Cat::operator=(const Cat &rhs) {
+  std::cout << ORANGE << "Cat Assignment Operator called" << RESET << std::endl;
+  if (this != &rhs) {
+    this->type = rhs.type;
+    this->brain = new Brain(*rhs.brain);
+  }
+  return *this;
 }
 
-void Cat::makeSound() const
-{
-    std::cout << ORANGE << "Cat Sound" << RESET << std::endl;
+void Cat::makeSound() const {
+  std::cout << ORANGE << "Cat Sound" << RESET << std::endl;
 }
 
-Brain* Cat::GetBrain() const
-{
-    return brain;
+Brain *Cat::GetBrain() const {
+  return brain;
 }
