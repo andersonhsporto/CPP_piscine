@@ -15,7 +15,7 @@ Fixed::Fixed(const int integer) : rawBits(integer << fractionalBits) {
   std::cout << INT_CONSTRUCTOR << std::endl;
 }
 
-Fixed::Fixed(const float float_nbr) : rawBits(roundf(float_nbr * (float)(1 << fractionalBits))) {
+Fixed::Fixed(const float float_nbr) : rawBits(roundf(float_nbr * (float) (1 << fractionalBits))) {
   std::cout << FLOAT_CONSTRUCTOR << std::endl;
 }
 
@@ -46,7 +46,7 @@ Fixed::~Fixed() {
 }
 
 float Fixed::toFloat(void) const {
-  float float_nbr = ((float)rawBits / (float)(1 << fractionalBits));
+  float float_nbr = ((float) rawBits / (float) (1 << fractionalBits));
 
   return float_nbr;
 }

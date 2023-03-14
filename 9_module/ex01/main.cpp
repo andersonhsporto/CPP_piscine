@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     std::cout << "Usage: ./rpn \"expression\"" << std::endl;
     return 1;
   }
-    RPN rpn;
-    rpn.evaluate(argv[1]);
-    return 0;
+  RPN rpn;
+  rpn.evaluate(argv[1]);
+  return 0;
 }

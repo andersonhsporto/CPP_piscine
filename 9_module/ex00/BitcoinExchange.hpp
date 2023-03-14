@@ -10,21 +10,21 @@
 
 class BitcoinExchange {
 
-public:
-    BitcoinExchange();
-    ~BitcoinExchange();
-    BitcoinExchange (const BitcoinExchange &other);
-    BitcoinExchange &operator=(const BitcoinExchange &other);
+ public:
+  BitcoinExchange();
+  ~BitcoinExchange();
+  BitcoinExchange(const BitcoinExchange &other);
+  BitcoinExchange &operator=(const BitcoinExchange &other);
 
-    // read file
-    void readDataFile(const std::string &fileName);
+  // read file
+  void readDataFile(const std::string &fileName);
 
-    //
-    void readDatabaseFile();
+  //
+  void readDatabaseFile();
 
  private:
   //data file
-  std::map <std::string, float> data;
+  std::map<std::string, float> data;
 
   void _printData(std::string line);
 

@@ -10,37 +10,36 @@
 #include <deque>
 #include <deque>
 
-class PmergeMe
-{
-public:
-	PmergeMe();
+class PmergeMe {
+ public:
+  PmergeMe();
 
-	~PmergeMe();
+  ~PmergeMe();
 
-	PmergeMe operator=(const PmergeMe &rhs);
+  PmergeMe operator=(const PmergeMe &rhs);
 
-	PmergeMe(const PmergeMe &rhs);
+  PmergeMe(const PmergeMe &rhs);
 
-	void parse(int c, char *str[]);
-	void sort();
+  void parse(int c, char *str[]);
+  void sort();
 
-    void print(int argc, char *argv[]);
+  void print(int argc, char *argv[]);
 
-private:
-	std::list<int> _list;
-	std::deque<int> _deque;
+ private:
+  std::list<int> _list;
+  std::deque<int> _deque;
   timeval _timeList;
   timeval _timeDeque;
 
-	void _parseList(int c, char *str[]);
+  void _parseList(int c, char *str[]);
 
-	void _parseDeque(int c, char *str[]);
+  void _parseDeque(int c, char *str[]);
 
-	void _mergeList();
+  void _mergeList();
 
-	void _mergeDeque();
+  void _mergeDeque();
 
-	bool _isValidNumbers(const char *str);
+  bool _isValidNumbers(const char *str);
 };
 
 #endif // EX02__PMERGEME_HPP_

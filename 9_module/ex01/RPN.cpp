@@ -70,11 +70,11 @@ void RPN::_push(std::string str) {
   }
 
   // reverse stack
-    std::stack<std::string> tmp;
-    for (std::stack<std::string> dump = _stack; !dump.empty(); dump.pop()) {
-      tmp.push(dump.top());
-    }
-    _stack = tmp;
+  std::stack<std::string> tmp;
+  for (std::stack<std::string> dump = _stack; !dump.empty(); dump.pop()) {
+    tmp.push(dump.top());
+  }
+  _stack = tmp;
 
 }
 void RPN::_validation(std::string str) {

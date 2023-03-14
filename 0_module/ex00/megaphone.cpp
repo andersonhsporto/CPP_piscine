@@ -5,7 +5,7 @@ int main(int argc, char *argv[]) {
     int i = 1;
     do {
       for (int j = 0; argv[i][j] != '\0'; j++) {
-        std::cout << (char)toupper(argv[i][j]);
+        std::cout << (char) toupper(argv[i][j]);
       }
       if (i != argc - 1)
         std::cout << " ";

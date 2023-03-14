@@ -17,10 +17,10 @@ class RPN {
 
   void evaluate(const char *str);
 
-  private:
-    std::stack <std::string> _stack;
-    void _push(std::string str);
-    void _validation(std::string str);
+ private:
+  std::stack<std::string> _stack;
+  void _push(std::string str);
+  void _validation(std::string str);
 
 };
 

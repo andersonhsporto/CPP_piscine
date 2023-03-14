@@ -39,7 +39,7 @@ Fixed::~Fixed() {
 }
 
 float Fixed::toFloat(void) const {
-  float float_nbr = ((float)rawBits / (float)(1 << fractionalBits));
+  float float_nbr = ((float) rawBits / (float) (1 << fractionalBits));
 
   return float_nbr;
 }

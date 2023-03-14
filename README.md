@@ -1,6 +1,6 @@
 # C++ Piscine
 
-This is a 42 school project. The goal is to learn C++ using some basic 
+This is a 42 school project. The goal is to learn C++ using some basic
 exercises.
 
 ## Description
@@ -17,8 +17,8 @@ Each module is a C++ project based on a specific topic.
 | [Day 05](https://github.com/andersonhsporto/CPP_piscine/tree/main/5_module) |                              Try/Catch and Exceptions in CPP                              |
 | [Day 06](https://github.com/andersonhsporto/CPP_piscine/tree/main/6_module) |                        Casting ( Static, Dynamic and Reinterpret )                        |
 | [Day 07](https://github.com/andersonhsporto/CPP_piscine/tree/main/7_module) |                                         Templates                                         |
-| [Day 08](https://github.com/andersonhsporto/CPP_piscine/tree/main/8_module) |                      Containers         
-| [Day 09](https://github.com/andersonhsporto/CPP_piscine/tree/main/9_module) |                      Simple Containers                                                           |
+| [Day 08](https://github.com/andersonhsporto/CPP_piscine/tree/main/8_module) |                                        Containers                                         
+| [Day 09](https://github.com/andersonhsporto/CPP_piscine/tree/main/9_module) |                                     Simple Containers                                     |
 
 ## Usage
 
