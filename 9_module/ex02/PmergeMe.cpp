@@ -52,10 +52,10 @@ void PmergeMe::print(int argc, char *argv[]) {
     std::cout << *it << " ";
   }
 
-    std::cout << std::endl << "After <std::set> : ";
-    for (std::set<int>::iterator it = _set.begin(); it != _set.end(); it++) {
-        std::cout << *it << " ";
-    }
+  std::cout << std::endl << "After <std::set> : ";
+  for (std::set<int>::iterator it = _set.begin(); it != _set.end(); it++) {
+    std::cout << *it << " ";
+  }
 
   std::cout << std::endl << "Time to process a range of " << argc - 1 << " elements";
   std::cout << " with std::list : " << _timeList.tv_usec << " us" << std::endl;
@@ -64,7 +64,7 @@ void PmergeMe::print(int argc, char *argv[]) {
   std::cout << " with std::deque: " << _timeDeque.tv_usec << " us" << std::endl;
 
   std::cout << std::endl << "Time to process a range of " << argc - 1 << " elements";
-  std::cout << " with std::set: " << _timeSet.tv_usec  << " us" << std::endl;
+  std::cout << " with std::set: " << _timeSet.tv_usec << " us" << std::endl;
 }
 
 bool PmergeMe::_isValidNumbers(const char *str) {
