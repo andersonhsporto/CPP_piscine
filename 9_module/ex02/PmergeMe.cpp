@@ -33,6 +33,7 @@ void PmergeMe::parse(int c, char *str[]) {
   }
   _parseList(c, str);
   _parseDeque(c, str);
+  _parseSet(c, str);
 }
 
 void PmergeMe::print(int argc, char *argv[]) {
@@ -51,11 +52,19 @@ void PmergeMe::print(int argc, char *argv[]) {
     std::cout << *it << " ";
   }
 
+    std::cout << std::endl << "After <std::set> : ";
+    for (std::set<int>::iterator it = _set.begin(); it != _set.end(); it++) {
+        std::cout << *it << " ";
+    }
+
   std::cout << std::endl << "Time to process a range of " << argc - 1 << " elements";
   std::cout << " with std::list : " << _timeList.tv_usec << " us" << std::endl;
 
   std::cout << std::endl << "Time to process a range of " << argc - 1 << " elements";
   std::cout << " with std::deque: " << _timeDeque.tv_usec << " us" << std::endl;
+
+  std::cout << std::endl << "Time to process a range of " << argc - 1 << " elements";
+  std::cout << " with std::set: " << _timeSet.tv_usec  << " us" << std::endl;
 }
 
 bool PmergeMe::_isValidNumbers(const char *str) {
@@ -83,14 +92,21 @@ void PmergeMe::_parseDeque(int c, char *str[]) {
 void PmergeMe::sort() {
   // time
   timeval start;
+
   gettimeofday(&start, NULL);
   _mergeList();
   gettimeofday(&_timeList, NULL);
   timersub(&_timeList, &start, &_timeList);
+
   gettimeofday(&start, NULL);
   _mergeDeque();
   gettimeofday(&_timeDeque, NULL);
   timersub(&_timeDeque, &start, &_timeDeque);
+
+  gettimeofday(&start, NULL);
+  _mergeSet();
+  gettimeofday(&_timeSet, NULL);
+  timersub(&_timeSet, &start, &_timeSet);
 }
 
 void PmergeMe::_mergeList() {
@@ -121,4 +137,15 @@ void PmergeMe::_mergeDeque() {
       }
     }
   }
+}
+
+void PmergeMe::_parseSet(int c, char **str) {
+  for (int i = 0; i < c; i++) {
+    _set.insert(atoi(str[i]));
+  }
+
+}
+
+void PmergeMe::_mergeSet() {
+  return;
 }

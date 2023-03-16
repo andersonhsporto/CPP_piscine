@@ -8,7 +8,7 @@
 #include <iostream>
 #include <list>
 #include <deque>
-#include <deque>
+#include <set>
 
 class PmergeMe {
  public:
@@ -28,16 +28,22 @@ class PmergeMe {
  private:
   std::list<int> _list;
   std::deque<int> _deque;
+  std::set<int> _set;
   timeval _timeList;
   timeval _timeDeque;
+  timeval _timeSet;
 
   void _parseList(int c, char *str[]);
 
   void _parseDeque(int c, char *str[]);
 
+  void _parseSet(int c, char *str[]);
+
   void _mergeList();
 
   void _mergeDeque();
+
+  void _mergeSet();
 
   bool _isValidNumbers(const char *str);
 };
