@@ -3,8 +3,7 @@
 //
 
 #include "PmergeMe.hpp"
-#include <cstdlib>
-#include <sys/time.h>
+
 
 PmergeMe::PmergeMe() {
 }
@@ -109,6 +108,7 @@ void PmergeMe::sort() {
   timersub(&_timeSet, &start, &_timeSet);
 }
 
+// using bubble sort
 void PmergeMe::_mergeList() {
   int tempNBR;
 
@@ -124,6 +124,7 @@ void PmergeMe::_mergeList() {
   }
 }
 
+// using bubble sort
 void PmergeMe::_mergeDeque() {
   int tempNBR;
 

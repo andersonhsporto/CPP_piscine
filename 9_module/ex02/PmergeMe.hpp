@@ -5,6 +5,8 @@
 #ifndef EX02__PMERGEME_HPP_
 #define EX02__PMERGEME_HPP_
 
+#include <cstdlib>
+#include <sys/time.h>
 #include <iostream>
 #include <list>
 #include <deque>
